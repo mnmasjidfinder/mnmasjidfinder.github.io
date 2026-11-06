@@ -71,7 +71,7 @@ footer code{font-size:12px}
   <label for="jfrom">Jumu'ah from<input type="time" id="jfrom"></label>
   <label for="jto">to<input type="time" id="jto"></label>
   <label for="sort">Sort<select id="sort">
-    <option value="region">Region</option><option value="name">Name</option><option value="jumuah">Earliest Jumu'ah</option>
+    <option value="name">Name (A–Z)</option><option value="region">Region</option><option value="jumuah">Earliest Jumu'ah</option>
   </select></label>
   <label class="chk"><input type="checkbox" id="hasj"> Jumu'ah time known</label>
   <label class="chk"><input type="checkbox" id="iq"> Iqamah times known</label>
@@ -114,8 +114,8 @@ function subtitle() {
 subtitle();
 
 const KEYS = ["q","region","jfrom","jto","sort","hasj","iq"];
-try { const s = JSON.parse(localStorage.getItem("mnmf") || "{}"); KEYS.forEach(k => { if (k in s) $(k)[$(k).type === "checkbox" ? "checked" : "value"] = s[k]; }); } catch {}
-const save = () => { try { localStorage.setItem("mnmf", JSON.stringify(Object.fromEntries(KEYS.map(k => [k, $(k).type === "checkbox" ? $(k).checked : $(k).value])))); } catch {} };
+try { const s = JSON.parse(localStorage.getItem("mnmf2") || "{}"); KEYS.forEach(k => { if (k in s) $(k)[$(k).type === "checkbox" ? "checked" : "value"] = s[k]; }); } catch {}
+const save = () => { try { localStorage.setItem("mnmf2", JSON.stringify(Object.fromEntries(KEYS.map(k => [k, $(k).type === "checkbox" ? $(k).checked : $(k).value])))); } catch {} };
 
 function jumuahHtml(m) {
   if (!m.jumuah.length) return `<span class="none">Jumu'ah time not published online. Call or check the website.</span>`;
@@ -213,7 +213,7 @@ async function refreshLive() {
 }
 
 KEYS.forEach(k => $(k).addEventListener("input", render));
-$("reset").onclick = () => { KEYS.forEach(k => $(k).type === "checkbox" ? $(k).checked = false : $(k).value = (k === "sort" ? "region" : "")); render(); };
+$("reset").onclick = () => { KEYS.forEach(k => $(k).type === "checkbox" ? $(k).checked = false : $(k).value = (k === "sort" ? "name" : "")); render(); };
 render();
 refreshLive();
 </script>
