@@ -41,6 +41,8 @@ main{padding-block:16px}
 .jum{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .jum .t{background:var(--accent-soft);color:var(--accent);font-weight:700;border-radius:8px;padding:4px 10px;font-size:14px;font-variant-numeric:tabular-nums}
 .jum .t small{font-weight:500;opacity:.85}
+.jum .t.hit{background:var(--accent);color:var(--card)}
+td.hit{background:var(--accent);color:var(--card);border-radius:4px}
 .jum .none{color:var(--muted);font-size:13px}
 .sect{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 table{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
@@ -66,10 +68,9 @@ footer code{font-size:12px}
   <div class="sub" id="sub">Prayer timings, Jumu'ah and events</div>
 </header>
 <div class="controls"><div class="wrap">
-  <label for="q">Search name / city / address<input type="search" id="q" placeholder="e.g. Dar Al-Farooq, Rochester"></label>
+  <label for="q">Search name, city or time<input type="search" id="q" placeholder="e.g. Dar Al-Farooq, Rochester, 1:30 pm"></label>
   <label for="region">Region<select id="region"><option value="">All regions</option></select></label>
-  <label for="jfrom">Jumu'ah from<input type="time" id="jfrom"></label>
-  <label for="jto">to<input type="time" id="jto"></label>
+  <label for="jtime">Jumu'ah time<select id="jtime"><option value="">Any time</option></select></label>
   <label for="sort">Sort<select id="sort">
     <option value="name">Name (A–Z)</option><option value="region">Region</option><option value="jumuah">Earliest Jumu'ah</option>
   </select></label>
@@ -92,7 +93,6 @@ footer code{font-size:12px}
 const D = window.MASAJID || {mosques: []};
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const toMin = v => { if (!v) return null; const [h, m] = v.split(":").map(Number); return h * 60 + m; };
 const PRAYERS = [["fajr","Fajr"],["sunrise","Sunrise"],["dhuhr","Dhuhr"],["asr","Asr"],["maghrib","Maghrib"],["isha","Isha"]];
 // "1:00PM" / "01:00 pm" -> "1:00 PM"
 const nt = s => { const m = /^(\d{1,2}):(\d{2})\s*([AP]M)?$/i.exec(String(s || "").trim()); if (!m) return null;
@@ -113,9 +113,44 @@ function subtitle() {
 }
 subtitle();
 
-const KEYS = ["q","region","jfrom","jto","sort","hasj","iq"];
-try { const s = JSON.parse(localStorage.getItem("mnmf2") || "{}"); KEYS.forEach(k => { if (k in s) $(k)[$(k).type === "checkbox" ? "checked" : "value"] = s[k]; }); } catch {}
-const save = () => { try { localStorage.setItem("mnmf2", JSON.stringify(Object.fromEntries(KEYS.map(k => [k, $(k).type === "checkbox" ? $(k).checked : $(k).value])))); } catch {} };
+// Jumu'ah time dropdown: ranges first, then every start time actually published.
+const fmtMin = n => `${(Math.floor(n / 60) % 12) || 12}:${String(n % 60).padStart(2, "0")} ${n >= 720 ? "PM" : "AM"}`;
+const RANGES = [["r:0-719", "Before 12:00 PM", 0, 719], ["r:720-779", "12:00 – 12:59 PM", 720, 779],
+                ["r:780-839", "1:00 – 1:59 PM", 780, 839], ["r:840-1439", "2:00 PM or later", 840, 1439]];
+function fillTimeOptions() {
+  const sel = $("jtime"), keep = sel.value;
+  const times = new Map();
+  D.mosques.forEach(m => new Set(m.jumuah.map(j => j.start_min).filter(v => v != null)).forEach(v => times.set(v, (times.get(v) || 0) + 1)));
+  const count = (lo, hi) => D.mosques.filter(m => m.jumuah.some(j => j.start_min >= lo && j.start_min <= hi)).length;
+  sel.innerHTML = `<option value="">Any time</option><optgroup label="Time range">` +
+    RANGES.map(([v, l, lo, hi]) => [v, l, count(lo, hi)]).filter(r => r[2]).map(([v, l, n]) => `<option value="${v}">${l} (${n})</option>`).join("") +
+    `</optgroup><optgroup label="Exact start time">` +
+    [...times].sort((a, b) => a[0] - b[0]).map(([v, n]) => `<option value="t:${v}">${fmtMin(v)} (${n})</option>`).join("") + "</optgroup>";
+  sel.value = [...sel.options].some(o => o.value === keep) ? keep : "";
+}
+fillTimeOptions();
+
+// Pull a time like "1:30", "1:30pm", "12 pm", "13:15" out of the search text.
+// Without am/pm, 1–9 o'clock is read as afternoon (Jumu'ah hours).
+function parseTimeQuery(q) {
+  const re = /\b(\d{1,2}):(\d{2})\s*(a\.?m\.?|p\.?m\.?)?|\b(\d{1,2})\s*(a\.?m\.?|p\.?m\.?)/i;
+  const m = re.exec(q);
+  if (!m) return {text: q, time: null};
+  let h = +(m[1] ?? m[4]), mi = +(m[2] ?? 0);
+  const ap = (m[3] || m[5] || "").toLowerCase().replace(/\./g, "");
+  if (h > 23 || mi > 59) return {text: q, time: null};
+  if (ap === "pm" && h < 12) h += 12;
+  else if (ap === "am" && h === 12) h = 0;
+  else if (!ap && h >= 1 && h <= 9) h += 12;
+  return {text: (q.slice(0, m.index) + " " + q.slice(m.index + m[0].length)).trim(), time: h * 60 + mi};
+}
+const todayOf = m => { const d = m.days || []; const i = d.findIndex(x => dayISO(x.date) === todayISO); return d[i < 0 ? 0 : i]; };
+let hit = () => false;    // which Jumu'ah chips to highlight
+let hitIq = () => false;  // which iqamah cells to highlight
+
+const KEYS = ["q","region","jtime","sort","hasj","iq"];
+try { const s = JSON.parse(localStorage.getItem("mnmf3") || "{}"); KEYS.forEach(k => { if (k in s) $(k)[$(k).type === "checkbox" ? "checked" : "value"] = s[k]; }); } catch {}
+const save = () => { try { localStorage.setItem("mnmf3", JSON.stringify(Object.fromEntries(KEYS.map(k => [k, $(k).type === "checkbox" ? $(k).checked : $(k).value])))); } catch {} };
 
 function jumuahHtml(m) {
   if (!m.jumuah.length) return `<span class="none">Jumu'ah time not published online. Call or check the website.</span>`;
@@ -123,7 +158,7 @@ function jumuahHtml(m) {
     const parts = [];
     if (j.khutbah && j.khutbah !== j.start) parts.push(`khutbah ${esc(j.khutbah)}`);
     if (j.iqamah) parts.push(`iqamah ${esc(j.iqamah)}`);
-    return `<span class="t">${esc(j.start)}${parts.length ? ` <small>(${parts.join(", ")})</small>` : ""}</span>`;
+    return `<span class="t${hit(j) ? " hit" : ""}">${esc(j.start)}${parts.length ? ` <small>(${parts.join(", ")})</small>` : ""}</span>`;
   }).join("") + `<span class="none" style="font-size:11px">${esc(m.jumuah_source || "")}</span>`;
 }
 
@@ -132,7 +167,7 @@ const hasIqamah = m => (m.days || []).some(d => Object.values(d.iqamah || {}).so
 function dayTable(day) {
   const iq = day.iqamah || {}, hasIq = Object.values(iq).some(Boolean);
   return `<table><tr><th scope="col">Prayer</th><th scope="col">Adhan</th><th scope="col">Iqamah</th></tr>` +
-    PRAYERS.map(([k, n]) => `<tr><td>${n}</td><td>${esc(day.adhan?.[k] || "—")}</td><td class="${hasIq ? "" : "na"}">${k === "sunrise" ? "" : esc(iq[k] || "—")}</td></tr>`).join("") +
+    PRAYERS.map(([k, n]) => `<tr><td>${n}</td><td>${esc(day.adhan?.[k] || "—")}</td><td class="${hasIq ? (hitIq(iq[k]) ? "hit" : "") : "na"}">${k === "sunrise" ? "" : esc(iq[k] || "—")}</td></tr>`).join("") +
     "</table>" + (hasIq ? "" : `<div class="iqnote">Iqamah times aren't published online. Call or check the masjid's website.</div>`);
 }
 
@@ -169,14 +204,25 @@ function card(m) {
 
 function render() {
   save();
-  const q = $("q").value.trim().toLowerCase(), region = $("region").value;
-  const f = toMin($("jfrom").value), t = toMin($("jto").value);
-  const needJ = $("hasj").checked || f != null || t != null;
+  const {text: q, time: qt} = parseTimeQuery($("q").value.trim().toLowerCase());
+  const region = $("region").value, jt = $("jtime").value;
+  let lo = null, hi = null;
+  if (jt.startsWith("r:")) [lo, hi] = jt.slice(2).split("-").map(Number);
+  else if (jt.startsWith("t:")) lo = hi = +jt.slice(2);
+  // a typed time matches Jumu'ah within 15 minutes, or any of today's iqamah times exactly
+  const nearTyped = j => qt != null && j.start_min != null && Math.abs(j.start_min - qt) <= 15;
+  const inPicker = j => lo != null && j.start_min != null && j.start_min >= lo && j.start_min <= hi;
+  hit = j => nearTyped(j) || inPicker(j);
+  hitIq = v => qt != null && mins(v) === qt;
+  const phrase = q.replace(/\s+/g, " ").replace(/^[\s,]+|[\s,]+$/g, "");
   const list = D.mosques.filter(m => {
     if (region && m.region !== region) return false;
-    if (q && !`${m.name} ${m.aka || ""} ${m.city} ${m.address || ""} ${m.region}`.toLowerCase().includes(q)) return false;
+    const hay = `${m.name} ${m.aka || ""} ${m.city} ${m.address || ""} ${m.region}`.toLowerCase();
+    if (phrase && !hay.includes(phrase)) return false;
     if ($("iq").checked && !hasIqamah(m)) return false;
-    if (needJ && !m.jumuah.some(j => j.start_min != null && (f == null || j.start_min >= f) && (t == null || j.start_min <= t))) return false;
+    if ($("hasj").checked && !m.jumuah.some(j => j.start_min != null)) return false;
+    if (lo != null && !m.jumuah.some(inPicker)) return false;
+    if (qt != null && !m.jumuah.some(nearTyped) && !Object.values(todayOf(m)?.iqamah || {}).some(v => mins(v) === qt)) return false;
     return true;
   });
   const firstJ = m => Math.min(...m.jumuah.map(j => j.start_min ?? 9999), 9999);
@@ -184,7 +230,10 @@ function render() {
   list.sort(s === "name" ? (a, b) => a.name.localeCompare(b.name)
     : s === "jumuah" ? (a, b) => firstJ(a) - firstJ(b) || a.name.localeCompare(b.name)
     : (a, b) => a.region.localeCompare(b.region) || hasIqamah(b) - hasIqamah(a) || a.name.localeCompare(b.name));
-  $("count").textContent = `${list.length} of ${D.mosques.length} masajid` + (needJ ? " with a matching Jumu'ah time" : "");
+  const why = [];
+  if (qt != null) why.push(`Jumu'ah or iqamah around ${fmtMin(qt)}`);
+  if (lo != null) why.push(`Jumu'ah ${$("jtime").selectedOptions[0].text.replace(/\s*\(\d+\)$/, "")}`);
+  $("count").textContent = `${list.length} of ${D.mosques.length} masajid` + (why.length ? ` with ${why.join(" and ")}` : "");
   $("grid").innerHTML = list.length ? list.map(card).join("") : `<div class="empty">No masajid match these filters. Try widening the Jumu'ah window or clearing the search.</div>`;
 }
 
@@ -209,7 +258,7 @@ async function refreshLive() {
       m.live = true; liveCount++;
     } catch {}
   }));
-  if (liveCount) { subtitle(); render(); }
+  if (liveCount) { subtitle(); fillTimeOptions(); render(); }
 }
 
 KEYS.forEach(k => $(k).addEventListener("input", render));
