@@ -371,9 +371,14 @@ def load_osm():
                 log(f"OSM {url}: {str(e)[:80]}")
         time.sleep(5 * (attempt + 1))
     if cache.exists():
-        log("OSM unavailable, using cached list")
-        return json.loads(cache.read_text())["elements"], "cached"
-    raise SystemExit("Could not reach OpenStreetMap and no cache exists.")
+        try:
+            elements = json.loads(cache.read_text())["elements"]
+            log("OSM unavailable, using cached list")
+            return elements, "cached"
+        except (ValueError, KeyError) as e:
+            log(f"OSM cache unreadable: {e}")
+    # Stop without writing anything, so the last good site stays up.
+    raise SystemExit("Could not reach OpenStreetMap and no usable cache exists.")
 
 
 def osm_to_mosque(e):
