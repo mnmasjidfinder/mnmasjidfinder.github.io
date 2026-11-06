@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MN Masjid Finder</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Prayer timings, Jumu'ah times and events for masajid across Minnesota.">
+<style>
+/* Layout: sticky filter bar over a wrapping grid of masjid cards; green = live data, amber = calculated */
+:root{--bg:#f6f5f1;--card:#fff;--ink:#1d2321;--muted:#5f6864;--line:#e3e1da;--accent:#0f6b4f;--accent-soft:#e3f1eb;--warn:#8a5a00;--warn-soft:#fbf0d9;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121514;--card:#1b201e;--ink:#e8ece9;--muted:#9aa49f;--line:#2c3330;--accent:#4fc59a;--accent-soft:#183329;--warn:#e7b65a;--warn-soft:#342a14;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121514;--card:#1b201e;--ink:#e8ece9;--muted:#9aa49f;--line:#2c3330;--accent:#4fc59a;--accent-soft:#183329;--warn:#e7b65a;--warn-soft:#342a14;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 var(--font)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+header{padding-block:28px 8px}
+h1{margin:0;font-size:26px;letter-spacing:-.01em;text-wrap:balance}
+.sub{color:var(--muted);margin-top:4px;font-size:14px}
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.controls .wrap{padding-block:12px;display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+label{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.01em}
+input,select{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-width:0}
+input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+input[type=search]{width:260px}
+input[type=time]{width:120px}
+.chk{flex-direction:row;align-items:center;gap:6px;padding-bottom:9px;font-weight:500;color:var(--ink);font-size:14px}
+button.reset{font:inherit;background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:8px 12px;cursor:pointer}
+main{padding-block:16px}
+.count{color:var(--muted);font-size:13px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card h2{margin:0;font-size:17px;line-height:1.25;text-wrap:balance}
+.meta{color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+.meta a{color:var(--accent)}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;letter-spacing:.02em}
+.live{background:var(--accent-soft);color:var(--accent)}
+.calc{background:var(--warn-soft);color:var(--warn)}
+.jum{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.jum .t{background:var(--accent-soft);color:var(--accent);font-weight:700;border-radius:8px;padding:4px 10px;font-size:14px;font-variant-numeric:tabular-nums}
+.jum .t small{font-weight:500;opacity:.85}
+.jum .none{color:var(--muted);font-size:13px}
+.sect{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+table{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:4px 6px;border-bottom:1px solid var(--line)}
+th{font-weight:600;color:var(--muted);font-size:12px}
+td:first-child{font-weight:600}
+.events{margin:0;padding:0;list-style:none;font-size:13.5px}
+.events li{padding:4px 0;border-bottom:1px dashed var(--line)}
+.events time{color:var(--muted);font-variant-numeric:tabular-nums;margin-right:6px}
+.empty{padding:40px;text-align:center;color:var(--muted)}
+details summary{cursor:pointer;font-size:13px;color:var(--accent)}
+footer{padding-block:8px 40px;color:var(--muted);font-size:12.5px}
+footer code{font-size:12px}
+@media (max-width:560px){input[type=search]{width:100%}.controls label{flex:1 1 140px}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <h1>Minnesota Masjid Finder</h1>
+  <div class="sub" id="sub">Prayer timings, Jumu'ah and events</div>
+</header>
+<div class="controls"><div class="wrap">
+  <label for="q">Search name / city / address<input type="search" id="q" placeholder="e.g. Dar Al-Farooq, Rochester"></label>
+  <label for="region">Region<select id="region"><option value="">All regions</option></select></label>
+  <label for="jfrom">Jumu'ah from<input type="time" id="jfrom"></label>
+  <label for="jto">to<input type="time" id="jto"></label>
+  <label for="sort">Sort<select id="sort">
+    <option value="region">Region</option><option value="name">Name</option><option value="jumuah">Earliest Jumu'ah</option>
+  </select></label>
+  <label class="chk"><input type="checkbox" id="hasj"> Jumu'ah time known</label>
+  <label class="chk"><input type="checkbox" id="live"> Live times only</label>
+  <button class="reset" id="reset" type="button">Reset</button>
+</div></div>
+<main class="wrap">
+  <div class="count" id="count"></div>
+  <div class="grid" id="grid"></div>
+</main>
+<footer class="wrap">
+  <b>Live</b> times come from each masjid's own Masjidal or Mohid feed. Cards marked <b>Calculated</b> show astronomical adhan times (ISNA, 15°/15°), not iqamah, so check with the masjid before you go.
+  Mosque list © OpenStreetMap contributors. Missing a masjid or a time is wrong? Let the maintainer know.
+</footer>
+<!--DATA-->
+<script src="data/masajid.js"></script>
+<!--/DATA-->
+<script>
+const D = window.MASAJID || {mosques: []};
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const toMin = v => { if (!v) return null; const [h, m] = v.split(":").map(Number); return h * 60 + m; };
+const PRAYERS = [["fajr","Fajr"],["sunrise","Sunrise"],["dhuhr","Dhuhr"],["asr","Asr"],["maghrib","Maghrib"],["isha","Isha"]];
+// "1:00PM" / "01:00 pm" -> "1:00 PM"
+const nt = s => { const m = /^(\d{1,2}):(\d{2})\s*([AP]M)?$/i.exec(String(s || "").trim()); if (!m) return null;
+  let h = +m[1]; const ap = (m[3] || (h < 12 ? "AM" : "PM")).toUpperCase(); if (!m[3] && h > 12) h -= 12; return `${h % 12 || 12}:${m[2]} ${ap}`; };
+const mins = s => { s = nt(s); if (!s) return null; const [hm, ap] = s.split(" "); let [h, m] = hm.split(":").map(Number); h = h % 12 + (ap === "PM" ? 12 : 0); return h * 60 + m; };
+const chicagoISO = d => d.toLocaleDateString("en-CA", {timeZone: "America/Chicago"});
+const todayISO = chicagoISO(new Date());
+const dayISO = s => { const t = new Date(String(s).replace(/^[A-Za-z]+,\s*/, "")); return isNaN(t) ? null : chicagoISO(new Date(t.getTime() + 12 * 3600e3)); };
+let liveCount = 0;
+
+const regions = [...new Set(D.mosques.map(m => m.region))].sort();
+$("region").innerHTML += regions.map(r => `<option>${esc(r)}</option>`).join("");
+function subtitle() {
+  const gen = D.generated_at ? new Date(D.generated_at) : null;
+  $("sub").textContent = `${D.mosques.length} masajid across Minnesota` +
+    (gen ? ` · directory updated ${gen.toLocaleDateString([], {dateStyle: "medium"})}` : "") +
+    (liveCount ? ` · ${liveCount} timetables refreshed live just now` : "");
+}
+subtitle();
+
+const KEYS = ["q","region","jfrom","jto","sort","hasj","live"];
+try { const s = JSON.parse(localStorage.getItem("mnmf") || "{}"); KEYS.forEach(k => { if (k in s) $(k)[$(k).type === "checkbox" ? "checked" : "value"] = s[k]; }); } catch {}
+const save = () => { try { localStorage.setItem("mnmf", JSON.stringify(Object.fromEntries(KEYS.map(k => [k, $(k).type === "checkbox" ? $(k).checked : $(k).value])))); } catch {} };
+
+function jumuahHtml(m) {
+  if (!m.jumuah.length) return `<span class="none">Jumu'ah time not published online. Call or check the website.</span>`;
+  return m.jumuah.map(j => {
+    const parts = [];
+    if (j.khutbah && j.khutbah !== j.start) parts.push(`khutbah ${esc(j.khutbah)}`);
+    if (j.iqamah) parts.push(`iqamah ${esc(j.iqamah)}`);
+    return `<span class="t">${esc(j.start)}${parts.length ? ` <small>(${parts.join(", ")})</small>` : ""}</span>`;
+  }).join("") + `<span class="none" style="font-size:11px">${esc(m.jumuah_source || "")}</span>`;
+}
+
+function dayTable(day) {
+  const iq = day.iqamah || {}, hasIq = Object.values(iq).some(Boolean);
+  return `<table><tr><th scope="col">Prayer</th><th scope="col">Adhan</th>${hasIq ? '<th scope="col">Iqamah</th>' : ""}</tr>` +
+    PRAYERS.map(([k, n]) => `<tr><td>${n}</td><td>${esc(day.adhan?.[k] || "—")}</td>${hasIq ? `<td>${esc(iq[k] || (k === "sunrise" ? "" : "—"))}</td>` : ""}</tr>`).join("") + "</table>";
+}
+
+function card(m) {
+  const days = m.days || [];
+  let i = days.findIndex(d => dayISO(d.date) === todayISO); if (i < 0) i = 0;
+  const day = days[i], rest = days.slice(i + 1);
+  const calc = (m.timing_source || "").startsWith("Calc");
+  const addr = m.address || `${m.city}, MN`;
+  const map = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(m.name + " " + addr)}`;
+  const links = [
+    `<a href="${map}" target="_blank" rel="noopener">Map</a>`,
+    m.website && `<a href="${esc(m.website)}" target="_blank" rel="noopener">Website</a>`,
+    m.mohid_url && `<a href="${esc(m.mohid_url)}" target="_blank" rel="noopener">Mohid page</a>`,
+    m.phone && `<span>${esc(m.phone)}</span>`,
+  ].filter(Boolean).join(" · ");
+  const ev = m.events.length
+    ? `<ul class="events">${m.events.slice(0, 5).map(e => `<li><time>${esc((e.start || "").slice(0, 16).replace("T", " "))}</time>${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.title)}</a>` : esc(e.title)}</li>`).join("")}</ul>`
+    : `<span class="meta">No upcoming events published online.</span>`;
+  const week = rest.map(d => `<div class="sect" style="margin-top:8px">${esc(d.date)}</div>${dayTable(d)}`).join("");
+  return `<article class="card">
+    <div>
+      <h2>${esc(m.name)}</h2>${m.aka ? `<div class="meta">also listed as ${esc(m.aka)}</div>` : ""}
+      <div class="meta">${esc(addr)} · <b>${esc(m.region)}</b></div>
+      <div class="meta">${links}</div>
+    </div>
+    <div><div class="sect">Jumu'ah (Friday)</div><div class="jum">${jumuahHtml(m)}</div></div>
+    ${day ? `<div><div class="sect">${esc(day.date)}${day.hijri ? " · " + esc(day.hijri) : ""} &nbsp;
+      <span class="badge ${calc ? "calc" : "live"}">${calc ? "Calculated" : "Live"}</span></div>
+      ${dayTable(day)}${week ? `<details><summary>Next ${rest.length} days</summary>${week}</details>` : ""}</div>` : ""}
+    <div><div class="sect">Upcoming events</div>${ev}</div>
+  </article>`;
+}
+
+function render() {
+  save();
+  const q = $("q").value.trim().toLowerCase(), region = $("region").value;
+  const f = toMin($("jfrom").value), t = toMin($("jto").value);
+  const needJ = $("hasj").checked || f != null || t != null;
+  const list = D.mosques.filter(m => {
+    if (region && m.region !== region) return false;
+    if (q && !`${m.name} ${m.aka || ""} ${m.city} ${m.address || ""} ${m.region}`.toLowerCase().includes(q)) return false;
+    if ($("live").checked && !m.live) return false;
+    if (needJ && !m.jumuah.some(j => j.start_min != null && (f == null || j.start_min >= f) && (t == null || j.start_min <= t))) return false;
+    return true;
+  });
+  const firstJ = m => Math.min(...m.jumuah.map(j => j.start_min ?? 9999), 9999);
+  const s = $("sort").value;
+  list.sort(s === "name" ? (a, b) => a.name.localeCompare(b.name)
+    : s === "jumuah" ? (a, b) => firstJ(a) - firstJ(b) || a.name.localeCompare(b.name)
+    : (a, b) => a.region.localeCompare(b.region) || a.name.localeCompare(b.name));
+  $("count").textContent = `${list.length} of ${D.mosques.length} masajid` + (needJ ? " with a matching Jumu'ah time" : "");
+  $("grid").innerHTML = list.length ? list.map(card).join("") : `<div class="empty">No masajid match these filters. Try widening the Jumu'ah window or clearing the search.</div>`;
+}
+
+// Refresh Masjidal-backed timetables straight from the source. Where the browser
+// blocks the call (some hosts do), the snapshot above stays in place.
+async function refreshLive() {
+  const from = todayISO, to = chicagoISO(new Date(Date.now() + 6 * 864e5));
+  const targets = D.mosques.filter(m => m.masjidal_id);
+  await Promise.all(targets.map(async m => {
+    try {
+      const r = await fetch(`https://masjidal.com/api/v1/time/range?masjid_id=${encodeURIComponent(m.masjidal_id)}&from_date=${from}&to_date=${to}`);
+      const j = await r.json();
+      if (j.status !== "success" || !j.data?.salah?.length) return;
+      m.days = j.data.salah.map((s, i) => { const q = j.data.iqamah[i] || {}; return {
+        date: s.date, hijri: `${s.hijri_date || ""} ${s.hijri_month || ""}`.trim(),
+        adhan: {fajr: nt(s.fajr), sunrise: nt(s.sunrise), dhuhr: nt(s.zuhr), asr: nt(s.asr), maghrib: nt(s.maghrib), isha: nt(s.isha)},
+        iqamah: {fajr: nt(q.fajr), dhuhr: nt(q.zuhr), asr: nt(q.asr), maghrib: nt(q.maghrib), isha: nt(q.isha)} }; });
+      m.timing_source = "Masjidal (live)";
+      const q0 = j.data.iqamah[0] || {};
+      const jm = Object.keys(q0).filter(k => k.startsWith("jummah")).sort().map(k => nt(q0[k])).filter(Boolean);
+      if (jm.length) { m.jumuah = jm.map(s => ({start: s, start_min: mins(s)})); m.jumuah_source = "Masjidal (live)"; }
+      m.live = true; liveCount++;
+    } catch {}
+  }));
+  if (liveCount) { subtitle(); render(); }
+}
+
+KEYS.forEach(k => $(k).addEventListener("input", render));
+$("reset").onclick = () => { KEYS.forEach(k => $(k).type === "checkbox" ? $(k).checked = false : $(k).value = (k === "sort" ? "region" : "")); render(); };
+render();
+refreshLive();
+</script>
+</body>
+</html>

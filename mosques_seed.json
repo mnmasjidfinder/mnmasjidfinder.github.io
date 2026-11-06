@@ -1,0 +1,131 @@
+{
+  "_help": "Extra mosques and per-mosque overrides. Entries are matched to OpenStreetMap results by 'osm_id' (e.g. 'way/93122458'), by exact 'name', or by location (within 80 m). Any field here wins over OSM. An 'address' with no lat/lon is geocoded automatically. Optional live sources: masjidal_id (from a timing.athanplus.com / masjidal.com widget), mohid_url (us.mohid.co page), events_wp (WordPress site running The Events Calendar). Hand-entered Jumu'ah: \"jumuah\": [{\"khutbah\": \"12:30 PM\", \"iqamah\": \"1:00 PM\"}] plus \"jumuah_note\". 'ref' records where the facts came from.",
+  "mosques": [
+    {
+      "osm_id": "way/93122458",
+      "masjidal_id": "8L7kWPL5",
+      "events_wp": "https://daralfarooq.com"
+    },
+    {
+      "osm_id": "way/289380714",
+      "masjidal_id": "EdoeO9L7"
+    },
+    {
+      "osm_id": "way/92986445",
+      "events_wp": "http://daralqalam.org"
+    },
+    {
+      "osm_id": "way/313727189",
+      "jumuah": [{"khutbah": "12:30 PM"}],
+      "jumuah_note": "doors open 11:30 AM; per masjidannur.org/jumuah, checked Nov 2026",
+      "ref": "https://www.masjidannur.org/jumuah"
+    },
+    {
+      "name": "Northwest Islamic Community Center - Masjid Al-Kareem",
+      "address": "3300 Plymouth Blvd, Plymouth, MN 55447",
+      "city": "Plymouth",
+      "mohid_url": "https://us.mohid.co/mn/minneapolis/nwicc",
+      "ref": "https://us.mohid.co/mn/minneapolis/nwicc"
+    },
+
+    {
+      "osm_id": "way/607751857",
+      "name": "Blaine Masjid (MAS Minnesota)",
+      "address": "12175 Aberdeen St NE, Blaine, MN 55449",
+      "city": "Blaine",
+      "website": "https://masmn.org",
+      "masjidal_id": "xdNPqnLV",
+      "ref": "https://masmn.org"
+    },
+    {
+      "osm_id": "way/504404784",
+      "name": "South Metro Islamic Center – Rosemount Masjid (MAS Minnesota)",
+      "website": "https://masmn.org",
+      "masjidal_id": "3AO2BxLe",
+      "ref": "https://masmn.org"
+    },
+    {
+      "name": "Masjid At-Taqwa (MAS Minnesota)",
+      "address": "1608 Como Ave, St. Paul, MN 55108",
+      "city": "St. Paul",
+      "website": "https://masmn.org",
+      "masjidal_id": "VdwqVxLe",
+      "ref": "https://masmn.org"
+    },
+    {
+      "name": "Maple Grove Masjid (MAS Minnesota)",
+      "address": "10186 Lancaster Lane N, Maple Grove, MN 55369",
+      "city": "Maple Grove",
+      "website": "https://masmn.org",
+      "masjidal_id": "JdGmjXLP",
+      "ref": "https://masmn.org"
+    },
+    {
+      "name": "Coon Rapids Masjid (MAS Minnesota)",
+      "address": "1313 Coon Rapids Blvd, Coon Rapids, MN 55433",
+      "city": "Coon Rapids",
+      "website": "https://masmn.org",
+      "masjidal_id": "9L2MoNKZ",
+      "ref": "https://masmn.org"
+    },
+    {
+      "name": "Masjid Al-Rahman (MAS Minnesota)",
+      "address": "8910 Old Cedar Ave S, Bloomington, MN 55425",
+      "city": "Bloomington",
+      "website": "https://masmn.org",
+      "masjidal_id": "jKZpzNAX",
+      "ref": "https://masmn.org"
+    },
+    {
+      "name": "Quba Islamic Center (MAS Minnesota)",
+      "address": "415 N Chestnut St, Chaska, MN 55318",
+      "city": "Chaska",
+      "website": "https://masmn.org",
+      "masjidal_id": "zKz8DRAO",
+      "ref": "https://masmn.org"
+    },
+    {
+      "name": "Lakeville Masjid (MAS Minnesota)",
+      "address": "8670 210th St W, Lakeville, MN 55044",
+      "city": "Lakeville",
+      "website": "https://masmn.org",
+      "masjidal_id": "wLVpRMdJ",
+      "ref": "https://masmn.org"
+    },
+    {
+      "name": "Eastern Twin Cities Islamic Center (ETCIC)",
+      "address": "12585 Hudson Rd S, Afton, MN 55001",
+      "city": "Afton",
+      "website": "https://www.etcic.org",
+      "masjidal_id": "6adJqxAk",
+      "mohid_url": "https://us.mohid.co/mn/saintpaul/iswem",
+      "ref": "https://www.etcic.org"
+    },
+    {
+      "name": "Islamic Center of Minnesota",
+      "address": "1401 Gardena Ave NE, Fridley, MN 55432",
+      "city": "Fridley",
+      "ref": "https://www.givemn.org/organization/Islamic-Center-Of-Minnesota"
+    },
+    {
+      "name": "Islamic Center of St. Cloud",
+      "address": "375 5th Ave S, St. Cloud, MN 56301",
+      "city": "St. Cloud",
+      "ref": "https://www.cair.com/press_releases/cair-mn-to-join-local-leaders-for-st-cloud-mosque-solidarity-event/"
+    },
+    {
+      "name": "Islamic Center of the Twin Ports",
+      "address": "145 W Winona St, Duluth, MN 55803",
+      "city": "Duluth",
+      "website": "https://www.ictpmn.org",
+      "ref": "https://www.duluthnewstribune.com/news/islamic-center-of-the-twin-ports-reaches-goal-to-pay-for-mosque-in-woodland"
+    },
+    {
+      "name": "Mankato Islamic Center",
+      "address": "329 N Broad St, Mankato, MN 56001",
+      "city": "Mankato",
+      "website": "https://mankatoislamiccenter.org",
+      "ref": "https://causeiq.com/organizations/mankato-islamic-center,450952840"
+    }
+  ]
+}
