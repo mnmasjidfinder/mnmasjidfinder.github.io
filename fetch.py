@@ -83,11 +83,14 @@ CITIES = [
     ("Chaska", 44.7894, -93.6022, "West Metro"),
     ("Afton", 44.9028, -92.7835, "St. Paul & East Metro"),
     ("East Bethel", 45.3194, -93.2025, "North Metro"),
+    ("St. Anthony", 45.0205, -93.2180, "North Metro"),
+    ("Circle Pines", 45.1486, -93.1516, "North Metro"),
+    ("Otsego", 45.2741, -93.5913, "North Metro"),
+    ("Minnetonka", 44.9133, -93.5033, "West Metro"),
     ("Savage", 44.7792, -93.3363, "South Metro"),
     ("Richfield", 44.8833, -93.2830, "South Metro"),
     ("Eden Prairie", 44.8547, -93.4708, "West Metro"),
     ("Edina", 44.8897, -93.3499, "West Metro"),
-    ("Minnetonka", 44.9133, -93.5033, "West Metro"),
     ("Hopkins", 44.9247, -93.4049, "West Metro"),
     ("St. Louis Park", 44.9483, -93.3480, "West Metro"),
     ("Plymouth", 45.0105, -93.4555, "West Metro"),
@@ -280,7 +283,7 @@ def src_masjidal(mid: str, today: dt.date):
         })
         if not jumuah:
             for k in sorted(q):
-                if k.startswith("jummah") and norm_time(q[k]):
+                if k.startswith("jummah") and norm_time(q[k]) and norm_time(q[k]) not in [j["start"] for j in jumuah]:
                     jumuah.append({"khutbah": None, "iqamah": None, "start": norm_time(q[k])})
     return {"days": days, "jumuah": jumuah, "source": "Masjidal (set by masjid)"}
 
@@ -438,12 +441,141 @@ class Geo:
         return a.get("city") or a.get("town") or a.get("village") or a.get("hamlet")
 
 
+# ---------------------------------------------------------------- Masjidal directory
+
+MN_STATE = {"mn", "minnesota"}
+
+
+def load_masjidal_directory():
+    """Every masjid registered on Masjidal, filtered to Minnesota. ~47 pages; cached for when it's down."""
+    cache = DATA / "masjidal_cache.json"
+    try:
+        out, page, pages = [], 1, 1
+        while page <= pages:
+            req = urllib.request.Request(f"https://masjidal.com/api/v2/masjids?per-page=50&page={page}",
+                                         headers={"User-Agent": GEO_UA})
+            with urllib.request.urlopen(req, timeout=30, context=_CTX) as r:
+                d = json.loads(r.read())
+            pages = d["_meta"]["pageCount"]
+            out += [i for i in d["items"] if (i.get("state") or "").strip().lower() in MN_STATE]
+            page += 1
+            time.sleep(0.3)
+        cache.write_text(json.dumps(out, indent=1))
+        log(f"Masjidal directory: {len(out)} Minnesota masjids")
+        return out
+    except Exception as e:
+        log(f"Masjidal directory unavailable ({str(e)[:60]}), using cache")
+        return json.loads(cache.read_text()) if cache.exists() else []
+
+
+def _clean(v):
+    v = (v or "").strip()
+    return None if v in ("", "-") else re.sub(r"\s+", " ", v)
+
+
+def _nice_name(n):
+    n = _clean(n) or ""
+    n = re.sub(r",?\s+MN$", "", n)  # "… Rochester MN" -> "… Rochester"
+    if n.isupper():  # "MASJID AL-HIKMA ASSOCIATION" -> "Masjid Al-Hikma Association"
+        n = re.sub(r"[A-Za-z][A-Za-z']*", lambda w: w[0][0].upper() + w[0][1:].lower(), n)
+        n = re.sub(r"\b(Icbmn|Iccc|Mas|Nwicc|Isfm|Mfic)\b", lambda w: w[0].upper(), n)
+    return n
+
+
+def _better_name(osm_name, reg_name, reg_was_caps):
+    """Prefer the masjid's registered name unless it's a shouted acronym or less descriptive."""
+    return reg_name if (not reg_was_caps and len(reg_name) >= len(osm_name)) else osm_name
+
+
+def masjidal_to_mosque(i):
+    city = (_clean(i.get("city")) or "").replace(", MN", "")
+    street = _clean(i.get("address")) or ""
+    street = street.split(",")[0]
+    addr = ", ".join(x for x in [street, city, " ".join(x for x in ["MN", _clean(i.get("zipcode"))] if x)] if x)
+    try:
+        lat, lon = float(i["latitude"]), float(i["longitude"])
+    except (KeyError, TypeError, ValueError):
+        lat = lon = None
+    return {"name": _nice_name(i.get("name")), "caps": (_clean(i.get("name")) or "").isupper(), "address": addr, "city": city or None, "lat": lat, "lon": lon,
+            "phone": _clean(i.get("phone")), "website": _clean(i.get("website_url")),
+            "masjidal_id": i["id"], "from_directory": True}
+
+
+_DIRS = r"(?:n|s|e|w|ne|nw|se|sw|north|south|east|west|northeast|northwest|southeast|southwest)"
+
+
+def addr_key(a):
+    """'8201 Park Avenue South' and '8201 Park Ave S' -> '8201 park'."""
+    m = re.match(rf"\s*(\d+)\s+(?:{_DIRS}\.?\s+)?([a-z0-9]+)", (a or "").lower())
+    return f"{m[1]} {m[2]}" if m else None
+
+
+_GENERIC = {"masjid", "masjed", "mosque", "islamic", "center", "centre", "of", "the", "mn", "minnesota",
+            "community", "cultural", "association", "al", "inc", "mas"}
+
+
+def core_name(n):
+    words = re.findall(r"[a-z0-9]+", (n or "").lower().replace("-", " "))
+    return " ".join(w for w in words if w not in _GENERIC)
+
+
+def find_same(m, mosques, near_km=0.06):
+    """The entry in `mosques` that is the same masjid as `m`, if any.
+    Two Masjidal directory entries are only merged when they share a street address."""
+    for o in mosques:
+        if o is m:
+            continue
+        if m.get("masjidal_id") and o.get("masjidal_id") == m["masjidal_id"]:
+            return o
+        if m.get("osm_id") and o.get("osm_id") == m["osm_id"]:
+            return o
+    have = m.get("lat") is not None
+    for o in mosques:
+        if o is m or o.get("lat") is None or not have:
+            continue
+        d = km(m["lat"], m["lon"], o["lat"], o["lon"])
+        ka, kb = addr_key(m.get("address")), addr_key(o.get("address"))
+        if ka and ka == kb and d < 3:
+            return o
+        if m.get("from_directory") and o.get("from_directory"):
+            continue
+        if d < near_km:
+            return o
+        cm, co = core_name(m.get("name")), core_name(o.get("name"))
+        if cm and cm == co and d < 10:
+            return o
+    return None
+
+
 def build_list():
-    seed = json.loads((ROOT / "mosques_seed.json").read_text())["mosques"]
+    seed_file = json.loads((ROOT / "mosques_seed.json").read_text())
+    seed = seed_file["mosques"]
+    exclude = set(seed_file.get("exclude_masjidal", []))
     elements, osm_state = load_osm()
     mosques = [m for m in (osm_to_mosque(e) for e in elements) if m]
     geo = Geo()
-    by_osm = {m["osm_id"]: m for m in mosques}
+
+    # 1. Masjidal directory: attach IDs to masajid we already have, add the rest.
+    for i in load_masjidal_directory():
+        if i["id"] in exclude:
+            continue
+        d = masjidal_to_mosque(i)
+        tgt = find_same(d, mosques)
+        if tgt is None:
+            mosques.append(d)
+        elif not tgt.get("masjidal_id"):
+            tgt["masjidal_id"] = d["masjidal_id"]
+            for k in ("phone", "website"):
+                tgt[k] = tgt.get(k) or d[k]
+            if tgt.get("osm_id") and core_name(tgt["name"]) != core_name(d["name"]):
+                keep = _better_name(tgt["name"], d["name"], d["caps"])
+                tgt["aka"] = d["name"] if keep == tgt["name"] else tgt["name"]
+                tgt["name"] = keep
+            if not tgt.get("address"):
+                tgt["address"] = d["address"]
+
+    # 2. Hand-maintained entries in mosques_seed.json win over everything.
+    by_osm = {m["osm_id"]: m for m in mosques if m.get("osm_id")}
     by_name = {m["name"].lower(): m for m in mosques}
     for s in seed:
         s = dict(s)
@@ -452,11 +584,9 @@ def build_list():
             if ll:
                 s["lat"], s["lon"] = ll
         tgt = by_osm.get(s.get("osm_id")) or by_name.get(s.get("name", "").lower())
-        if not tgt and s.get("lat") is not None:  # same building already on OSM under another name?
-            near = [m for m in mosques if m.get("osm_id") and m.get("lat") is not None
-                    and km(s["lat"], s["lon"], m["lat"], m["lon"]) < 0.08]
-            if near:
-                tgt = near[0]
+        if not tgt and not s.get("osm_id"):
+            tgt = find_same(s, mosques, near_km=0.08)
+            if tgt and core_name(tgt["name"]) != core_name(s.get("name", "")):
                 s.setdefault("aka", tgt["name"])
         if tgt:
             if tgt.get("lat") is not None:
@@ -467,8 +597,10 @@ def build_list():
     for m in mosques:
         if not m.get("city") and m.get("lat") is not None:
             m["city"] = geo.city(m["lat"], m["lon"])
-        if m.get("city") == "Saint Paul":
-            m["city"] = "St. Paul"
+        c = (m.get("city") or "").strip()
+        m["city"] = {"saint paul": "St. Paul", "st paul": "St. Paul", "st cloud": "St. Cloud",
+                     "saint cloud": "St. Cloud", "st anthony": "St. Anthony",
+                     "saint anthony": "St. Anthony", "east grand fork": "East Grand Forks"}.get(c.lower(), c) or None
         locate(m)
         m["id"] = re.sub(r"[^a-z0-9]+", "-", (m["name"] + "-" + m["city"]).lower()).strip("-")
     return mosques, osm_state

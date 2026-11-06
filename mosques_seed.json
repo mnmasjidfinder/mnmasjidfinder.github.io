@@ -1,14 +1,21 @@
 {
   "_help": "Extra mosques and per-mosque overrides. Entries are matched to OpenStreetMap results by 'osm_id' (e.g. 'way/93122458'), by exact 'name', or by location (within 80 m). Any field here wins over OSM. An 'address' with no lat/lon is geocoded automatically. Optional live sources: masjidal_id (from a timing.athanplus.com / masjidal.com widget), mohid_url (us.mohid.co page), events_wp (WordPress site running The Events Calendar). Hand-entered Jumu'ah: \"jumuah\": [{\"khutbah\": \"12:30 PM\", \"iqamah\": \"1:00 PM\"}] plus \"jumuah_note\". 'ref' records where the facts came from.",
+  "exclude_masjidal": [
+    "Vdwg9ode",
+    "wAaDPXL1"
+  ],
+  "_exclude_help": "Masjidal directory IDs to skip: Vdwg9ode = Carleton College chapel prayer room; wAaDPXL1 = 'Umm Abdulaziz', appears to be a personal account at Abu Huraira's address.",
   "mosques": [
     {
       "osm_id": "way/93122458",
-      "masjidal_id": "8L7kWPL5",
-      "events_wp": "https://daralfarooq.com"
+      "masjidal_id": "wAa3N8K1",
+      "events_wp": "https://daralfarooq.com",
+      "ref": "Masjidal directory ID; the widget on daralfarooq.com (8L7kWPL5) returns stale iqamah"
     },
     {
       "osm_id": "way/289380714",
-      "masjidal_id": "EdoeO9L7"
+      "masjidal_id": "JdGJy5AP",
+      "ref": "Samaha's own Masjidal account; samahaislamiccenter.org embeds Masjid Al-Ihsan's widget (EdoeO9L7)"
     },
     {
       "osm_id": "way/92986445",
@@ -110,17 +117,25 @@
       "ref": "https://www.givemn.org/organization/Islamic-Center-Of-Minnesota"
     },
     {
-      "name": "Islamic Center of St. Cloud",
-      "address": "375 5th Ave S, St. Cloud, MN 56301",
-      "city": "St. Cloud",
-      "ref": "https://www.cair.com/press_releases/cair-mn-to-join-local-leaders-for-st-cloud-mosque-solidarity-event/"
-    },
-    {
       "name": "Islamic Center of the Twin Ports",
       "address": "145 W Winona St, Duluth, MN 55803",
       "city": "Duluth",
       "website": "https://www.ictpmn.org",
       "ref": "https://www.duluthnewstribune.com/news/islamic-center-of-the-twin-ports-reaches-goal-to-pay-for-mosque-in-woodland"
+    },
+    {
+      "name": "Ja'afari Islamic Center",
+      "address": "10301 Jefferson Highway, Brooklyn Park, MN 55445",
+      "city": "Brooklyn Park",
+      "denomination": "shia",
+      "ref": "https://pluralismarchive.hsites.harvard.edu/anjaman-e-asghari"
+    },
+    {
+      "name": "Imam Husain Islamic Center",
+      "address": "6120 Brooklyn Blvd, Brooklyn Center, MN 55429",
+      "city": "Brooklyn Center",
+      "denomination": "shia",
+      "ref": "https://startpage.mapquest.com/us/minnesota/imam-husain-islamic-center-534426519"
     },
     {
       "name": "Mankato Islamic Center",

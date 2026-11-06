@@ -234,7 +234,7 @@ async function refreshLive() {
         iqamah: {fajr: nt(q.fajr), dhuhr: nt(q.zuhr), asr: nt(q.asr), maghrib: nt(q.maghrib), isha: nt(q.isha)} }; });
       m.timing_source = "Masjidal (live)";
       const q0 = j.data.iqamah[0] || {};
-      const jm = Object.keys(q0).filter(k => k.startsWith("jummah")).sort().map(k => nt(q0[k])).filter(Boolean);
+      const jm = Object.keys(q0).filter(k => k.startsWith("jummah")).sort().map(k => nt(q0[k])).filter((v, i, all) => v && all.indexOf(v) === i);
       if (jm.length) { m.jumuah = jm.map(s => ({start: s, start_min: mins(s)})); m.jumuah_source = "Masjidal (live)"; }
       m.live = true; liveCount++;
     } catch {}

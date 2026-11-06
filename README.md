@@ -16,6 +16,7 @@ You can search by name, city or address, filter by region, and filter by a Jumu'
 | Source | Gives | How it's found |
 |---|---|---|
 | OpenStreetMap (Overpass) | mosque list, address, coordinates, website | every run; falls back to `data/osm_cache.json` |
+| Masjidal directory | every Minnesota masjid registered on Masjidal (name, address, ID) | every run; cached in `data/masjidal_cache.json` |
 | Masjidal / Athan+ API | adhan, iqamah and Jumu'ah, 7 days | `masjid_id` auto-detected from the masjid website's widget, or set in seed |
 | Mohid (us.mohid.co) | Jumu'ah khutbah/iqamah, daily iqamah, events | link auto-detected on website, or `mohid_url` in seed |
 | WordPress Events Calendar | upcoming events | auto-detected, or `events_wp` in seed |
@@ -26,7 +27,7 @@ MAS Minnesota's eight masjids and ETCIC all publish live times through Masjidal.
 
 ## Adding or fixing a masjid
 
-Edit `mosques_seed.json`. You can add a mosque missing from OpenStreetMap, attach a `masjidal_id` or `mohid_url`, or type in Jumu'ah times by hand:
+Edit `mosques_seed.json`. To hide a Masjidal directory entry, add its ID to `exclude_masjidal`. You can add a mosque missing from OpenStreetMap, attach a `masjidal_id` or `mohid_url`, or type in Jumu'ah times by hand:
 
 ```json
 {"osm_id": "way/313727189", "jumuah": [{"khutbah": "1:00 PM"}, {"khutbah": "2:00 PM"}], "jumuah_note": "confirmed by phone 2026-11"}
