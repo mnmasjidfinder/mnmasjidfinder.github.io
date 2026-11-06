@@ -47,6 +47,9 @@ table{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:
 th,td{text-align:left;padding:4px 6px;border-bottom:1px solid var(--line)}
 th{font-weight:600;color:var(--muted);font-size:12px}
 td:first-child{font-weight:600}
+td:nth-child(3){font-weight:700;color:var(--accent)}
+td.na{color:var(--muted);font-weight:400}
+.iqnote{font-size:12px;color:var(--warn);margin-top:6px}
 .events{margin:0;padding:0;list-style:none;font-size:13.5px}
 .events li{padding:4px 0;border-bottom:1px dashed var(--line)}
 .events time{color:var(--muted);font-variant-numeric:tabular-nums;margin-right:6px}
@@ -71,7 +74,7 @@ footer code{font-size:12px}
     <option value="region">Region</option><option value="name">Name</option><option value="jumuah">Earliest Jumu'ah</option>
   </select></label>
   <label class="chk"><input type="checkbox" id="hasj"> Jumu'ah time known</label>
-  <label class="chk"><input type="checkbox" id="live"> Live times only</label>
+  <label class="chk"><input type="checkbox" id="iq"> Iqamah times known</label>
   <button class="reset" id="reset" type="button">Reset</button>
 </div></div>
 <main class="wrap">
@@ -110,7 +113,7 @@ function subtitle() {
 }
 subtitle();
 
-const KEYS = ["q","region","jfrom","jto","sort","hasj","live"];
+const KEYS = ["q","region","jfrom","jto","sort","hasj","iq"];
 try { const s = JSON.parse(localStorage.getItem("mnmf") || "{}"); KEYS.forEach(k => { if (k in s) $(k)[$(k).type === "checkbox" ? "checked" : "value"] = s[k]; }); } catch {}
 const save = () => { try { localStorage.setItem("mnmf", JSON.stringify(Object.fromEntries(KEYS.map(k => [k, $(k).type === "checkbox" ? $(k).checked : $(k).value])))); } catch {} };
 
@@ -124,10 +127,13 @@ function jumuahHtml(m) {
   }).join("") + `<span class="none" style="font-size:11px">${esc(m.jumuah_source || "")}</span>`;
 }
 
+const hasIqamah = m => (m.days || []).some(d => Object.values(d.iqamah || {}).some(Boolean));
+
 function dayTable(day) {
   const iq = day.iqamah || {}, hasIq = Object.values(iq).some(Boolean);
-  return `<table><tr><th scope="col">Prayer</th><th scope="col">Adhan</th>${hasIq ? '<th scope="col">Iqamah</th>' : ""}</tr>` +
-    PRAYERS.map(([k, n]) => `<tr><td>${n}</td><td>${esc(day.adhan?.[k] || "—")}</td>${hasIq ? `<td>${esc(iq[k] || (k === "sunrise" ? "" : "—"))}</td>` : ""}</tr>`).join("") + "</table>";
+  return `<table><tr><th scope="col">Prayer</th><th scope="col">Adhan</th><th scope="col">Iqamah</th></tr>` +
+    PRAYERS.map(([k, n]) => `<tr><td>${n}</td><td>${esc(day.adhan?.[k] || "—")}</td><td class="${hasIq ? "" : "na"}">${k === "sunrise" ? "" : esc(iq[k] || "—")}</td></tr>`).join("") +
+    "</table>" + (hasIq ? "" : `<div class="iqnote">Iqamah times aren't published online. Call or check the masjid's website.</div>`);
 }
 
 function card(m) {
@@ -169,7 +175,7 @@ function render() {
   const list = D.mosques.filter(m => {
     if (region && m.region !== region) return false;
     if (q && !`${m.name} ${m.aka || ""} ${m.city} ${m.address || ""} ${m.region}`.toLowerCase().includes(q)) return false;
-    if ($("live").checked && !m.live) return false;
+    if ($("iq").checked && !hasIqamah(m)) return false;
     if (needJ && !m.jumuah.some(j => j.start_min != null && (f == null || j.start_min >= f) && (t == null || j.start_min <= t))) return false;
     return true;
   });
@@ -177,7 +183,7 @@ function render() {
   const s = $("sort").value;
   list.sort(s === "name" ? (a, b) => a.name.localeCompare(b.name)
     : s === "jumuah" ? (a, b) => firstJ(a) - firstJ(b) || a.name.localeCompare(b.name)
-    : (a, b) => a.region.localeCompare(b.region) || a.name.localeCompare(b.name));
+    : (a, b) => a.region.localeCompare(b.region) || hasIqamah(b) - hasIqamah(a) || a.name.localeCompare(b.name));
   $("count").textContent = `${list.length} of ${D.mosques.length} masajid` + (needJ ? " with a matching Jumu'ah time" : "");
   $("grid").innerHTML = list.length ? list.map(card).join("") : `<div class="empty">No masajid match these filters. Try widening the Jumu'ah window or clearing the search.</div>`;
 }
