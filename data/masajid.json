@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-06T08:44-06:00",
- "osm": "live",
+ "generated_at": "2026-11-06T09:33-06:00",
+ "osm": "cached",
  "count": 42,
  "mosques": [
   {
@@ -648,7 +648,7 @@
    "events": [],
    "sources": [],
    "errors": [
-    "website: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+    "website: <urlopen error [Errno -5] No address associated with hostname>"
    ],
    "days": [
     {
@@ -965,7 +965,7 @@
    "events": [],
    "sources": [],
    "errors": [
-    "website: <urlopen error [Errno 65] No route to host>"
+    "website: <urlopen error [Errno 101] Network is unreachable>"
    ],
    "days": [
     {
@@ -3700,7 +3700,7 @@
    "events": [],
    "sources": [],
    "errors": [
-    "website: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1000)>"
+    "website: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1011)>"
    ],
    "days": [
     {
@@ -4038,7 +4038,7 @@
    "events": [],
    "sources": [],
    "errors": [
-    "website: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1000)>"
+    "website: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1011)>"
    ],
    "days": [
     {
@@ -4803,7 +4803,7 @@
    "events": [],
    "sources": [],
    "errors": [
-    "website: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1000)>"
+    "website: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1011)>"
    ],
    "days": [
     {
