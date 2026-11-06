@@ -1,0 +1,2740 @@
+[
+ {
+  "id": "rdRyYvAG",
+  "uuid": "2a21f96d-2d48-4b56-a6ef-382c80ab2f7a",
+  "name": " Darul Arqam Center of Excellence",
+  "address": "8710 Central Ave NE",
+  "city": "Blaine",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2363",
+  "latitude": "45.1286",
+  "zipcode": "55434",
+  "phone": "-",
+  "meta": "-",
+  "email": "It_admin@darularqammn.com",
+  "website_url": "https://darularqammn.com/",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "0LbpOXdo",
+  "uuid": "05b9bc7c-67f5-4a8e-97ba-5de78707a3e3",
+  "name": " MASJID  AL-HIKMA ASSOCIATION ",
+  "address": "116 E 32nd St",
+  "city": "Minneapolis",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2757",
+  "latitude": "44.9453",
+  "zipcode": "55408",
+  "phone": "6125015472",
+  "meta": "-",
+  "email": "-",
+  "website_url": "https://alhikmaa.org",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "10",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "5"
+   }
+  }
+ },
+ {
+  "id": "0dYlJ7A6",
+  "uuid": "a1ef5aac-0309-4dea-9e17-2bff0fe1f00e",
+  "name": "Abu Huraira Islamic Center ",
+  "address": "3055 Old Hwy 8",
+  "city": "St Anthony",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2093",
+  "latitude": "45.0242",
+  "zipcode": "55418",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": true
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "MA5XnzLr",
+  "uuid": "8b4e2f28-3159-41ec-a512-7fdca5ebd613",
+  "name": "Abubakar As-Saddique islamic Center Faribault",
+  "address": "1201 Division St W",
+  "city": "Faribault",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2866",
+  "latitude": "44.2902",
+  "zipcode": "55021",
+  "phone": "5078388202",
+  "meta": "-",
+  "email": "yahyenoor46@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "yLjOePAQ",
+  "uuid": "da498a49-781f-4e53-a255-7ed391993097",
+  "name": "Abubakar As-Sadique Islamic Center",
+  "address": "2824 13th Ave S",
+  "city": "Minneapolis",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2567",
+  "latitude": "44.9511",
+  "zipcode": "55407",
+  "phone": "-",
+  "meta": "Abubakar,As-Sadique Islamic Center",
+  "email": "-",
+  "website_url": "https://abuubakar.org/",
+  "event_url": "https://abuubakar.org/",
+  "donation_url": "https://abuubakar.org/",
+  "audio_url": "-",
+  "prayer_timing_url": "https://masjidal.com/widget/monthly/v3/?masjid_id=yLjOePAQ",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": true
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "Edoe3vL7",
+  "uuid": "3fbb396f-e501-4f50-b525-bb164294d8ae",
+  "name": "Al Hadi Association",
+  "address": "17685 Juniper Path",
+  "city": "Lakeville",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2878",
+  "latitude": "44.6919",
+  "zipcode": "55044",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "GAE974An",
+  "uuid": "802e6832-a4ec-44c9-80ad-76f5f320b0df",
+  "name": "Al-Amaan Center",
+  "address": "5620 Smetana Dr",
+  "city": "Minnetonka",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.4051",
+  "latitude": "44.9010",
+  "zipcode": "55343",
+  "phone": "-",
+  "meta": "-",
+  "email": "info@alamaan.org",
+  "website_url": "https://alamaan.org",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "QKMqgGKB",
+  "uuid": "c1d74b3f-6f8f-45ec-82fd-27f74a580038",
+  "name": "Al-Ansar Islamic Movement of Minnesota",
+  "address": "1600 Lowry Ave N",
+  "city": "Minneapolis",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.3218",
+  "latitude": "45.1286",
+  "zipcode": "55412",
+  "phone": "-",
+  "meta": "-",
+  "email": "alansar08@gmail.com",
+  "website_url": "http://www.aimom.org/",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "15",
+    "zuhr_offset": "10",
+    "asr_offset": "10",
+    "maghrib_offset": "0",
+    "isha_offset": "15"
+   }
+  }
+ },
+ {
+  "id": "QKMWq9AB",
+  "uuid": "d7ee18bf-3782-45a9-b52f-6b870bc5fde1",
+  "name": "Al-huda Islamic Center East Grand Forks, MN",
+  "address": "1401 Central Ave NW",
+  "city": "East Grand Forks",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-97.0209",
+  "latitude": "47.9385",
+  "zipcode": "56721",
+  "phone": "-",
+  "meta": "-",
+  "email": "Gocondhe@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "0AWp0ydj",
+  "uuid": "086d6cb4-6b30-4064-8ffe-a2aa9e6bf27e",
+  "name": "Al-Madina Association",
+  "address": "1300 145th St",
+  "city": "Rosemount",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.1258",
+  "latitude": "44.7394",
+  "zipcode": "55068",
+  "phone": "-",
+  "meta": "Al-Madina Association,AMA",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "15",
+    "zuhr_offset": "10",
+    "asr_offset": "5",
+    "maghrib_offset": "5",
+    "isha_offset": "5"
+   }
+  }
+ },
+ {
+  "id": "rdRGaPKG",
+  "uuid": "e049d4f4-4a1e-4061-a48d-fc7db0818b7e",
+  "name": "As-Sunnah Islamic Center",
+  "address": "373 Pedersen St STE 102",
+  "city": "St Paul",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.0133",
+  "latitude": "44.9526",
+  "zipcode": "55119",
+  "phone": "6518882628",
+  "meta": "-",
+  "email": "info@assunnahmn.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "VL4owpKx",
+  "uuid": "bdc50f44-22d6-469b-8d70-0dad6c46bd38",
+  "name": "Baitul-Maqdis Masjid ",
+  "address": "3680 Pheasant Ridge Dr NE",
+  "city": "Blaine",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.1703",
+  "latitude": "45.1560",
+  "zipcode": "55449",
+  "phone": "-",
+  "meta": "-",
+  "email": "EBCC3680@gmail.com",
+  "website_url": "-",
+  "event_url": "https://calendar.google.com/calendar/u/5?cid=ZWJjYzM2ODBAZ21haWwuY29t",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "https://masjidal.com/widget/monthly/v2/?masjid_id=VL4owpKx",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": true
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "YAD4ZJAN",
+  "uuid": "7288fb25-189f-472d-b987-50514207b91f",
+  "name": "Bilal Oromo Dawa Center",
+  "address": "7200 University Ave NE",
+  "city": "Fridley, MN",
+  "state": "MN",
+  "country": "United States",
+  "longitude": "-93.2647",
+  "latitude": "45.0993",
+  "zipcode": "55432",
+  "phone": "6128004393",
+  "meta": "-",
+  "email": "bilalodc@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "https://masjidal.com/widget/monthly/?masjid_id=YAD4ZJAN",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "9",
+    "zuhr_offset": "7",
+    "asr_offset": "7",
+    "maghrib_offset": "6",
+    "isha_offset": "8"
+   }
+  }
+ },
+ {
+  "id": "yLjOjbAQ",
+  "uuid": "ec91ce6c-23a4-4c9e-be43-2e8669d29482",
+  "name": "Bilal Oromo Dawa Center",
+  "address": "7200 University Ave NE",
+  "city": "Fridley",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2647",
+  "latitude": "45.0993",
+  "zipcode": "55432",
+  "phone": "7633001273",
+  "meta": "-",
+  "email": "omarsabri24mall@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "XAlzz8Kb",
+  "uuid": "e691d44d-c31e-4a8b-a1af-7153b6e669e8",
+  "name": "Brooklyn Park Islamic Center",
+  "address": "2100 93rd Way",
+  "city": "Brooklyn Park",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.3068",
+  "latitude": "45.1246",
+  "zipcode": "55444",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": true
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "8K9Oy8Ap",
+  "uuid": "7ccf74f9-425c-4f53-a07c-cbfffa944589",
+  "name": "Burnsville Mosque",
+  "address": "1351 Riverwood Dr",
+  "city": "Burnsville",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2555",
+  "latitude": "44.7849",
+  "zipcode": "55337",
+  "phone": "9164761376",
+  "meta": "-",
+  "email": "salahyounis1@gmail.com",
+  "website_url": "http://www.islamicinstituteofmn.org",
+  "event_url": "-",
+  "donation_url": "http://www.islamicinstituteofmn.com/DONATIONS.html",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "Vdwg9ode",
+  "uuid": "e97104e0-e229-485d-aa6a-8337b9bd2983",
+  "name": "Carleton Chapel Prayer Room",
+  "address": " ",
+  "city": "Northfield",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.1613",
+  "latitude": "44.4581",
+  "zipcode": "55057",
+  "phone": "-",
+  "meta": "-",
+  "email": "fbasharat@carleton.edu",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "QL0BDndZ",
+  "uuid": "2cd2ce0f-0256-48c0-b76c-ff1a902680f9",
+  "name": "Dar al Qalam Cultural Center",
+  "address": "81 NE Lowry Ave",
+  "city": "Minneapolis",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2685",
+  "latitude": "45.0134",
+  "zipcode": "55418",
+  "phone": "6122268467",
+  "meta": "-",
+  "email": "dqcenter@gmail.com",
+  "website_url": "http://www.daralqalam.org",
+  "event_url": "-",
+  "donation_url": "http://www.daralqalam.org/",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "wAa3N8K1",
+  "uuid": "8daecc52-73c7-46aa-9e5b-506d184b48c0",
+  "name": "Dar Al-Farooq Islamic Center",
+  "address": "8201 Park Ave S",
+  "city": "Bloomington",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2646",
+  "latitude": "44.8544",
+  "zipcode": "55420",
+  "phone": "952-767-0677",
+  "meta": "DFC",
+  "email": "-",
+  "website_url": "https://daralfarooq.com/",
+  "event_url": "-",
+  "donation_url": "https://daralfarooq.com/donate-us/",
+  "audio_url": "-",
+  "prayer_timing_url": "https://daralfarooq.com/donate-us/",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "3AObN9Le",
+  "uuid": "18ec67fa-0f84-4be3-8a6d-6d05c411e474",
+  "name": "Dar Al-Hijrah Minneapolis",
+  "address": "504 Cedar Ave",
+  "city": "Minneapolis",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2475",
+  "latitude": "44.9686",
+  "zipcode": "55454",
+  "phone": "-",
+  "meta": "-",
+  "email": "wali.dirie@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "xdNPgJLV",
+  "uuid": "c6170ad9-ee23-4fbe-8023-1567800e483f",
+  "name": "Dar Omar Al-Farooq",
+  "address": "983 17th Ave SE",
+  "city": "Minneapolis",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2289",
+  "latitude": "44.9873",
+  "zipcode": "55414",
+  "phone": "6123311234",
+  "meta": "-",
+  "email": "info@daromaralfarooq.org",
+  "website_url": "https://daromaralfarooq.org/",
+  "event_url": "-",
+  "donation_url": "https://daromaralfarooq.org/donate/",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "1",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "QL0BaWdZ",
+  "uuid": "c4537170-6ff5-4a60-aba1-2cb5788b741b",
+  "name": "Dar-Us-Salam",
+  "address": "190 River Ridge Cir S",
+  "city": "Burnsville",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2838",
+  "latitude": "44.7781",
+  "zipcode": "55337",
+  "phone": "-",
+  "meta": "-",
+  "email": "Masjid@Darusalam.org",
+  "website_url": "https://darusalam.org/",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": true
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "0Lbpaado",
+  "uuid": "935ad4aa-01ef-4faf-accf-7df284d9d75d",
+  "name": "DARUL QUBA",
+  "address": "1501 S 6th St",
+  "city": "Minneapolis",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2509",
+  "latitude": "44.9688",
+  "zipcode": "55454",
+  "phone": "7635018770",
+  "meta": "DARUL QUBA",
+  "email": "Info@darul-quba.com",
+  "website_url": "https://www.darul-quba.org/",
+  "event_url": "-",
+  "donation_url": "https://www.darul-quba.org/donate",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "8L7jzjK5",
+  "uuid": "19dbf11c-1382-4ca0-aadc-42383de6df2f",
+  "name": "DARUL-ULOOM ISLAMIC CENTER",
+  "address": "967 5TH ST E ST",
+  "city": "St Paul",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.0597",
+  "latitude": "44.9598",
+  "zipcode": "55106",
+  "phone": "612-800-2760",
+  "meta": "DARUL ULOOM ISLAMIC CENTER",
+  "email": "info@duicmn.org",
+  "website_url": "https://www.darululoomcenter.org/",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "nL121OAa",
+  "uuid": "50bd0a68-c84f-46dc-8112-6b672e7cc885",
+  "name": "Darusalam Islamic center",
+  "address": " 15670 90th St NE Suite B",
+  "city": "Otsego",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.5909",
+  "latitude": "45.2737",
+  "zipcode": "55303",
+  "phone": "-",
+  "meta": "-",
+  "email": "admin@darusalamcenter.org",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "DAgpnDd0",
+  "uuid": "4be7b8c8-486c-4bd1-874c-d1cee95500d7",
+  "name": "Eagan Islamic Center",
+  "address": "1875 Plaza Dr",
+  "city": "Eagan",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.1999",
+  "latitude": "44.7888",
+  "zipcode": "55122",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "https://www.islamicfinder.org/world/united-states/5024825/eagan-prayer-times/",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "8L7kRjL5",
+  "uuid": "2ddff235-6a57-46ae-b556-dc25afea3b5a",
+  "name": "East grand Forks Islamic Center",
+  "address": "1500 5th Ave NE",
+  "city": "East Grand Forks",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-97.0116",
+  "latitude": "47.9400",
+  "zipcode": "56721",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "6adJqxAk",
+  "uuid": "ad991080-3af5-4c9a-919a-1e7ceb8be19b",
+  "name": "Eastern Twin Cities Islamic Center",
+  "address": "12585 Hudson Rd S",
+  "city": "Afton",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-92.8523",
+  "latitude": "44.9459",
+  "zipcode": "55001",
+  "phone": "(651) 200-3956",
+  "meta": "Eastern Twin Cities Islamic Center",
+  "email": "contact@etcic.org",
+  "website_url": "http://www.etcic.org",
+  "event_url": "-",
+  "donation_url": "http://www.etcic.org/donate",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "JAmzqGdR",
+  "uuid": "b2766bc3-1638-4a3c-8f36-f4f9afc8de04",
+  "name": "Hikmah Masjid",
+  "address": "1338 15th Ave SE",
+  "city": "St Cloud",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-94.1307",
+  "latitude": "45.5517",
+  "zipcode": "56304",
+  "phone": "6126369343",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "30",
+    "zuhr_offset": "10",
+    "asr_offset": "10",
+    "maghrib_offset": "5",
+    "isha_offset": "10"
+   }
+  }
+ },
+ {
+  "id": "OA8a62dp",
+  "uuid": "a655366e-fe07-4b47-9546-95f8e1f935a7",
+  "name": "ICBMN ",
+  "address": "668 Broadway St NE",
+  "city": "Minneapolis",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2545",
+  "latitude": "44.9985",
+  "zipcode": "55413",
+  "phone": "-",
+  "meta": "-",
+  "email": "mbradaric@icbmn.org",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "JdGJnDAP",
+  "uuid": "44d99beb-58d7-48ae-8bd4-5744c01913d0",
+  "name": "Iqra Education Center",
+  "address": "3316 3rd St N",
+  "city": "St. Cloud",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-94.1990",
+  "latitude": "45.5582",
+  "zipcode": "56303",
+  "phone": "3202491944",
+  "meta": "-",
+  "email": "iqramn2015@gmail.com",
+  "website_url": "https://iqramn.org/",
+  "event_url": "-",
+  "donation_url": "https://payments.madinaapps.com/iqramn",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "XAllGzAb",
+  "uuid": "71c04759-f73d-4baa-a24f-83fdbdcc64c7",
+  "name": "IQRA MASJID",
+  "address": "1044 7th St W",
+  "city": "Saint Paul",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.1286",
+  "latitude": "44.9262",
+  "zipcode": "55102",
+  "phone": "-",
+  "meta": "-",
+  "email": "iqratreasure@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "RKx6o6AO",
+  "uuid": "f236db73-289c-4821-aa5f-740737d48916",
+  "name": "Irshad Islamic Center",
+  "address": "6520 Edenvale Blvd",
+  "city": "Eden Prairie",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.4559",
+  "latitude": "44.8869",
+  "zipcode": "55346",
+  "phone": "-",
+  "meta": "-",
+  "email": "irshadislamiccenter20@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "VKpeJbLP",
+  "uuid": "ecf9f0bc-c5b1-4106-8ee7-97226591a6fa",
+  "name": "Islamic Center Of St Cloud",
+  "address": "3401 3rd St N",
+  "city": "St. Cloud",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-94.2004",
+  "latitude": "45.5593",
+  "zipcode": "56303",
+  "phone": "6513477648",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "15",
+    "zuhr_offset": "15",
+    "asr_offset": "15",
+    "maghrib_offset": "5",
+    "isha_offset": "5"
+   }
+  }
+ },
+ {
+  "id": "DAgvOOL0",
+  "uuid": "32223114-97a5-41f3-9b1d-96c446be51f0",
+  "name": "Karmel Community Prayer Center",
+  "address": "2910 Pillsbury Ave  S Suite 300",
+  "city": "Minneapolis",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2818",
+  "latitude": "44.9500",
+  "zipcode": "55408",
+  "phone": "(612) 707-6508",
+  "meta": "-",
+  "email": "Masjidkarmel01@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "GA6abeLe",
+  "uuid": "7a79d0dd-0d61-4167-8492-735b4ee84924",
+  "name": "Khalid Ibn Al-Walid ",
+  "address": "124 W Lake St",
+  "city": "Minneapolis",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2809",
+  "latitude": "44.9487",
+  "zipcode": "55408",
+  "phone": "7633285756",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "wLVpRMdJ",
+  "uuid": "75408771-e886-4458-a20b-eb3185c7589a",
+  "name": "Lakeville Masjid",
+  "address": "8670 210th St W",
+  "city": "Lakeville",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2407",
+  "latitude": "44.6448",
+  "zipcode": "55044",
+  "phone": "6517959982",
+  "meta": "-",
+  "email": "masjidlakeville@gmail.com",
+  "website_url": "https://masmn.org",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "10",
+    "zuhr_offset": "5",
+    "asr_offset": "5",
+    "maghrib_offset": "5",
+    "isha_offset": "5"
+   }
+  }
+ },
+ {
+  "id": "zKzoJZLO",
+  "uuid": "84bf65f1-0362-44b6-a078-42236b1e291c",
+  "name": "Maplewood Mosque",
+  "address": "1460 Skillman Ave E",
+  "city": "Maplewood",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.0388",
+  "latitude": "45.0025",
+  "zipcode": "55109",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "10",
+    "zuhr_offset": "15",
+    "asr_offset": "10",
+    "maghrib_offset": "5",
+    "isha_offset": "10"
+   }
+  }
+ },
+ {
+  "id": "xdNPqnLV",
+  "uuid": "263d04dc-11f0-47e5-8707-43ec9faff4b8",
+  "name": "MAS Blaine Masjid",
+  "address": "12175 Aberdeen St NE",
+  "city": "Blaine",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2324",
+  "latitude": "45.1913",
+  "zipcode": "55449",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "jKZpzNAX",
+  "uuid": "ca8bb936-24c7-4064-bba8-1333e20e4d2a",
+  "name": "MAS Bloomington Masjid Rahman",
+  "address": "8910 Old Cedar Ave S",
+  "city": "Bloomington",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2484",
+  "latitude": "44.8418",
+  "zipcode": "55425",
+  "phone": "-19528830044",
+  "meta": "Mas Al Rahman",
+  "email": "mccalrahman@gmail.com",
+  "website_url": "https://masmn.org/",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "9L2MoNKZ",
+  "uuid": "b650ddd5-26a4-4da1-8e95-3e535d13ff42",
+  "name": "MAS Coon Rapids Masjid",
+  "address": "1313 Coon Rapids Blvd NW",
+  "city": "Coon Rapids",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2998",
+  "latitude": "45.1530",
+  "zipcode": "55433",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "JdGmjXLP",
+  "uuid": "df6e871f-7d93-4ab6-bea6-0cc2231619fb",
+  "name": "MAS Maple Grove Masjid",
+  "address": "10186 Lancaster Ln N",
+  "city": "Maple Grove",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.4026",
+  "latitude": "45.1393",
+  "zipcode": "55369",
+  "phone": "-",
+  "meta": "MAS Masjid,Maple Grove Masjid,MapleGrove Masjid,MapleGrove Mosque,Maple Grove Mosque",
+  "email": "-",
+  "website_url": "https://masmn.org/maple-grove-masjid/",
+  "event_url": "-",
+  "donation_url": "https://masmn.org/donate/",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "VdwqVxLe",
+  "uuid": "d3cb51fb-f15e-45f8-90f2-e895e41dd4de",
+  "name": "MAS Taqwa Masjid",
+  "address": "1608 Como Ave",
+  "city": "St Paul",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.1683",
+  "latitude": "44.9771",
+  "zipcode": "55108",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "VKpelOLP",
+  "uuid": "65a41822-1c08-4daf-8aab-843b05e6e1bb",
+  "name": "Masjed AbuBakr Al-Seddiq",
+  "address": "17 N Broadway Ave",
+  "city": "Rochester",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-92.4635",
+  "latitude": "44.0241",
+  "zipcode": "55906",
+  "phone": "5074001342",
+  "meta": "-",
+  "email": "rochester.mosque@gmail.com",
+  "website_url": "https://rochestermosque.org/",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "8K9qBEKp",
+  "uuid": "c5bc41d6-82f9-43f7-8fdf-c26a656e5118",
+  "name": "Masjid Abuhureira Islamic Center Rochester MN",
+  "address": "530 6th Ave NW",
+  "city": "Rochester",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-92.4706",
+  "latitude": "44.0292",
+  "zipcode": "55901",
+  "phone": "5072718877",
+  "meta": "-",
+  "email": "masjidabuhurairarochester@gmail.com",
+  "website_url": "https://www.masjidabuhuraira.org/",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "https://masjidal.com/widget/monthly/v2/?masjid_id=8K9qBEKp",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "25",
+    "zuhr_offset": "36",
+    "asr_offset": "20",
+    "maghrib_offset": "10",
+    "isha_offset": "47"
+   }
+  }
+ },
+ {
+  "id": "XAlRwNKb",
+  "uuid": "3b657c72-4c13-4323-bb97-6e88f9d63a7c",
+  "name": "Masjid Al Israa",
+  "address": "6831 Hwy 65 NE",
+  "city": "Fridley",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2426",
+  "latitude": "45.0906",
+  "zipcode": "55432",
+  "phone": "6128886252",
+  "meta": "-",
+  "email": "contact@masjidalisraa.org",
+  "website_url": "http://masjidalisraa.org",
+  "event_url": "-",
+  "donation_url": "https://us.mohid.co/mn/minneapolis/masjidalisraa/masjid/online/donate_basic",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "adJq5rAk",
+  "uuid": "e7c5f9a9-a312-41c7-bc1a-4cc907bcc402",
+  "name": "Masjid Al Kareem (NWICC)",
+  "address": "3300 Plymouth Blvd",
+  "city": "Plymouth",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.4730",
+  "latitude": "45.0184",
+  "zipcode": "55447",
+  "phone": "-",
+  "meta": "NWICC,MasjidAlKareem,PlymouthMasjid,Plymouth Mosque,Northwest Islamic Community Center",
+  "email": "-",
+  "website_url": "https://www.nwiccmn.org",
+  "event_url": "-",
+  "donation_url": "https://us.mohid.co/mn/minneapolis/nwicc/masjid/online/donation",
+  "audio_url": "-",
+  "prayer_timing_url": "https://masjidal.com/widget/monthly/?masjid_id=adJq5rAk",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "nL128VAa",
+  "uuid": "7b265d59-a9b5-4217-98ef-3ffd39251647",
+  "name": "Masjid Al-Akbar",
+  "address": "3600 E Lake St.",
+  "city": "Minneapolis",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2166",
+  "latitude": "44.9480",
+  "zipcode": "55406",
+  "phone": "-",
+  "meta": "-",
+  "email": "themasjidalakbar@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "PAPnDrKJ",
+  "uuid": "f1c6ae19-20d3-4ed0-85f9-2c42b42c7174",
+  "name": "Masjid Al-furqaan",
+  "address": "1525 Glenwood Ave",
+  "city": "Minneapolis",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.3002",
+  "latitude": "44.9806",
+  "zipcode": "55405",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "1",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "JAmzE9dR",
+  "uuid": "bc2179cf-0305-4614-b71a-6029ab51ab6a",
+  "name": "MASJID AL-HUDA ICCC",
+  "address": "2534 Central Ave NE",
+  "city": "Minneapolis",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2478",
+  "latitude": "45.0143",
+  "zipcode": "55418",
+  "phone": "6514349270",
+  "meta": "-",
+  "email": "iccc.masjidalhuda@gmail.com",
+  "website_url": "https://www.alhudacenter.net/",
+  "event_url": "-",
+  "donation_url": "https://payments.madinaapps.com/ICCC/all",
+  "audio_url": "https://payments.madinaapps.com/ICCC/all",
+  "prayer_timing_url": "http://www.muslimfeed.com/month.aspx?pc=55401&dt=6/22/2024",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": true
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "3",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "EdoeO9L7",
+  "uuid": "2c9e44f3-0897-469b-81ac-91c08e3e1647",
+  "name": "Masjid Al-Ihsan (MN)",
+  "address": "955 W Minnehaha Ave",
+  "city": "Saint Paul",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.1409",
+  "latitude": "44.9637",
+  "zipcode": "55104",
+  "phone": "7632868180",
+  "meta": "-",
+  "email": "maqaamka100@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "8K9O0nAp",
+  "uuid": "03e5fb2a-51a7-46ff-b832-4624e4a9ad9d",
+  "name": "Masjid Al-Khair",
+  "address": "310 14th St SE, Rochester, MN 55904",
+  "city": "Rochester",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-92.4802",
+  "latitude": "44.0121",
+  "zipcode": "55902",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "JAmznNdR",
+  "uuid": "669fa94c-43a6-4a07-a053-7681dff5bc95",
+  "name": "Masjid Al-Wahyain Islamic Center",
+  "address": "670 Payne Ave",
+  "city": "Saint Paul",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.0758",
+  "latitude": "44.9613",
+  "zipcode": "55130",
+  "phone": "-",
+  "meta": "-",
+  "email": "admin@masjidalwahyain.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "xdy0oXAX",
+  "uuid": "d031e195-ac94-4e5c-823c-5c99f02ab77e",
+  "name": "Masjid AlTawba",
+  "address": "6871 Flying Cloud Dr",
+  "city": "Eden Prairie",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.4127",
+  "latitude": "44.8790",
+  "zipcode": "55344",
+  "phone": "9529466061",
+  "meta": "-",
+  "email": "iccc.masjidaltawba@gmail.com",
+  "website_url": "http://www.altawba.org/",
+  "event_url": "-",
+  "donation_url": "https://payments.madinaapps.com/altawba/all",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "10",
+    "zuhr_offset": "0",
+    "asr_offset": "20",
+    "maghrib_offset": "10",
+    "isha_offset": "2"
+   }
+  }
+ },
+ {
+  "id": "xdyqy0dX",
+  "uuid": "8c48358a-4425-4aaa-94fe-aba115847108",
+  "name": "Masjid An-Nur",
+  "address": "1729 N Lyndale Ave",
+  "city": "Minneapolis",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2883",
+  "latitude": "44.9973",
+  "zipcode": "55411",
+  "phone": "6125211749",
+  "meta": "-",
+  "email": "bilalm@almaauun.org",
+  "website_url": "https://masjidannur.org/",
+  "event_url": "-",
+  "donation_url": "https://masjidannur.org/about-us/newsletterbulleting-donate/",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "QL0BObdZ",
+  "uuid": "89acf5e1-8979-475d-8276-1805398489a5",
+  "name": "Masjid Ar-Rahim Islamic Center",
+  "address": "5820 74th Ave N",
+  "city": "Brooklyn Park",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.3542",
+  "latitude": "45.0903",
+  "zipcode": "55443",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "0AWpVWdj",
+  "uuid": "08c81662-e986-428b-9895-612ccb3dce4a",
+  "name": "Masjid Dawah",
+  "address": "605 Fairview Ave N",
+  "city": "Saint Paul",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.1779",
+  "latitude": "44.9595",
+  "zipcode": "55104",
+  "phone": "-",
+  "meta": "Masjid Da'wah",
+  "email": "admin@mndawahacademy.org",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": true
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "wAa3bnK1",
+  "uuid": "a985f9db-f97d-466e-9a02-b5a878ccd7d8",
+  "name": "MASJID RAWDAH",
+  "address": "2426 E 26th St",
+  "city": "Minneapolis",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2366",
+  "latitude": "44.9558",
+  "zipcode": "55406",
+  "phone": "6122504290",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "https://masjidal.com/widget/monthly/v3/?masjid_id=yLjOePAQ",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "JAm7q2KR",
+  "uuid": "97625dc0-e475-461f-a1b5-cae8878a6ef5",
+  "name": "Masjid Salaama",
+  "address": "1500 1st Ave NE",
+  "city": "Rochester",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-92.4604",
+  "latitude": "44.0384",
+  "zipcode": "55906",
+  "phone": "-",
+  "meta": "-",
+  "email": "jeyzaani@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "0dYeyyd6",
+  "uuid": "989782a2-9427-4b14-8bda-1cef8bfdd644",
+  "name": "Masjid Salahuddin - As-Suffah Islamic Center",
+  "address": "3629 95th Ave NE",
+  "city": "Circle Pines",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.1800",
+  "latitude": "45.1457",
+  "zipcode": "55014",
+  "phone": "6124040085",
+  "meta": "-",
+  "email": "info@as-suffahmn.org",
+  "website_url": "https://as-suffahmn.org",
+  "event_url": "-",
+  "donation_url": "http://as-suffahmn.com/donate",
+  "audio_url": "-",
+  "prayer_timing_url": "https://masjidal.com/widget/monthly/?masjid_id=0dYeyyd6",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "5",
+    "zuhr_offset": "5",
+    "asr_offset": "5",
+    "maghrib_offset": "5",
+    "isha_offset": "5"
+   }
+  }
+ },
+ {
+  "id": "MA5qrzAr",
+  "uuid": "fc87b277-86a3-472a-bada-4d47e7636870",
+  "name": "Masjid Shaafici Cultural Center",
+  "address": "400 Cedar Ave",
+  "city": "Minneapolis",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2474",
+  "latitude": "44.9701",
+  "zipcode": "55454",
+  "phone": "-",
+  "meta": "-",
+  "email": "masjidshafici400@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "Vdwgozde",
+  "uuid": "0cc9d8dc-843c-4788-acc2-cda2b60da66f",
+  "name": "MERCY  CENTER",
+  "address": "2647 Bloomington Ave",
+  "city": "Minneapolis",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2522",
+  "latitude": "44.9541",
+  "zipcode": "55407",
+  "phone": "-",
+  "meta": "-",
+  "email": "mercycentermn@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": true
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "MA5ZQwdr",
+  "uuid": "f1b20f6e-4975-47b0-99b9-f311b474e280",
+  "name": "MFIC - Moorhead Fargo Islamic Center",
+  "address": "2215 12th Ave S",
+  "city": "Moorhead",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-96.7452",
+  "latitude": "46.8619",
+  "zipcode": "56560",
+  "phone": "-",
+  "meta": "-",
+  "email": "drzakiofficial@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "wLVOZDAJ",
+  "uuid": "b648ddd8-b7b2-40c8-b104-bad59241fff2",
+  "name": "Minnesota islamic center",
+  "address": "12119 16th Ave S",
+  "city": "Burnsville",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2508",
+  "latitude": "44.7839",
+  "zipcode": "55337",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "https://masjidal.com/widget/monthly/?masjid_id=wLVOZDAJ",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "zKz8DRAO",
+  "uuid": "8e8546e3-e20e-4664-8735-ada8b6f94461",
+  "name": "Quba Islamic Center Chaska",
+  "address": "415 N Chestnut St",
+  "city": "Chaska",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.6016",
+  "latitude": "44.7879",
+  "zipcode": "55318",
+  "phone": "-",
+  "meta": "Qicc,QICC,MAS Quba,Chaska masjid,Carver Masjid",
+  "email": "Carvermasjid@gmail.com",
+  "website_url": "https://masmn.org/quba-islamic-center-of-chaska/",
+  "event_url": "-",
+  "donation_url": "https://app.etapestry.com/onlineforms/MuslimAmericanSocietyofMinnes/ChaskaMasjid.html",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "0",
+    "zuhr_offset": "15",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "15"
+   }
+  }
+ },
+ {
+  "id": "rdRGGbKG",
+  "uuid": "8113c56f-b423-4ce8-b5ac-f2311c06cd35",
+  "name": "RAMADAN CENTER ",
+  "address": "291 McKnight Rd S",
+  "city": "St Paul",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.0055",
+  "latitude": "44.9325",
+  "zipcode": "55119",
+  "phone": "612-636-2051",
+  "meta": "-",
+  "email": "ramadancenter2022@gmail.com",
+  "website_url": "https://ramadancenter.org/",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "GA66N6Ae",
+  "uuid": "19881485-0fa5-4bb9-860c-3330a87cbeff",
+  "name": "Salam Community",
+  "address": "1501 Washington Ave S",
+  "city": "Minneapolis",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2477",
+  "latitude": "44.9727",
+  "zipcode": "55454",
+  "phone": "-",
+  "meta": "-",
+  "email": "info@salamcommunitymn.org",
+  "website_url": "https://salamcommunitymn.org/",
+  "event_url": "-",
+  "donation_url": "https://swgv.io/general-donations-1",
+  "audio_url": "-",
+  "prayer_timing_url": "https://masjidal.com/widget/monthly/v3/?masjid_id=GA66N6Ae",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "JdGJy5AP",
+  "uuid": "ffdee6e4-a18e-4390-a931-f264ad439218",
+  "name": "Samaha Islamic Center of Shakopee ",
+  "address": "214 Holmes St S",
+  "city": "Shakopee",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.5271",
+  "latitude": "44.7971",
+  "zipcode": "55379",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "15",
+    "zuhr_offset": "15",
+    "asr_offset": "16",
+    "maghrib_offset": "8",
+    "isha_offset": "10"
+   }
+  }
+ },
+ {
+  "id": "3AO2BxLe",
+  "uuid": "9f1ebb12-bed7-49ee-800b-537a8df6742a",
+  "name": "South Metro Islamic Center",
+  "address": "15400 S Robert Trail",
+  "city": "Rosemount",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.1315",
+  "latitude": "44.7266",
+  "zipcode": "55068",
+  "phone": "(651) 252-1186",
+  "meta": "-",
+  "email": "info@SouthMetroIC.org",
+  "website_url": "https://masmn.org/south-metro-islamic-center/",
+  "event_url": "https://calendar.google.com/calendar/u/0?cid=c21pY3Jvc2Vtb3VudEBnbWFpbC5jb20",
+  "donation_url": "https://masmn.org/donate/",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "kK3yQyAe",
+  "uuid": "1d723404-84d0-4f85-b352-06d177ee12b0",
+  "name": "Tawfiq Islamic Center",
+  "address": "2400 Minnehaha Ave",
+  "city": "Minneapolis",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2423",
+  "latitude": "44.9587",
+  "zipcode": "55404",
+  "phone": "6517755549",
+  "meta": "-",
+  "email": "tawfiqic2400@gmail.com",
+  "website_url": "https://www.tawfiqic.org",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
+  "id": "lJAmV2dR",
+  "uuid": "61a082a4-ac1a-416a-bec3-a21b5b0fd10b",
+  "name": "Tawhid Islamic Center of Minnesota",
+  "address": "1001 Westgate Dr",
+  "city": "Saint Paul",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2057",
+  "latitude": "44.9711",
+  "zipcode": "55114",
+  "phone": "-",
+  "meta": "-",
+  "email": "info@tawhidic.org",
+  "website_url": "https://tawhidic.org/",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "10",
+    "zuhr_offset": "10",
+    "asr_offset": "10",
+    "maghrib_offset": "5",
+    "isha_offset": "5"
+   }
+  }
+ },
+ {
+  "id": "0Lbk5NAo",
+  "uuid": "470182d7-421d-4216-9303-8c04fa566a0c",
+  "name": "Umatul Islam Center ",
+  "address": "3015 2nd Ave S ",
+  "city": "Minneapolis",
+  "state": "Minnesota ",
+  "country": "US",
+  "longitude": "-93.2740",
+  "latitude": "44.9482",
+  "zipcode": "55408",
+  "phone": "6123881447",
+  "meta": "-",
+  "email": "masjidumatulislam@gmail.com",
+  "website_url": "https://umatulislam.org/",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": true
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "wAaDPXL1",
+  "uuid": "2f0814bc-0f72-4404-9750-c342489c6a94",
+  "name": "Umm Abdulaziz",
+  "address": "3055 Old Hwy 8",
+  "city": "Saint Anthony",
+  "state": "Minnesota",
+  "country": "US",
+  "longitude": "-93.2095",
+  "latitude": "45.0241",
+  "zipcode": "55418",
+  "phone": "-",
+  "meta": "-",
+  "email": "478ahmed@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": true
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
+  "id": "0LbpoGdo",
+  "uuid": "29002392-3a7c-4287-989a-8dc59cd4ea00",
+  "name": "Willmar Islamic Center",
+  "address": "313 Litchfield Ave SW",
+  "city": "Willmar",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-95.0472",
+  "latitude": "45.1214",
+  "zipcode": "56201",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": false,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": true,
+    "fajr_offset": "20",
+    "zuhr_offset": "10",
+    "asr_offset": "10",
+    "maghrib_offset": "10",
+    "isha_offset": "10"
+   }
+  }
+ }
+]

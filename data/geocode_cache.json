@@ -657,5 +657,51 @@
    "-93.2722682",
    "-93.2269525"
   ]
- }
+ },
+ "f:10301 Jefferson Highway, Brooklyn Park, MN 55445": [
+  {
+   "place_id": 374197026,
+   "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 1076607022,
+   "lat": "45.1084682",
+   "lon": "-93.4022140",
+   "category": "highway",
+   "type": "tertiary",
+   "place_rank": 26,
+   "importance": 0.053392569619287365,
+   "addresstype": "tertiary",
+   "name": "Jefferson Highway",
+   "display_name": "Jefferson Highway, Brooklyn Park, Hennepin County, Minnesota, 55445, United States",
+   "boundingbox": [
+    "45.1082148",
+    "45.1087467",
+    "-93.4022972",
+    "-93.4022105"
+   ]
+  }
+ ],
+ "f:6120 Brooklyn Blvd, Brooklyn Center, MN 55429": [
+  {
+   "place_id": 397863769,
+   "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 117011747,
+   "lat": "45.0661070",
+   "lon": "-93.3263231",
+   "category": "place",
+   "type": "house",
+   "place_rank": 30,
+   "importance": 9.99999999995449e-06,
+   "addresstype": "place",
+   "name": "",
+   "display_name": "6120, Brooklyn Boulevard, Brooklyn Center, Hennepin County, Minnesota, 55429, United States",
+   "boundingbox": [
+    "45.0660570",
+    "45.0661570",
+    "-93.3263731",
+    "-93.3262731"
+   ]
+  }
+ ]
 }
