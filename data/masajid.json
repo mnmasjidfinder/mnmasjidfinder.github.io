@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T09:57-06:00",
+ "generated_at": "2026-11-07T10:34-06:00",
  "osm": "cached",
  "count": 84,
  "mosques": [
@@ -12040,7 +12040,9 @@
    "sources": [
     "masjidal"
    ],
-   "errors": [],
+   "errors": [
+    "website: <urlopen error [Errno 101] Network is unreachable>"
+   ],
    "days": [
     {
      "date": "Saturday, Nov 7, 2026",
@@ -12205,7 +12207,9 @@
    "sources": [
     "masjidal"
    ],
-   "errors": [],
+   "errors": [
+    "website: <urlopen error [Errno 101] Network is unreachable>"
+   ],
    "days": [
     {
      "date": "Saturday, Nov 7, 2026",
