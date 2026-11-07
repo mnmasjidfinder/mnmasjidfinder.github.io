@@ -56,6 +56,11 @@ td.na{color:var(--muted);font-weight:400}
 .events li{padding:4px 0;border-bottom:1px dashed var(--line)}
 .events time{color:var(--muted);font-variant-numeric:tabular-nums;margin-right:6px}
 .empty{padding:40px;text-align:center;color:var(--muted)}
+.fb{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.fb button,.fb a.btn{font:inherit;font-size:13px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:99px;padding:4px 12px;cursor:pointer;text-decoration:none}
+.fb button:hover,.fb a.btn:hover{border-color:var(--accent)}
+.fb .done{color:var(--accent);font-weight:600}
+.cta{display:inline-block;margin-top:8px;color:var(--accent);font-weight:600}
 details summary{cursor:pointer;font-size:13px;color:var(--accent)}
 footer{padding-block:8px 40px;color:var(--muted);font-size:12.5px}
 footer code{font-size:12px}
@@ -83,7 +88,7 @@ footer code{font-size:12px}
 </main>
 <footer class="wrap">
   <b>Live</b> times come from each masjid's own Masjidal or Mohid feed. Cards marked <b>Calculated</b> show astronomical adhan times (ISNA, 15°/15°), not iqamah, so check with the masjid before you go.
-  Mosque list © OpenStreetMap contributors. Missing a masjid or a time is wrong? Let the maintainer know.
+  Mosque list © OpenStreetMap contributors and Masjidal.<br><a class="cta" id="addMasjid" target="_blank" rel="noopener">Missing a masjid, or something wrong? Tell us →</a>
 </footer>
 <!--DATA-->
 <script src="data/masajid.js"></script>
@@ -155,6 +160,46 @@ function dayTable(day) {
     "</table>" + (hasIq ? "" : `<div class="iqnote">Iqamah times aren't published online. Call or check the masjid's website.</div>`);
 }
 
+// Feedback goes to a Google Form; responses land in the maintainer's Google Sheet.
+const FORM = {
+  base: "https://docs.google.com/forms/d/e/1FAIpQLSdbPTC-fwICRAG58oj-kykXhfoj7PhM63SGVO7YJe1hNUbemw/",
+  masjid: "entry.143079288", correct: "entry.47161889", what: "entry.370983494",
+};
+const label = m => `${m.name} (${m.city || "MN"})`;
+const formLink = fields => FORM.base + "viewform?usp=pp_url&" + new URLSearchParams(fields).toString();
+const voteKey = m => `mnmf-vote:${m.id}:${todayISO}`;
+const voted = m => { try { return localStorage.getItem(voteKey(m)); } catch { return null; } };
+
+function feedbackHtml(m) {
+  const no = formLink({[FORM.masjid]: label(m), [FORM.correct]: "No"});
+  if (voted(m)) return `<div class="fb"><span class="done">Thanks, you confirmed these times today.</span>
+    <a href="${esc(no)}" target="_blank" rel="noopener">Something wrong?</a></div>`;
+  return `<div class="fb" data-id="${esc(m.id)}"><span>Are these times correct?</span>
+    <button type="button" data-vote="yes" aria-label="Yes, the times are correct">👍 Yes</button>
+    <a class="btn" href="${esc(no)}" target="_blank" rel="noopener" aria-label="No, report a correction">👎 No, report a fix</a></div>`;
+}
+
+async function confirmTimes(m, box) {
+  const fields = {[FORM.masjid]: label(m), [FORM.correct]: "Yes",
+                  [FORM.what]: `Confirmed on ${todayISO} (${m.timing_source || "unknown source"})`};
+  try {
+    await fetch(FORM.base + "formResponse", {method: "POST", mode: "no-cors", body: new URLSearchParams(fields)});
+    try { localStorage.setItem(voteKey(m), "yes"); } catch {}
+    box.innerHTML = `<span class="done">Thanks! Your confirmation was recorded.</span>`;
+  } catch {
+    // some hosts block background requests; fall back to the pre-filled form
+    window.open(formLink(fields), "_blank", "noopener");
+    box.innerHTML = `<span class="done">Thanks! Press Submit on the form that opened.</span>`;
+  }
+}
+
+$("grid").addEventListener("click", e => {
+  const b = e.target.closest("button[data-vote]"); if (!b) return;
+  const box = b.closest(".fb"), m = D.mosques.find(x => x.id === box.dataset.id);
+  if (m) { b.disabled = true; confirmTimes(m, box); }
+});
+$("addMasjid").href = formLink({[FORM.masjid]: "New masjid / general feedback: "});
+
 function card(m) {
   const days = m.days || [];
   let i = days.findIndex(d => dayISO(d.date) === todayISO); if (i < 0) i = 0;
@@ -183,6 +228,7 @@ function card(m) {
       <span class="badge ${calc ? "calc" : "live"}">${calc ? "Calculated" : "Live"}</span></div>
       ${dayTable(day)}${week ? `<details><summary>Next ${rest.length} days</summary>${week}</details>` : ""}</div>` : ""}
     <div><div class="sect">Upcoming events</div>${ev}</div>
+    ${feedbackHtml(m)}
   </article>`;
 }
 
