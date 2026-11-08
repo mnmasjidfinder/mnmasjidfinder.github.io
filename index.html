@@ -21,10 +21,19 @@ h1{margin:0;font-size:26px;letter-spacing:-.01em;text-wrap:balance}
 .sub{color:var(--muted);margin-top:4px;font-size:14px}
 .controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
 .controls .wrap{padding-block:12px;display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.searchrow{display:flex;gap:8px;align-items:end;min-width:0}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.pill{font:inherit;font-size:14px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;height:38px}
+.pill:hover{border-color:var(--accent)}
+.pill.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:600}
+.mobile-only{display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.dist{color:var(--accent);font-weight:700}
+.count .note{color:var(--warn)}
 label{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.01em}
 input,select{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-width:0}
 input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-input[type=search]{width:260px}
+input[type=search]{width:360px}
 input[type=time]{width:120px}
 .chk{flex-direction:row;align-items:center;gap:6px;padding-bottom:9px;font-weight:500;color:var(--ink);font-size:14px}
 button.reset{font:inherit;background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:8px 12px;cursor:pointer}
@@ -65,7 +74,16 @@ td.na{color:var(--muted);font-weight:400}
 details summary{cursor:pointer;font-size:13px;color:var(--accent)}
 footer{padding-block:8px 40px;color:var(--muted);font-size:12.5px}
 footer code{font-size:12px}
-@media (max-width:560px){input[type=search]{width:100%}.controls label{flex:1 1 140px}}
+@media (max-width:640px){
+  header{padding-block:16px 6px} h1{font-size:21px} .sub{font-size:12.5px}
+  .controls .wrap{flex-direction:column;align-items:stretch;gap:8px;padding-block:8px}
+  .searchrow label.grow{flex:1} .searchrow .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  input[type=search]{width:100%;height:38px;font-size:16px}  /* 16px stops iOS zooming in */
+  .mobile-only{display:inline-flex}
+  .pill .long{display:none}
+  .filters{display:none;padding-bottom:4px} .filters.open{display:flex}
+  .filters label{flex:1 1 140px} .filters .chk{flex:1 1 auto}
+}
 </style>
 </head>
 <body>
@@ -74,14 +92,20 @@ footer code{font-size:12px}
   <div class="sub" id="sub">Prayer timings, Jumu'ah and events</div>
 </header>
 <div class="controls"><div class="wrap">
-  <label for="q">Search name, city or time<input type="search" id="q" placeholder="e.g. Dar Al-Farooq, Rochester, 1:30 pm"></label>
+  <div class="searchrow">
+    <label for="q" class="grow"><span class="lbl">Search name, city or time</span><input type="search" id="q" placeholder="Masjid, city or time" autocomplete="off" enterkeyhint="search"></label>
+    <button type="button" class="pill" id="nearBtn" aria-pressed="false">📍<span>Near me</span></button>
+    <button type="button" class="pill mobile-only" id="filtBtn" aria-expanded="false" aria-controls="filters">Filters</button>
+  </div>
+  <div class="filters" id="filters">
   <label for="region">Region<select id="region"><option value="">All regions</option></select></label>
   <label for="sort">Sort<select id="sort">
-    <option value="name">Name (A–Z)</option><option value="region">Region</option><option value="jumuah">Earliest Jumu'ah</option><option value="jumuah-late">Latest Jumu'ah</option>
+    <option value="name">Name (A–Z)</option><option value="region">Region</option><option value="jumuah">Earliest Jumu'ah</option><option value="jumuah-late">Latest Jumu'ah</option><option value="near">Nearest to me</option>
   </select></label>
   <label class="chk"><input type="checkbox" id="hasj"> Jumu'ah time known</label>
   <label class="chk"><input type="checkbox" id="iq"> Iqamah times known</label>
   <button class="reset" id="reset" type="button">Reset</button>
+  </div>
 </div></div>
 <main class="wrap">
   <div class="count" id="count"></div>
@@ -134,6 +158,56 @@ function parseTimeQuery(q) {
   else if (!ap && h >= 1 && h <= 9) h += 12;
   return {text: (q.slice(0, m.index) + " " + q.slice(m.index + m[0].length)).trim(), time: h * 60 + mi};
 }
+// ---- Search that forgives spelling: hyphens/apostrophes/spaces ignored, word-start matches,
+// vowel-insensitive "sounds like" matching (Abubakar ~ Abu Bakr), and * / ? wildcards.
+const fold = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/['’`ʿʾ]/g, "");
+const wordsOf = s => fold(s).split(/[^a-z0-9]+/).filter(Boolean);
+const skel = w => w ? (w[0] + w.slice(1).replace(/[aeiouyhw]/g, "")).replace(/(.)\1+/g, "$1") : "";
+D.mosques.forEach(m => {
+  const nameWords = wordsOf(`${m.name} ${m.aka || ""}`);
+  m._words = [...nameWords, ...wordsOf(`${m.city} ${m.address || ""} ${m.region}`)];
+  m._compact = nameWords.join("");
+  m._skel = skel(m._compact);
+  m._skelWords = m._words.map(skel);
+  m._text = fold(`${m.name} | ${m.aka || ""} | ${m.city} | ${m.address || ""} | ${m.region}`);
+});
+// 0 = no match, 3 = exact, 2 = word starts, 1 = similar spelling
+function matchScore(m, q) {
+  if (/[*?]/.test(q)) {
+    const re = new RegExp(fold(q).split(/([*?])/).map(p => p === "*" ? ".*" : p === "?" ? "." : p.replace(/[.+^${}()|[\]\\]/g, "\\$&")).join(""));
+    return re.test(m._text) ? 3 : 0;
+  }
+  const qw = wordsOf(q); if (!qw.length) return 3;
+  const qc = qw.join("");
+  if (m._compact.includes(qc)) return 3;
+  if (qw.every(w => m._words.some(h => h.startsWith(w)))) return 2;
+  if (qw.every(w => w.length >= 3 && skel(w).length >= 2 && m._skelWords.some(h => h.startsWith(skel(w))))) return 1;
+  if (qc.length >= 5 && skel(qc).length >= 4 && m._skel.includes(skel(qc))) return 1;
+  return 0;
+}
+
+// ---- Near me
+let here = null;
+const miles = (a, b, c, d) => { const r = Math.PI / 180, x = Math.sin((c - a) * r / 2) ** 2 + Math.cos(a * r) * Math.cos(c * r) * Math.sin((d - b) * r / 2) ** 2; return 7917.5 * Math.asin(Math.sqrt(x)); };
+const distOf = m => here && m.lat != null ? miles(here.lat, here.lon, m.lat, m.lon) : null;
+let locNote = "";
+function locate() {
+  const btn = $("nearBtn");
+  if (here) { here = null; btn.classList.remove("on"); btn.setAttribute("aria-pressed", "false"); if ($("sort").value === "near") $("sort").value = "name"; render(); return; }
+  if (!navigator.geolocation) { locNote = "This browser can't share your location. Search by city instead."; render(); return; }
+  btn.disabled = true; btn.querySelector("span").textContent = "Finding…";
+  navigator.geolocation.getCurrentPosition(p => {
+    here = {lat: p.coords.latitude, lon: p.coords.longitude}; locNote = "";
+    btn.disabled = false; btn.querySelector("span").textContent = "Near me"; btn.classList.add("on"); btn.setAttribute("aria-pressed", "true");
+    $("sort").value = "near"; render(); window.scrollTo({top: 0, behavior: "smooth"});
+  }, err => {
+    btn.disabled = false; btn.querySelector("span").textContent = "Near me";
+    locNote = err.code === 1 ? "Location is blocked. Allow it for this site in your browser settings, or search by city."
+                             : "Couldn't get your location right now. Try again, or search by city.";
+    render();
+  }, {enableHighAccuracy: false, timeout: 12000, maximumAge: 300000});
+}
+
 const todayOf = m => { const d = m.days || []; const i = d.findIndex(x => dayISO(x.date) === todayISO); return d[i < 0 ? 0 : i]; };
 let hit = () => false;    // which Jumu'ah chips to highlight
 let hitIq = () => false;  // which iqamah cells to highlight
@@ -221,7 +295,7 @@ function card(m) {
   return `<article class="card">
     <div>
       <h2>${esc(m.name)}</h2>${m.aka ? `<div class="meta">also listed as ${esc(m.aka)}</div>` : ""}
-      <div class="meta">${esc(addr)} · <b>${esc(m.region)}</b></div>
+      <div class="meta">${distOf(m) != null ? `<span class="dist">${distOf(m) < 10 ? distOf(m).toFixed(1) : Math.round(distOf(m))} mi away</span> · ` : ""}${esc(addr)} · <b>${esc(m.region)}</b></div>
       <div class="meta">${links}</div>
     </div>
     <div><div class="sect">Jumu'ah (Friday)</div><div class="jum">${jumuahHtml(m)}</div></div>
@@ -242,10 +316,11 @@ function render() {
   hit = nearTyped;
   hitIq = v => qt != null && mins(v) === qt;
   const phrase = q.replace(/\s+/g, " ").replace(/^[\s,]+|[\s,]+$/g, "");
+  if ($("sort").value === "near" && !here) $("sort").value = "name";
+  const score = new Map();
   const list = D.mosques.filter(m => {
     if (region && m.region !== region) return false;
-    const hay = `${m.name} ${m.aka || ""} ${m.city} ${m.address || ""} ${m.region}`.toLowerCase();
-    if (phrase && !hay.includes(phrase)) return false;
+    if (phrase) { const sc = matchScore(m, phrase); if (!sc) return false; score.set(m, sc); }
     if ($("iq").checked && !hasIqamah(m)) return false;
     if ($("hasj").checked && !m.jumuah.some(j => j.start_min != null)) return false;
     if (qt != null && !m.jumuah.some(nearTyped) && !Object.values(todayOf(m)?.iqamah || {}).some(v => mins(v) === qt)) return false;
@@ -255,13 +330,22 @@ function render() {
   const firstJ = m => Math.min(...m.jumuah.map(j => j.start_min ?? 9999), 9999);
   const lastJ = m => Math.max(...m.jumuah.map(j => j.start_min ?? -1), -1);
   const s = $("sort").value;
-  list.sort(s === "name" ? (a, b) => a.name.localeCompare(b.name)
+  const byDist = (a, b) => (distOf(a) ?? 1e9) - (distOf(b) ?? 1e9);
+  list.sort(s === "near" ? byDist
+    // while searching by name, closest spellings first
+    : s === "name" && phrase ? (a, b) => (score.get(b) || 0) - (score.get(a) || 0) || a.name.localeCompare(b.name)
+    : s === "name" ? (a, b) => a.name.localeCompare(b.name)
     : s === "jumuah" ? (a, b) => firstJ(a) - firstJ(b) || a.name.localeCompare(b.name)
     : s === "jumuah-late" ? (a, b) => lastJ(b) - lastJ(a) || a.name.localeCompare(b.name)
     : (a, b) => a.region.localeCompare(b.region) || hasIqamah(b) - hasIqamah(a) || a.name.localeCompare(b.name));
   const why = [];
   if (qt != null) why.push(`Jumu'ah or iqamah around ${fmtMin(qt)}`);
-  $("count").textContent = `${list.length} of ${D.mosques.length} masajid` + (why.length ? ` with ${why.join(" and ")}` : "");
+  if (s === "near") why.push("nearest first");
+  const similar = [...score.values()].some(v => v === 1);
+  $("count").innerHTML = esc(`${list.length} of ${D.mosques.length} masajid` + (why.length ? ` · ${why.join(" · ")}` : "") + (similar ? " · including similar spellings" : "")) +
+    (locNote ? ` <span class="note">${esc(locNote)}</span>` : "");
+  const nf = [$("region").value, $("hasj").checked, $("iq").checked].filter(Boolean).length + ($("sort").value !== "name" && $("sort").value !== "near" ? 1 : 0);
+  $("filtBtn").textContent = nf ? `Filters (${nf})` : "Filters";
   $("grid").innerHTML = list.length ? list.map(card).join("") : `<div class="empty">No masajid match these filters. Try widening the Jumu'ah window or clearing the search.</div>`;
 }
 
@@ -290,7 +374,13 @@ async function refreshLive() {
 }
 
 KEYS.forEach(k => $(k).addEventListener("input", render));
-$("reset").onclick = () => { KEYS.forEach(k => $(k).type === "checkbox" ? $(k).checked = false : $(k).value = (k === "sort" ? "name" : "")); render(); };
+$("nearBtn").onclick = locate;
+const fitHint = () => { const w = $("q").clientWidth; $("q").placeholder = w < 200 ? "Search…" : w < 380 ? "Masjid, city or time" : "Masjid, city or time, e.g. Abubakar or 1:30 pm"; };
+fitHint(); addEventListener("resize", fitHint);
+$("sort").addEventListener("input", () => { if ($("sort").value === "near" && !here) locate(); });
+$("filtBtn").onclick = () => { const o = $("filters").classList.toggle("open"); $("filtBtn").setAttribute("aria-expanded", o); };
+$("q").addEventListener("keydown", e => { if (e.key === "Enter") e.target.blur(); });  // close the phone keyboard
+$("reset").onclick = () => { KEYS.forEach(k => $(k).type === "checkbox" ? $(k).checked = false : $(k).value = (k === "sort" ? "name" : "")); if (here) locate(); else render(); };
 render();
 refreshLive();
 </script>
