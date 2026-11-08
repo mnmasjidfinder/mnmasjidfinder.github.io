@@ -76,12 +76,16 @@ footer{padding-block:8px 40px;color:var(--muted);font-size:12.5px}
 footer code{font-size:12px}
 @media (max-width:640px){
   header{padding-block:16px 6px} h1{font-size:21px} .sub{font-size:12.5px}
-  .controls .wrap{flex-direction:column;align-items:stretch;gap:8px;padding-block:8px}
+  /* phones: the search bar lives at the bottom of the screen, always in thumb reach */
+  .controls{position:fixed;top:auto;left:0;right:0;bottom:0;z-index:20;border-bottom:0;border-top:1px solid var(--line);
+    box-shadow:0 -6px 20px rgba(0,0,0,.18);padding-bottom:env(safe-area-inset-bottom,0px)}
+  .controls .wrap{flex-direction:column-reverse;align-items:stretch;gap:8px;padding-block:10px}
+  main{padding-bottom:96px} footer{padding-bottom:110px}
   .searchrow label.grow{flex:1} .searchrow .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   input[type=search]{width:100%;height:38px;font-size:16px}  /* 16px stops iOS zooming in */
   .mobile-only{display:inline-flex}
   .pill .long{display:none}
-  .filters{display:none;padding-bottom:4px} .filters.open{display:flex}
+  .filters{display:none;padding-bottom:4px;max-height:55vh;overflow-y:auto} .filters.open{display:flex}
   .filters label{flex:1 1 140px} .filters .chk{flex:1 1 auto}
 }
 </style>
@@ -380,6 +384,11 @@ fitHint(); addEventListener("resize", fitHint);
 $("sort").addEventListener("input", () => { if ($("sort").value === "near" && !here) locate(); });
 $("filtBtn").onclick = () => { const o = $("filters").classList.toggle("open"); $("filtBtn").setAttribute("aria-expanded", o); };
 $("q").addEventListener("keydown", e => { if (e.key === "Enter") e.target.blur(); });  // close the phone keyboard
+// On phones, bring the top of the results into view as soon as someone searches,
+// wherever they were scrolled to.
+const isPhone = () => matchMedia("(max-width:640px)").matches;
+const toResults = () => { if (!isPhone()) return; const y = $("count").getBoundingClientRect().top + scrollY - 8; if (Math.abs(scrollY - y) > 40) scrollTo({top: y}); };
+["q", "region", "sort", "hasj", "iq"].forEach(k => $(k).addEventListener("input", toResults));
 $("reset").onclick = () => { KEYS.forEach(k => $(k).type === "checkbox" ? $(k).checked = false : $(k).value = (k === "sort" ? "name" : "")); if (here) locate(); else render(); };
 render();
 refreshLive();
