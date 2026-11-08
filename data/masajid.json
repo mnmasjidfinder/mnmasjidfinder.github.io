@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-08T07:02-06:00",
+ "generated_at": "2026-11-08T07:19-06:00",
  "osm": "cached",
  "count": 84,
  "mosques": [
@@ -5478,11 +5478,11 @@
    "id": "darul-arqam-center-of-excellence-blaine",
    "events": [],
    "sources": [
-    "masjidal"
+    "masjidal",
+    "mohid"
    ],
-   "errors": [
-    "website: <urlopen error timed out>"
-   ],
+   "errors": [],
+   "mohid_url": "https://us.mohid.co/mn/minneapolis/dacoe",
    "days": [
     {
      "date": "Sunday, Nov 8, 2026",
