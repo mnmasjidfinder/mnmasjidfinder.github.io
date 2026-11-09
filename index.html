@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
 <title>MN Masjid Finder</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Prayer timings, Jumu'ah times and events for masajid across Minnesota.">
@@ -81,6 +81,7 @@ footer code{font-size:12px}
     box-shadow:0 -6px 20px rgba(0,0,0,.18);padding-bottom:env(safe-area-inset-bottom,0px)}
   .controls .wrap{flex-direction:column-reverse;align-items:stretch;gap:8px;padding-block:10px}
   main{padding-bottom:96px} footer{padding-bottom:110px}
+  .controls.kb{padding-bottom:0}  /* keyboard open: no home-bar gap */
   .searchrow label.grow{flex:1} .searchrow .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   input[type=search]{width:100%;height:38px;font-size:16px}  /* 16px stops iOS zooming in */
   .mobile-only{display:inline-flex}
@@ -387,6 +388,21 @@ $("q").addEventListener("keydown", e => { if (e.key === "Enter") e.target.blur()
 // On phones, bring the top of the results into view as soon as someone searches,
 // wherever they were scrolled to.
 const isPhone = () => matchMedia("(max-width:640px)").matches;
+
+// iPhone Safari slides the keyboard over bars docked to the bottom of the screen instead of
+// moving them. Measure the part of the screen still visible and lift the bar to sit on the keyboard.
+const bar = document.querySelector(".controls");
+let dockFrame = 0;
+function dock(vv = window.visualViewport) {
+  if (!vv || !isPhone()) { bar.style.transform = ""; bar.classList.remove("kb"); return; }
+  const covered = Math.max(0, Math.round(innerHeight - vv.height - vv.offsetTop));
+  bar.style.transform = covered > 1 ? `translateY(${-covered}px)` : "";
+  bar.classList.toggle("kb", covered > 80);
+}
+const dockSoon = () => { cancelAnimationFrame(dockFrame); dockFrame = requestAnimationFrame(() => dock()); };
+if (window.visualViewport) { visualViewport.addEventListener("resize", dockSoon); visualViewport.addEventListener("scroll", dockSoon); }
+addEventListener("resize", dockSoon);
+["focus", "blur"].forEach(ev => $("q").addEventListener(ev, () => { dockSoon(); setTimeout(dockSoon, 350); }));
 const toResults = () => { if (!isPhone()) return; const y = $("count").getBoundingClientRect().top + scrollY - 8; if (Math.abs(scrollY - y) > 40) scrollTo({top: y}); };
 ["q", "region", "sort", "hasj", "iq"].forEach(k => $(k).addEventListener("input", toResults));
 $("reset").onclick = () => { KEYS.forEach(k => $(k).type === "checkbox" ? $(k).checked = false : $(k).value = (k === "sort" ? "name" : "")); if (here) locate(); else render(); };
