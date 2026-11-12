@@ -925,6 +925,43 @@
   }
  },
  {
+  "id": "MA5NB8dr",
+  "uuid": "21b32c4b-233e-4651-904b-b2290c9dec2f",
+  "name": "Durdur community ",
+  "address": "2824 13th Ave S",
+  "city": "Minneapolis",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-93.2646",
+  "latitude": "44.9778",
+  "zipcode": "55407",
+  "phone": "-",
+  "meta": "-",
+  "email": "Fiyooreomar@gmail.com",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": false,
+  "premium_features": {
+   "app": false,
+   "slideshow": true,
+   "donation_app": false
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": "0",
+    "zuhr_offset": "0",
+    "asr_offset": "0",
+    "maghrib_offset": "0",
+    "isha_offset": "0"
+   }
+  }
+ },
+ {
   "id": "DAgpnDd0",
   "uuid": "4be7b8c8-486c-4bd1-874c-d1cee95500d7",
   "name": "Eagan Islamic Center",

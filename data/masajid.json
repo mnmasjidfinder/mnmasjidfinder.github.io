@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-11T11:56-06:00",
+ "generated_at": "2026-11-12T12:23-06:00",
  "osm": "live",
- "count": 84,
+ "count": 85,
  "mosques": [
   {
    "osm_id": "way/686377520",
@@ -19,18 +19,6 @@
    "sources": [],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:45 AM",
-      "sunrise": "7:10 AM",
-      "dhuhr": "12:02 PM",
-      "asr": "2:28 PM",
-      "maghrib": "4:50 PM",
-      "isha": "6:15 PM"
-     },
-     "iqamah": {}
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
@@ -102,6 +90,18 @@
       "isha": "6:10 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:54 AM",
+      "sunrise": "7:20 AM",
+      "dhuhr": "12:03 PM",
+      "asr": "2:22 PM",
+      "maghrib": "4:43 PM",
+      "isha": "6:09 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -127,25 +127,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:46 AM",
-      "sunrise": "7:10 AM",
-      "dhuhr": "12:01 PM",
-      "asr": "2:28 PM",
-      "maghrib": "4:50 PM",
-      "isha": "6:16 PM"
-     },
-     "iqamah": {
-      "fajr": "6:01 AM",
-      "dhuhr": "12:11 PM",
-      "asr": "2:38 PM",
-      "maghrib": "4:55 PM",
-      "isha": "6:26 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -259,6 +240,25 @@
       "maghrib": "4:49 PM",
       "isha": "6:21 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:55 AM",
+      "sunrise": "7:20 AM",
+      "dhuhr": "12:02 PM",
+      "asr": "2:22 PM",
+      "maghrib": "4:43 PM",
+      "isha": "6:10 PM"
+     },
+     "iqamah": {
+      "fajr": "6:10 AM",
+      "dhuhr": "12:12 PM",
+      "asr": "2:32 PM",
+      "maghrib": "4:48 PM",
+      "isha": "6:20 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -294,25 +294,6 @@
     "website: <urlopen error timed out>"
    ],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:47 AM",
-      "sunrise": "7:11 AM",
-      "dhuhr": "12:01 PM",
-      "asr": "2:28 PM",
-      "maghrib": "4:50 PM",
-      "isha": "6:15 PM"
-     },
-     "iqamah": {
-      "fajr": "6:07 AM",
-      "dhuhr": "12:11 PM",
-      "asr": "2:38 PM",
-      "maghrib": "4:55 PM",
-      "isha": "6:25 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -426,6 +407,25 @@
       "maghrib": "4:49 PM",
       "isha": "6:19 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:55 AM",
+      "sunrise": "7:20 AM",
+      "dhuhr": "12:02 PM",
+      "asr": "2:22 PM",
+      "maghrib": "4:43 PM",
+      "isha": "6:08 PM"
+     },
+     "iqamah": {
+      "fajr": "6:15 AM",
+      "dhuhr": "12:12 PM",
+      "asr": "2:32 PM",
+      "maghrib": "4:48 PM",
+      "isha": "6:18 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -459,25 +459,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:47 AM",
-      "sunrise": "7:10 AM",
-      "dhuhr": "12:01 PM",
-      "asr": "2:29 PM",
-      "maghrib": "4:51 PM",
-      "isha": "6:16 PM"
-     },
-     "iqamah": {
-      "fajr": "6:02 AM",
-      "dhuhr": "12:11 PM",
-      "asr": "2:39 PM",
-      "maghrib": "4:56 PM",
-      "isha": "6:26 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -591,6 +572,25 @@
       "maghrib": "4:50 PM",
       "isha": "6:21 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:55 AM",
+      "sunrise": "7:20 AM",
+      "dhuhr": "12:03 PM",
+      "asr": "2:23 PM",
+      "maghrib": "4:44 PM",
+      "isha": "6:10 PM"
+     },
+     "iqamah": {
+      "fajr": "6:10 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:33 PM",
+      "maghrib": "4:49 PM",
+      "isha": "6:20 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -624,25 +624,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:49 AM",
-      "sunrise": "7:13 AM",
-      "dhuhr": "12:04 PM",
-      "asr": "2:33 PM",
-      "maghrib": "4:55 PM",
-      "isha": "6:19 PM"
-     },
-     "iqamah": {
-      "fajr": "6:09 AM",
-      "dhuhr": "12:14 PM",
-      "asr": "2:43 PM",
-      "maghrib": "5:05 PM",
-      "isha": "6:29 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -756,6 +737,25 @@
       "maghrib": "4:59 PM",
       "isha": "6:24 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:57 AM",
+      "sunrise": "7:22 AM",
+      "dhuhr": "12:05 PM",
+      "asr": "2:27 PM",
+      "maghrib": "4:48 PM",
+      "isha": "6:13 PM"
+     },
+     "iqamah": {
+      "fajr": "6:17 AM",
+      "dhuhr": "12:15 PM",
+      "asr": "2:37 PM",
+      "maghrib": "4:58 PM",
+      "isha": "6:23 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -790,25 +790,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:56 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:22 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -922,6 +903,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:17 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:04 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:36 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:17 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -961,25 +961,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:52 AM",
-      "dhuhr": "12:27 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:27 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -1093,6 +1074,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:22 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:00 AM",
+      "dhuhr": "12:28 PM",
+      "asr": "2:35 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:22 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -1119,25 +1119,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:56 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:27 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -1251,6 +1232,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:22 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:04 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:35 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:21 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -1286,25 +1286,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:51 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:36 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:22 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -1418,6 +1399,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:17 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:00 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:30 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:17 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -1452,25 +1452,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:44 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:54 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:46 PM",
-      "maghrib": "4:59 PM",
-      "isha": "7:00 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -1584,6 +1565,25 @@
       "maghrib": "4:53 PM",
       "isha": "7:00 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:52 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:02 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:40 PM",
+      "maghrib": "4:52 PM",
+      "isha": "7:00 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -1616,18 +1616,6 @@
     "website: <urlopen error [Errno -5] No address associated with hostname>"
    ],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {}
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
@@ -1699,6 +1687,18 @@
       "isha": "6:07 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -1726,25 +1726,6 @@
     "website: <urlopen error [Errno -2] Name or service not known>"
    ],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:01 AM",
-      "dhuhr": "12:17 PM",
-      "asr": "2:46 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:17 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -1858,6 +1839,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:12 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:09 AM",
+      "dhuhr": "12:18 PM",
+      "asr": "2:40 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:12 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -1867,6 +1867,171 @@
      "iqamah": null,
      "start": "1:50 PM",
      "start_min": 830
+    }
+   ],
+   "jumuah_source": "Masjidal (set by masjid)",
+   "live": true
+  },
+  {
+   "name": "Durdur community",
+   "caps": false,
+   "address": "2824 13th Ave S, Minneapolis, MN 55407",
+   "city": "Minneapolis",
+   "lat": 44.9778,
+   "lon": -93.2646,
+   "phone": null,
+   "website": null,
+   "masjidal_id": "MA5NB8dr",
+   "from_directory": true,
+   "region": "Minneapolis",
+   "id": "durdur-community-minneapolis",
+   "events": [],
+   "sources": [
+    "masjidal"
+   ],
+   "errors": [],
+   "days": [
+    {
+     "date": "Thursday, Nov 12, 2026",
+     "hijri": "2, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:42 AM",
+      "sunrise": "7:07 AM",
+      "dhuhr": "11:57 AM",
+      "asr": "2:25 PM",
+      "maghrib": "4:47 PM",
+      "isha": "6:11 PM"
+     },
+     "iqamah": {
+      "fajr": "6:02 AM",
+      "dhuhr": "12:12 PM",
+      "asr": "2:40 PM",
+      "maghrib": "4:57 PM",
+      "isha": "6:26 PM"
+     }
+    },
+    {
+     "date": "Friday, Nov 13, 2026",
+     "hijri": "3, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:44 AM",
+      "sunrise": "7:08 AM",
+      "dhuhr": "11:57 AM",
+      "asr": "2:24 PM",
+      "maghrib": "4:46 PM",
+      "isha": "6:11 PM"
+     },
+     "iqamah": {
+      "fajr": "6:04 AM",
+      "dhuhr": "12:12 PM",
+      "asr": "2:39 PM",
+      "maghrib": "4:56 PM",
+      "isha": "6:26 PM"
+     }
+    },
+    {
+     "date": "Saturday, Nov 14, 2026",
+     "hijri": "4, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:45 AM",
+      "sunrise": "7:09 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:23 PM",
+      "maghrib": "4:45 PM",
+      "isha": "6:10 PM"
+     },
+     "iqamah": {
+      "fajr": "6:05 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:38 PM",
+      "maghrib": "4:55 PM",
+      "isha": "6:25 PM"
+     }
+    },
+    {
+     "date": "Sunday, Nov 15, 2026",
+     "hijri": "5, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:46 AM",
+      "sunrise": "7:11 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:23 PM",
+      "maghrib": "4:44 PM",
+      "isha": "6:09 PM"
+     },
+     "iqamah": {
+      "fajr": "6:06 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:38 PM",
+      "maghrib": "4:54 PM",
+      "isha": "6:24 PM"
+     }
+    },
+    {
+     "date": "Monday, Nov 16, 2026",
+     "hijri": "6, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:47 AM",
+      "sunrise": "7:12 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:22 PM",
+      "maghrib": "4:43 PM",
+      "isha": "6:08 PM"
+     },
+     "iqamah": {
+      "fajr": "6:07 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:37 PM",
+      "maghrib": "4:53 PM",
+      "isha": "6:23 PM"
+     }
+    },
+    {
+     "date": "Tuesday, Nov 17, 2026",
+     "hijri": "7, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:48 AM",
+      "sunrise": "7:13 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:08 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:36 PM",
+      "maghrib": "4:52 PM",
+      "isha": "6:22 PM"
+     }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:09 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:35 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:22 PM"
+     }
+    }
+   ],
+   "timing_source": "Masjidal (set by masjid)",
+   "jumuah": [
+    {
+     "khutbah": null,
+     "iqamah": null,
+     "start": "1:30 AM",
+     "start_min": 90
     }
    ],
    "jumuah_source": "Masjidal (set by masjid)",
@@ -1888,18 +2053,6 @@
    "sources": [],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {}
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
@@ -1971,6 +2124,18 @@
       "isha": "6:07 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -1997,25 +2162,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:24 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:24 PM"
-     },
-     "iqamah": {
-      "fajr": "5:39 AM",
-      "dhuhr": "12:02 PM",
-      "asr": "2:31 PM",
-      "maghrib": "4:53 PM",
-      "isha": "6:52 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -2129,6 +2275,25 @@
       "maghrib": "4:47 PM",
       "isha": "6:47 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:32 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:18 PM"
+     },
+     "iqamah": {
+      "fajr": "5:47 AM",
+      "dhuhr": "12:03 PM",
+      "asr": "2:25 PM",
+      "maghrib": "4:46 PM",
+      "isha": "6:46 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -2165,25 +2330,6 @@
     "website: <urlopen error [Errno 101] Network is unreachable>"
    ],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {
-      "fajr": "5:57 AM",
-      "dhuhr": "12:13 PM",
-      "asr": "2:37 PM",
-      "maghrib": "4:59 PM",
-      "isha": "6:18 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -2297,6 +2443,25 @@
       "maghrib": "4:53 PM",
       "isha": "6:13 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:16 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:05 AM",
+      "dhuhr": "12:14 PM",
+      "asr": "2:31 PM",
+      "maghrib": "4:52 PM",
+      "isha": "6:12 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -2336,25 +2501,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "7, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:56 AM",
-      "dhuhr": "12:12 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:54 PM",
-      "isha": "6:27 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "8, 1448 Jumada Al-Thani",
@@ -2468,6 +2614,25 @@
       "maghrib": "4:48 PM",
       "isha": "6:22 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "14, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:05 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:36 PM",
+      "maghrib": "4:47 PM",
+      "isha": "6:22 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -2501,25 +2666,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:56 AM",
-      "dhuhr": "12:12 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:22 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -2633,6 +2779,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:17 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:05 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:36 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:17 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -2666,25 +2831,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:20 AM",
-      "dhuhr": "12:55 PM",
-      "asr": "3:50 PM",
-      "maghrib": "4:50 PM",
-      "isha": "7:29 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -2798,6 +2944,25 @@
       "maghrib": "4:44 PM",
       "isha": "7:29 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:20 AM",
+      "dhuhr": "12:55 PM",
+      "asr": "3:50 PM",
+      "maghrib": "4:43 PM",
+      "isha": "7:29 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -2831,25 +2996,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:56 AM",
-      "dhuhr": "1:30 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:15 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -2963,6 +3109,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:10 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:04 AM",
+      "dhuhr": "1:30 PM",
+      "asr": "2:36 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:10 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -3012,25 +3177,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:00 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:35 PM",
-      "maghrib": "4:55 PM",
-      "isha": "6:20 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -3144,6 +3290,25 @@
       "maghrib": "4:55 PM",
       "isha": "6:20 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:00 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:35 PM",
+      "maghrib": "4:55 PM",
+      "isha": "6:20 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -3169,25 +3334,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:56 AM",
-      "dhuhr": "12:12 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:53 PM",
-      "isha": "6:27 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -3301,6 +3447,25 @@
       "maghrib": "4:47 PM",
       "isha": "6:22 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:04 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:35 PM",
+      "maghrib": "4:46 PM",
+      "isha": "6:21 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -3340,25 +3505,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:51 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:36 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:22 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -3472,6 +3618,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:17 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:00 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:31 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:17 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -3512,25 +3677,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:56 AM",
-      "dhuhr": "12:12 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:22 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -3644,6 +3790,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:17 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:04 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:35 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:17 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -3678,25 +3843,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:43 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {
-      "fajr": "5:58 AM",
-      "dhuhr": "12:28 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:59 PM",
-      "isha": "6:23 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -3810,6 +3956,25 @@
       "maghrib": "4:53 PM",
       "isha": "6:18 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:51 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:06 AM",
+      "dhuhr": "12:29 PM",
+      "asr": "2:35 PM",
+      "maghrib": "4:52 PM",
+      "isha": "6:17 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -3843,25 +4008,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:46 AM",
-      "dhuhr": "1:30 PM",
-      "asr": "2:31 PM",
-      "maghrib": "4:53 PM",
-      "isha": "6:17 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -3975,6 +4121,25 @@
       "maghrib": "4:47 PM",
       "isha": "6:12 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "5:54 AM",
+      "dhuhr": "1:30 PM",
+      "asr": "2:25 PM",
+      "maghrib": "4:46 PM",
+      "isha": "6:11 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -4016,25 +4181,6 @@
     "website: <urlopen error [Errno 101] Network is unreachable>"
    ],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:01 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:17 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -4148,6 +4294,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:12 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:09 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:35 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:11 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -4189,25 +4354,6 @@
     "website: <urlopen error [Errno -3] Temporary failure in name resolution>"
    ],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:01 AM",
-      "dhuhr": "12:12 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:55 PM",
-      "isha": "6:22 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -4321,6 +4467,25 @@
       "maghrib": "4:49 PM",
       "isha": "6:17 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:09 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:36 PM",
+      "maghrib": "4:48 PM",
+      "isha": "6:17 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -4360,25 +4525,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:56 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:22 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -4492,6 +4638,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:17 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:04 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:35 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:16 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -4522,18 +4687,6 @@
    "sources": [],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {}
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
@@ -4605,6 +4758,18 @@
       "isha": "6:07 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -4630,25 +4795,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:25 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:00 AM",
-      "dhuhr": "1:30 PM",
-      "asr": "2:45 PM",
-      "maghrib": "4:58 PM",
-      "isha": "7:15 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -4762,6 +4908,25 @@
       "maghrib": "4:52 PM",
       "isha": "7:15 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:00 AM",
+      "dhuhr": "1:30 PM",
+      "asr": "2:45 PM",
+      "maghrib": "4:51 PM",
+      "isha": "7:15 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -4801,25 +4966,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:00 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:45 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:30 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -4931,6 +5077,25 @@
       "dhuhr": "12:30 PM",
       "asr": "2:45 PM",
       "maghrib": "4:52 PM",
+      "isha": "6:30 PM"
+     }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:00 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:45 PM",
+      "maghrib": "4:51 PM",
       "isha": "6:30 PM"
      }
     }
@@ -4975,25 +5140,6 @@
    "errors": [],
    "days": [
     {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:25 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:15 AM",
-      "dhuhr": "1:00 PM",
-      "asr": "3:00 PM",
-      "maghrib": "4:54 PM",
-      "isha": "7:00 PM"
-     }
-    },
-    {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
      "adhan": {
@@ -5106,6 +5252,25 @@
       "maghrib": "4:47 PM",
       "isha": "7:00 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:30 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "3:00 PM",
+      "maghrib": "4:46 PM",
+      "isha": "7:00 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -5146,25 +5311,6 @@
    "errors": [],
    "days": [
     {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:00 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:30 PM",
-      "maghrib": "4:53 PM",
-      "isha": "7:00 PM"
-     }
-    },
-    {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
      "adhan": {
@@ -5275,6 +5421,25 @@
       "dhuhr": "12:30 PM",
       "asr": "2:30 PM",
       "maghrib": "4:47 PM",
+      "isha": "7:00 PM"
+     }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:15 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:30 PM",
+      "maghrib": "4:46 PM",
       "isha": "7:00 PM"
      }
     }
@@ -5312,25 +5477,6 @@
    "errors": [],
    "days": [
     {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:15 AM",
-      "dhuhr": "1:00 PM",
-      "asr": "3:00 PM",
-      "maghrib": "4:53 PM",
-      "isha": "7:00 PM"
-     }
-    },
-    {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
      "adhan": {
@@ -5441,6 +5587,25 @@
       "dhuhr": "1:00 PM",
       "asr": "3:00 PM",
       "maghrib": "4:47 PM",
+      "isha": "7:00 PM"
+     }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:30 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "3:00 PM",
+      "maghrib": "4:46 PM",
       "isha": "7:00 PM"
      }
     }
@@ -5484,25 +5649,6 @@
    "errors": [],
    "mohid_url": "https://us.mohid.co/mn/minneapolis/dacoe",
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:24 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "3:04 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:30 AM",
-      "dhuhr": "1:20 PM",
-      "asr": "3:15 PM",
-      "maghrib": "4:53 PM",
-      "isha": "7:30 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -5616,6 +5762,25 @@
       "maghrib": "4:47 PM",
       "isha": "7:30 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:32 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:57 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:30 AM",
+      "dhuhr": "1:20 PM",
+      "asr": "3:15 PM",
+      "maghrib": "4:46 PM",
+      "isha": "7:30 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -5649,25 +5814,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:43 AM",
-      "sunrise": "7:07 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:54 PM",
-      "isha": "6:18 PM"
-     },
-     "iqamah": {
-      "fajr": "6:00 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "3:00 PM",
-      "maghrib": "4:59 PM",
-      "isha": "6:28 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -5781,6 +5927,25 @@
       "maghrib": "4:53 PM",
       "isha": "6:23 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:51 AM",
+      "sunrise": "7:17 AM",
+      "dhuhr": "12:00 PM",
+      "asr": "2:21 PM",
+      "maghrib": "4:47 PM",
+      "isha": "6:12 PM"
+     },
+     "iqamah": {
+      "fajr": "6:00 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "3:00 PM",
+      "maghrib": "4:52 PM",
+      "isha": "6:22 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -5809,18 +5974,6 @@
    "sources": [],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {}
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
@@ -5892,6 +6045,18 @@
       "isha": "6:07 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "12:00 PM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -5911,18 +6076,6 @@
    "sources": [],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {}
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
@@ -5994,6 +6147,18 @@
       "isha": "6:07 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -6014,18 +6179,6 @@
    "sources": [],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:59 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {}
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
@@ -6097,6 +6250,18 @@
       "isha": "6:08 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:16 AM",
+      "dhuhr": "12:00 PM",
+      "asr": "2:21 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -6119,18 +6284,6 @@
    "sources": [],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {}
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
@@ -6202,6 +6355,18 @@
       "isha": "6:07 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -6228,25 +6393,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:44 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:59 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:50 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {
-      "fajr": "6:15 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "3:00 PM",
-      "maghrib": "5:00 PM",
-      "isha": "7:30 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -6360,6 +6506,25 @@
       "maghrib": "4:53 PM",
       "isha": "7:30 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:52 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "12:00 PM",
+      "asr": "2:21 PM",
+      "maghrib": "4:43 PM",
+      "isha": "6:08 PM"
+     },
+     "iqamah": {
+      "fajr": "6:30 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "3:00 PM",
+      "maghrib": "4:53 PM",
+      "isha": "7:30 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -6399,25 +6564,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:00 AM",
-      "dhuhr": "1:00 PM",
-      "asr": "2:33 PM",
-      "maghrib": "4:55 PM",
-      "isha": "6:30 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -6531,6 +6677,25 @@
       "maghrib": "4:49 PM",
       "isha": "6:30 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "2:27 PM",
+      "maghrib": "4:48 PM",
+      "isha": "6:30 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -6570,25 +6735,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "2, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {
-      "fajr": "6:15 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:36 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:23 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "3, 1448 Jumada Al-Thani",
@@ -6702,6 +6848,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:17 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "9, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:15 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:30 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:17 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -6741,25 +6906,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:26 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:59 AM",
-      "asr": "3:04 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:15 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "3:15 PM",
-      "maghrib": "4:54 PM",
-      "isha": "7:00 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -6873,6 +7019,25 @@
       "maghrib": "4:48 PM",
       "isha": "7:00 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:34 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "12:00 PM",
+      "asr": "2:57 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:30 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "3:15 PM",
+      "maghrib": "4:47 PM",
+      "isha": "7:00 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -6907,25 +7072,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:59 AM",
-      "sunrise": "7:28 AM",
-      "dhuhr": "12:12 PM",
-      "asr": "2:32 PM",
-      "maghrib": "4:55 PM",
-      "isha": "6:24 PM"
-     },
-     "iqamah": {
-      "fajr": "6:19 AM",
-      "dhuhr": "12:32 PM",
-      "asr": "2:52 PM",
-      "maghrib": "5:05 PM",
-      "isha": "6:44 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -7039,6 +7185,25 @@
       "maghrib": "4:58 PM",
       "isha": "6:39 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "6:08 AM",
+      "sunrise": "7:39 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:26 PM",
+      "maghrib": "4:47 PM",
+      "isha": "6:18 PM"
+     },
+     "iqamah": {
+      "fajr": "6:28 AM",
+      "dhuhr": "12:33 PM",
+      "asr": "2:46 PM",
+      "maghrib": "4:57 PM",
+      "isha": "6:38 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -7072,25 +7237,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "2, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:59 AM",
-      "sunrise": "7:28 AM",
-      "dhuhr": "12:12 PM",
-      "asr": "2:32 PM",
-      "maghrib": "4:55 PM",
-      "isha": "6:24 PM"
-     },
-     "iqamah": {
-      "fajr": "6:29 AM",
-      "dhuhr": "12:22 PM",
-      "asr": "2:42 PM",
-      "maghrib": "5:00 PM",
-      "isha": "6:25 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "3, 1448 Jumada Al-Thani",
@@ -7204,6 +7350,25 @@
       "maghrib": "4:53 PM",
       "isha": "6:20 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "9, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "6:08 AM",
+      "sunrise": "7:39 AM",
+      "dhuhr": "12:13 PM",
+      "asr": "2:26 PM",
+      "maghrib": "4:47 PM",
+      "isha": "6:18 PM"
+     },
+     "iqamah": {
+      "fajr": "6:38 AM",
+      "dhuhr": "12:23 PM",
+      "asr": "2:36 PM",
+      "maghrib": "4:52 PM",
+      "isha": "6:19 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -7232,18 +7397,6 @@
    "sources": [],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:38 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:53 AM",
-      "asr": "2:16 PM",
-      "maghrib": "4:39 PM",
-      "isha": "6:06 PM"
-     },
-     "iqamah": {}
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
@@ -7315,6 +7468,18 @@
       "isha": "6:00 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:47 AM",
+      "sunrise": "7:16 AM",
+      "dhuhr": "11:55 AM",
+      "asr": "2:10 PM",
+      "maghrib": "4:31 PM",
+      "isha": "5:59 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -7340,25 +7505,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:57 AM",
-      "sunrise": "7:24 AM",
-      "dhuhr": "12:11 PM",
-      "asr": "2:35 PM",
-      "maghrib": "4:57 PM",
-      "isha": "5:44 PM"
-     },
-     "iqamah": {
-      "fajr": "6:15 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "3:00 PM",
-      "maghrib": "5:07 PM",
-      "isha": "7:00 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -7472,6 +7618,25 @@
       "maghrib": "5:00 PM",
       "isha": "7:00 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "6:06 AM",
+      "sunrise": "7:34 AM",
+      "dhuhr": "12:12 PM",
+      "asr": "2:28 PM",
+      "maghrib": "4:49 PM",
+      "isha": "5:38 PM"
+     },
+     "iqamah": {
+      "fajr": "6:15 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "3:00 PM",
+      "maghrib": "4:59 PM",
+      "isha": "7:00 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -7505,25 +7670,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:14 PM"
-     },
-     "iqamah": {
-      "fajr": "5:51 AM",
-      "dhuhr": "1:30 PM",
-      "asr": "2:37 PM",
-      "maghrib": "4:59 PM",
-      "isha": "6:24 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -7637,6 +7783,25 @@
       "maghrib": "4:53 PM",
       "isha": "6:19 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:08 PM"
+     },
+     "iqamah": {
+      "fajr": "5:59 AM",
+      "dhuhr": "1:30 PM",
+      "asr": "2:31 PM",
+      "maghrib": "4:52 PM",
+      "isha": "6:18 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -7676,25 +7841,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:04 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "3:05 PM",
-      "maghrib": "4:50 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:15 AM",
-      "dhuhr": "12:45 PM",
-      "asr": "3:15 PM",
-      "maghrib": "4:55 PM",
-      "isha": "7:00 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -7808,6 +7954,25 @@
       "maghrib": "4:49 PM",
       "isha": "7:00 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:13 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:58 PM",
+      "maghrib": "4:43 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:15 AM",
+      "dhuhr": "12:45 PM",
+      "asr": "3:15 PM",
+      "maghrib": "4:48 PM",
+      "isha": "7:00 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -7838,18 +8003,6 @@
    "sources": [],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:59 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {}
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
@@ -7921,6 +8074,18 @@
       "isha": "6:08 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "12:00 PM",
+      "asr": "2:22 PM",
+      "maghrib": "4:43 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -7949,25 +8114,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:15 AM",
-      "dhuhr": "1:00 PM",
-      "asr": "2:45 PM",
-      "maghrib": "4:59 PM",
-      "isha": "6:12 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -8081,6 +8227,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:07 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:15 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "2:45 PM",
+      "maghrib": "4:52 PM",
+      "isha": "6:07 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -8120,25 +8285,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {
-      "fajr": "5:56 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:42 PM",
-      "maghrib": "4:59 PM",
-      "isha": "6:18 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -8252,6 +8398,25 @@
       "maghrib": "4:53 PM",
       "isha": "6:13 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:04 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:36 PM",
+      "maghrib": "4:52 PM",
+      "isha": "6:12 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -8291,25 +8456,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:51 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "12:07 PM",
-      "asr": "2:36 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:22 PM"
-     },
-     "iqamah": {
-      "fajr": "5:16 AM",
-      "dhuhr": "1:15 PM",
-      "asr": "4:55 PM",
-      "maghrib": "7:51 PM",
-      "isha": "9:14 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -8423,6 +8569,25 @@
       "maghrib": "7:51 PM",
       "isha": "9:14 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:59 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "12:08 PM",
+      "asr": "2:31 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:17 PM"
+     },
+     "iqamah": {
+      "fajr": "5:16 AM",
+      "dhuhr": "1:15 PM",
+      "asr": "4:55 PM",
+      "maghrib": "7:51 PM",
+      "isha": "9:14 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -8449,25 +8614,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:04 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {
-      "fajr": "6:11 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "3:00 PM",
-      "maghrib": "4:54 PM",
-      "isha": "7:00 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -8581,6 +8727,25 @@
       "maghrib": "4:48 PM",
       "isha": "7:00 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:19 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "3:00 PM",
+      "maghrib": "4:47 PM",
+      "isha": "7:00 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -8622,25 +8787,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:56 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:45 PM",
-      "maghrib": "4:59 PM",
-      "isha": "6:17 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -8754,6 +8900,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:12 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:04 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:45 PM",
+      "maghrib": "4:52 PM",
+      "isha": "6:12 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -8793,25 +8958,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:01 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:42 PM",
-      "maghrib": "4:59 PM",
-      "isha": "6:15 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -8925,6 +9071,25 @@
       "maghrib": "4:53 PM",
       "isha": "6:10 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:09 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:36 PM",
+      "maghrib": "4:52 PM",
+      "isha": "6:10 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -8960,25 +9125,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:28 PM",
-      "maghrib": "4:50 PM",
-      "isha": "6:14 PM"
-     },
-     "iqamah": {
-      "fajr": "5:52 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:48 PM",
-      "maghrib": "5:00 PM",
-      "isha": "7:30 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -9092,6 +9238,25 @@
       "maghrib": "4:54 PM",
       "isha": "7:30 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:22 PM",
+      "maghrib": "4:43 PM",
+      "isha": "6:08 PM"
+     },
+     "iqamah": {
+      "fajr": "6:00 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:42 PM",
+      "maghrib": "4:53 PM",
+      "isha": "7:30 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -9132,25 +9297,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:04 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:06 AM",
-      "dhuhr": "1:00 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:53 PM",
-      "isha": "7:00 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -9264,6 +9410,25 @@
       "maghrib": "4:47 PM",
       "isha": "7:00 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:14 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "2:36 PM",
+      "maghrib": "4:46 PM",
+      "isha": "7:00 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -9306,25 +9471,6 @@
     "website: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1011)>"
    ],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:50 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:11 AM",
-      "dhuhr": "12:20 PM",
-      "asr": "2:37 PM",
-      "maghrib": "5:00 PM",
-      "isha": "6:17 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -9438,6 +9584,25 @@
       "maghrib": "4:54 PM",
       "isha": "6:12 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:43 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:19 AM",
+      "dhuhr": "12:20 PM",
+      "asr": "2:31 PM",
+      "maghrib": "4:53 PM",
+      "isha": "6:12 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -9477,25 +9642,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:04 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:28 PM",
-      "maghrib": "4:51 PM",
-      "isha": "6:14 PM"
-     },
-     "iqamah": {
-      "fajr": "5:57 AM",
-      "dhuhr": "12:13 PM",
-      "asr": "2:43 PM",
-      "maghrib": "4:56 PM",
-      "isha": "6:19 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -9609,6 +9755,25 @@
       "maghrib": "4:50 PM",
       "isha": "6:14 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:13 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:23 PM",
+      "maghrib": "4:44 PM",
+      "isha": "6:09 PM"
+     },
+     "iqamah": {
+      "fajr": "6:05 AM",
+      "dhuhr": "12:14 PM",
+      "asr": "2:38 PM",
+      "maghrib": "4:49 PM",
+      "isha": "6:14 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -9637,18 +9802,6 @@
    "sources": [],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:43 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "12:01 PM",
-      "asr": "2:31 PM",
-      "maghrib": "4:53 PM",
-      "isha": "6:16 PM"
-     },
-     "iqamah": {}
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
@@ -9720,6 +9873,18 @@
       "isha": "6:11 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:51 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "12:02 PM",
+      "asr": "2:26 PM",
+      "maghrib": "4:46 PM",
+      "isha": "6:11 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -9747,25 +9912,6 @@
    "errors": [],
    "mohid_url": "https://us.mohid.co/mn/rochester1/maas",
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:37 AM",
-      "sunrise": "7:00 AM",
-      "dhuhr": "11:54 AM",
-      "asr": "2:25 PM",
-      "maghrib": "4:47 PM",
-      "isha": "6:10 PM"
-     },
-     "iqamah": {
-      "fajr": "6:02 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:45 PM",
-      "maghrib": "4:54 PM",
-      "isha": "6:17 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -9879,6 +10025,25 @@
       "maghrib": "4:49 PM",
       "isha": "6:12 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:45 AM",
+      "sunrise": "7:09 AM",
+      "dhuhr": "11:55 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:05 PM"
+     },
+     "iqamah": {
+      "fajr": "6:10 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:40 PM",
+      "maghrib": "4:48 PM",
+      "isha": "6:12 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -9918,25 +10083,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:37 AM",
-      "sunrise": "7:00 AM",
-      "dhuhr": "11:54 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:10 PM"
-     },
-     "iqamah": {
-      "fajr": "5:52 AM",
-      "dhuhr": "12:25 PM",
-      "asr": "2:46 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:20 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -10050,6 +10196,25 @@
       "maghrib": "4:53 PM",
       "isha": "6:15 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:45 AM",
+      "sunrise": "7:09 AM",
+      "dhuhr": "11:55 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:05 PM"
+     },
+     "iqamah": {
+      "fajr": "6:00 AM",
+      "dhuhr": "12:26 PM",
+      "asr": "2:41 PM",
+      "maghrib": "4:52 PM",
+      "isha": "6:15 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -10083,25 +10248,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:37 AM",
-      "sunrise": "7:00 AM",
-      "dhuhr": "11:54 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:10 PM"
-     },
-     "iqamah": {
-      "fajr": "6:02 AM",
-      "dhuhr": "1:30 PM",
-      "asr": "2:46 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:20 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -10215,6 +10361,25 @@
       "maghrib": "4:52 PM",
       "isha": "6:15 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:45 AM",
+      "sunrise": "7:09 AM",
+      "dhuhr": "11:55 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:05 PM"
+     },
+     "iqamah": {
+      "fajr": "6:10 AM",
+      "dhuhr": "1:30 PM",
+      "asr": "2:40 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:15 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -10248,25 +10413,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:37 AM",
-      "sunrise": "7:00 AM",
-      "dhuhr": "11:54 AM",
-      "asr": "2:25 PM",
-      "maghrib": "4:47 PM",
-      "isha": "6:10 PM"
-     },
-     "iqamah": {
-      "fajr": "6:02 AM",
-      "dhuhr": "12:14 PM",
-      "asr": "2:35 PM",
-      "maghrib": "4:52 PM",
-      "isha": "6:15 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -10380,6 +10526,25 @@
       "maghrib": "4:47 PM",
       "isha": "6:10 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:45 AM",
+      "sunrise": "7:09 AM",
+      "dhuhr": "11:55 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:05 PM"
+     },
+     "iqamah": {
+      "fajr": "6:10 AM",
+      "dhuhr": "12:15 PM",
+      "asr": "2:30 PM",
+      "maghrib": "4:46 PM",
+      "isha": "6:10 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -10413,25 +10578,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:43 AM",
-      "sunrise": "7:04 AM",
-      "dhuhr": "11:56 AM",
-      "asr": "2:25 PM",
-      "maghrib": "4:47 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {
-      "fajr": "5:58 AM",
-      "dhuhr": "12:11 PM",
-      "asr": "2:40 PM",
-      "maghrib": "4:57 PM",
-      "isha": "6:28 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -10545,6 +10691,25 @@
       "maghrib": "4:51 PM",
       "isha": "6:23 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:51 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:57 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:40 PM",
+      "isha": "6:08 PM"
+     },
+     "iqamah": {
+      "fajr": "6:06 AM",
+      "dhuhr": "12:12 PM",
+      "asr": "2:35 PM",
+      "maghrib": "4:50 PM",
+      "isha": "6:23 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -10580,25 +10745,6 @@
     "website: HTTP Error 522: <none>"
    ],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:40 AM",
-      "sunrise": "7:04 AM",
-      "dhuhr": "11:56 AM",
-      "asr": "2:25 PM",
-      "maghrib": "4:47 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:00 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:35 PM",
-      "maghrib": "4:57 PM",
-      "isha": "6:17 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -10712,6 +10858,25 @@
       "maghrib": "4:51 PM",
       "isha": "6:11 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:57 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:40 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:09 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:30 PM",
+      "maghrib": "4:50 PM",
+      "isha": "6:11 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -10749,25 +10914,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:40 AM",
-      "sunrise": "7:04 AM",
-      "dhuhr": "11:55 AM",
-      "asr": "2:29 PM",
-      "maghrib": "4:47 PM",
-      "isha": "6:11 PM"
-     },
-     "iqamah": {
-      "fajr": "6:10 AM",
-      "dhuhr": "1:00 PM",
-      "asr": "2:39 PM",
-      "maghrib": "4:52 PM",
-      "isha": "7:00 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -10881,6 +11027,25 @@
       "maghrib": "4:46 PM",
       "isha": "7:00 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:48 AM",
+      "sunrise": "7:13 AM",
+      "dhuhr": "11:57 AM",
+      "asr": "2:24 PM",
+      "maghrib": "4:40 PM",
+      "isha": "6:05 PM"
+     },
+     "iqamah": {
+      "fajr": "6:18 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "2:34 PM",
+      "maghrib": "4:45 PM",
+      "isha": "7:00 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -10920,25 +11085,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:51 AM",
-      "dhuhr": "12:07 PM",
-      "asr": "2:36 PM",
-      "maghrib": "4:53 PM",
-      "isha": "6:22 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -11052,6 +11198,25 @@
       "maghrib": "4:47 PM",
       "isha": "6:17 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "5:59 AM",
+      "dhuhr": "12:08 PM",
+      "asr": "2:30 PM",
+      "maghrib": "4:46 PM",
+      "isha": "6:16 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -11088,25 +11253,6 @@
     "website: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1011)>"
    ],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "3, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:40 AM",
-      "sunrise": "7:04 AM",
-      "dhuhr": "11:56 AM",
-      "asr": "2:25 PM",
-      "maghrib": "4:47 PM",
-      "isha": "6:11 PM"
-     },
-     "iqamah": {
-      "fajr": "5:45 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:35 PM",
-      "maghrib": "4:52 PM",
-      "isha": "6:21 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "4, 1448 Jumada Al-Thani",
@@ -11220,6 +11366,25 @@
       "maghrib": "4:46 PM",
       "isha": "6:16 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "10, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:57 AM",
+      "asr": "2:19 PM",
+      "maghrib": "4:40 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "5:54 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:29 PM",
+      "maghrib": "4:45 PM",
+      "isha": "6:16 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -11253,25 +11418,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "5:56 AM",
-      "dhuhr": "12:13 PM",
-      "asr": "2:41 PM",
-      "maghrib": "4:55 PM",
-      "isha": "6:17 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -11385,6 +11531,25 @@
       "maghrib": "4:49 PM",
       "isha": "6:12 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:04 AM",
+      "dhuhr": "12:14 PM",
+      "asr": "2:35 PM",
+      "maghrib": "4:48 PM",
+      "isha": "6:11 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -11424,25 +11589,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:59 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:56 AM",
-      "asr": "2:25 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:14 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "2:35 PM",
-      "maghrib": "4:58 PM",
-      "isha": "6:45 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -11556,6 +11702,25 @@
       "maghrib": "4:51 PM",
       "isha": "6:45 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "6:07 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:40 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:22 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:30 PM",
+      "maghrib": "4:50 PM",
+      "isha": "6:45 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -11591,25 +11756,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:11 AM",
-      "dhuhr": "1:00 PM",
-      "asr": "3:00 PM",
-      "maghrib": "4:53 PM",
-      "isha": "7:00 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -11723,6 +11869,25 @@
       "maghrib": "4:47 PM",
       "isha": "7:00 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:19 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "3:00 PM",
+      "maghrib": "4:46 PM",
+      "isha": "7:00 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -11764,25 +11929,6 @@
    "errors": [],
    "days": [
     {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:06 AM",
-      "dhuhr": "1:30 PM",
-      "asr": "2:36 PM",
-      "maghrib": "4:53 PM",
-      "isha": "6:22 PM"
-     }
-    },
-    {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
      "adhan": {
@@ -11797,7 +11943,7 @@
       "fajr": "6:07 AM",
       "dhuhr": "1:30 PM",
       "asr": "2:35 PM",
-      "maghrib": "4:52 PM",
+      "maghrib": "4:57 PM",
       "isha": "6:21 PM"
      }
     },
@@ -11816,7 +11962,7 @@
       "fajr": "6:08 AM",
       "dhuhr": "1:30 PM",
       "asr": "2:34 PM",
-      "maghrib": "4:51 PM",
+      "maghrib": "4:56 PM",
       "isha": "6:20 PM"
      }
     },
@@ -11835,7 +11981,7 @@
       "fajr": "6:09 AM",
       "dhuhr": "1:30 PM",
       "asr": "2:33 PM",
-      "maghrib": "4:50 PM",
+      "maghrib": "4:55 PM",
       "isha": "6:19 PM"
      }
     },
@@ -11854,7 +12000,7 @@
       "fajr": "6:11 AM",
       "dhuhr": "1:30 PM",
       "asr": "2:32 PM",
-      "maghrib": "4:49 PM",
+      "maghrib": "4:54 PM",
       "isha": "6:18 PM"
      }
     },
@@ -11873,7 +12019,7 @@
       "fajr": "6:12 AM",
       "dhuhr": "1:30 PM",
       "asr": "2:32 PM",
-      "maghrib": "4:48 PM",
+      "maghrib": "4:53 PM",
       "isha": "6:18 PM"
      }
     },
@@ -11892,8 +12038,27 @@
       "fajr": "6:13 AM",
       "dhuhr": "1:30 PM",
       "asr": "2:31 PM",
-      "maghrib": "4:47 PM",
+      "maghrib": "4:52 PM",
       "isha": "6:17 PM"
+     }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:14 AM",
+      "dhuhr": "1:30 PM",
+      "asr": "2:30 PM",
+      "maghrib": "4:51 PM",
+      "isha": "6:16 PM"
      }
     }
    ],
@@ -11935,18 +12100,6 @@
    "events_wp": "http://mndawah.net",
    "days": [
     {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:25 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {}
-    },
-    {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
       "fajr": "5:42 AM",
@@ -12017,6 +12170,18 @@
       "isha": "6:07 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -12043,25 +12208,6 @@
    "errors": [],
    "days": [
     {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:40 AM",
-      "sunrise": "7:04 AM",
-      "dhuhr": "11:56 AM",
-      "asr": "2:25 PM",
-      "maghrib": "4:47 PM",
-      "isha": "6:11 PM"
-     },
-     "iqamah": {
-      "fajr": "5:50 AM",
-      "dhuhr": "12:11 PM",
-      "asr": "2:40 PM",
-      "maghrib": "4:57 PM",
-      "isha": "6:21 PM"
-     }
-    },
-    {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
      "adhan": {
@@ -12074,7 +12220,7 @@
      },
      "iqamah": {
       "fajr": "5:51 AM",
-      "dhuhr": "12:11 PM",
+      "dhuhr": "12:30 PM",
       "asr": "2:39 PM",
       "maghrib": "4:56 PM",
       "isha": "6:20 PM"
@@ -12093,7 +12239,7 @@
      },
      "iqamah": {
       "fajr": "5:53 AM",
-      "dhuhr": "12:11 PM",
+      "dhuhr": "12:30 PM",
       "asr": "2:38 PM",
       "maghrib": "4:55 PM",
       "isha": "6:20 PM"
@@ -12112,7 +12258,7 @@
      },
      "iqamah": {
       "fajr": "5:54 AM",
-      "dhuhr": "12:11 PM",
+      "dhuhr": "12:30 PM",
       "asr": "2:38 PM",
       "maghrib": "4:54 PM",
       "isha": "6:19 PM"
@@ -12131,7 +12277,7 @@
      },
      "iqamah": {
       "fajr": "5:55 AM",
-      "dhuhr": "12:12 PM",
+      "dhuhr": "12:30 PM",
       "asr": "2:37 PM",
       "maghrib": "4:53 PM",
       "isha": "6:18 PM"
@@ -12150,7 +12296,7 @@
      },
      "iqamah": {
       "fajr": "5:56 AM",
-      "dhuhr": "12:12 PM",
+      "dhuhr": "12:30 PM",
       "asr": "2:36 PM",
       "maghrib": "4:52 PM",
       "isha": "6:17 PM"
@@ -12169,9 +12315,28 @@
      },
      "iqamah": {
       "fajr": "5:57 AM",
-      "dhuhr": "12:12 PM",
+      "dhuhr": "12:30 PM",
       "asr": "2:35 PM",
       "maghrib": "4:51 PM",
+      "isha": "6:16 PM"
+     }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:48 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:57 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:40 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "5:58 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "2:35 PM",
+      "maghrib": "4:50 PM",
       "isha": "6:16 PM"
      }
     }
@@ -12207,25 +12372,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:57 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {
-      "fajr": "6:01 AM",
-      "dhuhr": "12:07 PM",
-      "asr": "2:36 PM",
-      "maghrib": "4:53 PM",
-      "isha": "6:17 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -12339,6 +12485,25 @@
       "maghrib": "4:47 PM",
       "isha": "6:12 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:58 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {
+      "fajr": "6:09 AM",
+      "dhuhr": "12:08 PM",
+      "asr": "2:30 PM",
+      "maghrib": "4:46 PM",
+      "isha": "6:11 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -12361,18 +12526,6 @@
    "sources": [],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "adhan": {
-      "fajr": "5:41 AM",
-      "sunrise": "7:05 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:26 PM",
-      "maghrib": "4:48 PM",
-      "isha": "6:12 PM"
-     },
-     "iqamah": {}
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "adhan": {
@@ -12444,6 +12597,18 @@
       "isha": "6:07 PM"
      },
      "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "adhan": {
+      "fajr": "5:49 AM",
+      "sunrise": "7:14 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:20 PM",
+      "maghrib": "4:41 PM",
+      "isha": "6:06 PM"
+     },
+     "iqamah": {}
     }
    ],
    "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
@@ -12469,25 +12634,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {
-      "fajr": "6:00 AM",
-      "dhuhr": "1:00 PM",
-      "asr": "3:00 PM",
-      "maghrib": "4:59 PM",
-      "isha": "6:45 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -12601,6 +12747,25 @@
       "maghrib": "4:53 PM",
       "isha": "6:45 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:00 AM",
+      "dhuhr": "1:00 PM",
+      "asr": "3:00 PM",
+      "maghrib": "4:52 PM",
+      "isha": "6:45 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -12640,25 +12805,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:50 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {
-      "fajr": "6:12 AM",
-      "dhuhr": "12:08 PM",
-      "asr": "2:37 PM",
-      "maghrib": "5:00 PM",
-      "isha": "6:18 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -12772,6 +12918,25 @@
       "maghrib": "4:54 PM",
       "isha": "6:13 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:22 PM",
+      "maghrib": "4:43 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:20 AM",
+      "dhuhr": "12:09 PM",
+      "asr": "2:32 PM",
+      "maghrib": "4:53 PM",
+      "isha": "6:12 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -12814,25 +12979,6 @@
     "website: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1011)>"
    ],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:49 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {
-      "fajr": "5:57 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "3:00 PM",
-      "maghrib": "4:59 PM",
-      "isha": "7:00 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -12946,6 +13092,25 @@
       "maghrib": "4:53 PM",
       "isha": "7:00 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:50 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "11:59 AM",
+      "asr": "2:21 PM",
+      "maghrib": "4:42 PM",
+      "isha": "6:07 PM"
+     },
+     "iqamah": {
+      "fajr": "6:05 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "3:00 PM",
+      "maghrib": "4:52 PM",
+      "isha": "7:00 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -12982,25 +13147,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:44 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:59 AM",
-      "asr": "2:27 PM",
-      "maghrib": "4:50 PM",
-      "isha": "6:13 PM"
-     },
-     "iqamah": {
-      "fajr": "6:00 AM",
-      "dhuhr": "12:30 PM",
-      "asr": "3:00 PM",
-      "maghrib": "5:00 PM",
-      "isha": "7:00 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -13114,6 +13260,25 @@
       "maghrib": "4:53 PM",
       "isha": "7:00 PM"
      }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:52 AM",
+      "sunrise": "7:15 AM",
+      "dhuhr": "12:00 PM",
+      "asr": "2:21 PM",
+      "maghrib": "4:43 PM",
+      "isha": "6:08 PM"
+     },
+     "iqamah": {
+      "fajr": "6:30 AM",
+      "dhuhr": "12:30 PM",
+      "asr": "3:00 PM",
+      "maghrib": "4:53 PM",
+      "isha": "7:00 PM"
+     }
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
@@ -13155,25 +13320,6 @@
    ],
    "errors": [],
    "days": [
-    {
-     "date": "Wednesday, Nov 11, 2026",
-     "hijri": "1, 1448 Jumada Al-Thani",
-     "adhan": {
-      "fajr": "5:42 AM",
-      "sunrise": "7:06 AM",
-      "dhuhr": "11:58 AM",
-      "asr": "2:28 PM",
-      "maghrib": "4:50 PM",
-      "isha": "6:14 PM"
-     },
-     "iqamah": {
-      "fajr": "6:02 AM",
-      "dhuhr": "1:15 PM",
-      "asr": "2:43 PM",
-      "maghrib": "4:58 PM",
-      "isha": "7:30 PM"
-     }
-    },
     {
      "date": "Thursday, Nov 12, 2026",
      "hijri": "2, 1448 Jumada Al-Thani",
@@ -13285,6 +13431,25 @@
       "dhuhr": "1:15 PM",
       "asr": "2:38 PM",
       "maghrib": "4:52 PM",
+      "isha": "7:30 PM"
+     }
+    },
+    {
+     "date": "Wednesday, Nov 18, 2026",
+     "hijri": "8, 1448 Jumada Al-Thani",
+     "adhan": {
+      "fajr": "5:51 AM",
+      "sunrise": "7:16 AM",
+      "dhuhr": "12:00 PM",
+      "asr": "2:22 PM",
+      "maghrib": "4:43 PM",
+      "isha": "6:08 PM"
+     },
+     "iqamah": {
+      "fajr": "6:11 AM",
+      "dhuhr": "1:15 PM",
+      "asr": "2:37 PM",
+      "maghrib": "4:51 PM",
       "isha": "7:30 PM"
      }
     }
