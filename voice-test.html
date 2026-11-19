@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<title>MN Masjid Finder · Voice test</title>
+<meta name="robots" content="noindex">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Prayer timings, Jumu'ah times and events for masajid across Minnesota.">
+<style>
+/* Layout: sticky filter bar over a wrapping grid of masjid cards; green = live data, amber = calculated */
+:root{--bg:#f6f5f1;--card:#fff;--ink:#1d2321;--muted:#5f6864;--line:#e3e1da;--accent:#0f6b4f;--accent-soft:#e3f1eb;--warn:#8a5a00;--warn-soft:#fbf0d9;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121514;--card:#1b201e;--ink:#e8ece9;--muted:#9aa49f;--line:#2c3330;--accent:#4fc59a;--accent-soft:#183329;--warn:#e7b65a;--warn-soft:#342a14;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121514;--card:#1b201e;--ink:#e8ece9;--muted:#9aa49f;--line:#2c3330;--accent:#4fc59a;--accent-soft:#183329;--warn:#e7b65a;--warn-soft:#342a14;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 var(--font)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+header{padding-block:28px 8px}
+h1{margin:0;font-size:26px;letter-spacing:-.01em;text-wrap:balance}
+.sub{color:var(--muted);margin-top:4px;font-size:14px}
+.controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.controls .wrap{padding-block:12px;display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.searchrow{display:flex;gap:8px;align-items:end;min-width:0}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.pill{font:inherit;font-size:14px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 12px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;height:38px}
+.pill:hover{border-color:var(--accent)}
+.pill.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:600}
+.mobile-only{display:none}
+.mic{font-size:16px;padding:8px 11px}
+.mic.listening{background:var(--accent);color:var(--card);border-color:var(--accent);animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px var(--accent-soft)}}
+@media (prefers-reduced-motion:reduce){.mic.listening{animation:none}}
+.voicebar{display:none;margin-bottom:10px;padding:10px 12px;border-radius:10px;background:var(--accent-soft);color:var(--ink);font-size:14px}
+.voicebar.show{display:block}
+.voicebar .heard{font-weight:700}
+.voicebar .ans{margin-top:4px;color:var(--muted)}
+.testflag{display:inline-block;margin-left:8px;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--warn);background:var(--warn-soft);border-radius:99px;padding:2px 8px;vertical-align:middle}
+tr.vhit td{background:var(--accent-soft)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.dist{color:var(--accent);font-weight:700}
+.count .note{color:var(--warn)}
+label{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.01em}
+input,select{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-width:0}
+input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+input[type=search]{width:360px}
+input[type=time]{width:120px}
+.chk{flex-direction:row;align-items:center;gap:6px;padding-bottom:9px;font-weight:500;color:var(--ink);font-size:14px}
+button.reset{font:inherit;background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:8px 12px;cursor:pointer}
+main{padding-block:16px}
+.count{color:var(--muted);font-size:13px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card h2{margin:0;font-size:17px;line-height:1.25;text-wrap:balance}
+.meta{color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+.meta a{color:var(--accent)}
+.badge{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px;letter-spacing:.02em}
+.live{background:var(--accent-soft);color:var(--accent)}
+.calc{background:var(--warn-soft);color:var(--warn)}
+.jum{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.jum .t{background:var(--accent-soft);color:var(--accent);font-weight:700;border-radius:8px;padding:4px 10px;font-size:14px;font-variant-numeric:tabular-nums}
+.jum .t small{font-weight:500;opacity:.85}
+.jum .t.hit{background:var(--accent);color:var(--card)}
+td.hit{background:var(--accent);color:var(--card);border-radius:4px}
+.jum .none{color:var(--muted);font-size:13px}
+.sect{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+table{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:4px 6px;border-bottom:1px solid var(--line)}
+th{font-weight:600;color:var(--muted);font-size:12px}
+td:first-child{font-weight:600}
+td:nth-child(3){font-weight:700;color:var(--accent)}
+td.na{color:var(--muted);font-weight:400}
+.iqnote{font-size:12px;color:var(--warn);margin-top:6px}
+.events{margin:0;padding:0;list-style:none;font-size:13.5px}
+.events li{padding:4px 0;border-bottom:1px dashed var(--line)}
+.events time{color:var(--muted);font-variant-numeric:tabular-nums;margin-right:6px}
+.empty{padding:40px;text-align:center;color:var(--muted)}
+.fb{display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.fb-btns{display:flex;gap:8px;flex-wrap:nowrap}
+.fb button,.fb a.btn{font:inherit;font-size:13px;line-height:1.3;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:99px;padding:5px 12px;cursor:pointer;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:4px}
+.fb button:hover,.fb a.btn:hover{border-color:var(--accent)}
+.fb .done{color:var(--accent);font-weight:600}
+.cta{display:inline-block;margin-top:8px;color:var(--accent);font-weight:600}
+details summary{cursor:pointer;font-size:13px;color:var(--accent)}
+footer{padding-block:8px 40px;color:var(--muted);font-size:12.5px}
+footer code{font-size:12px}
+@media (max-width:640px){
+  header{padding-block:16px 6px} h1{font-size:21px} .sub{font-size:12.5px}
+  /* phones: the search bar lives at the bottom of the screen, always in thumb reach */
+  .controls{position:fixed;top:auto;left:0;right:0;bottom:0;z-index:20;border-bottom:0;border-top:1px solid var(--line);
+    box-shadow:0 -6px 20px rgba(0,0,0,.18);padding-bottom:env(safe-area-inset-bottom,0px)}
+  .controls .wrap{flex-direction:column-reverse;align-items:stretch;gap:8px;padding-block:10px}
+  main{padding-bottom:96px} footer{padding-bottom:110px}
+  .controls.kb{padding-bottom:0}  /* keyboard open: no home-bar gap */
+  .searchrow label.grow{flex:1} .searchrow .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  input[type=search]{width:100%;height:38px;font-size:16px}  /* 16px stops iOS zooming in */
+  .mobile-only{display:inline-flex}
+  .pill .long{display:none}
+  .filters{display:none;padding-bottom:4px;max-height:55vh;overflow-y:auto} .filters.open{display:flex}
+  .filters label{flex:1 1 140px} .filters .chk{flex:1 1 auto}
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <h1>Minnesota Masjid Finder <span class="testflag">Voice test</span></h1>
+  <div class="sub" id="sub">Prayer timings, Jumu'ah and events</div>
+</header>
+<div class="controls"><div class="wrap">
+  <div class="searchrow">
+    <label for="q" class="grow"><span class="lbl">Search name, city or time</span><input type="search" id="q" placeholder="Masjid, city or time" autocomplete="off" enterkeyhint="search"></label>
+    <button type="button" class="pill mic" id="micBtn" aria-label="Search by voice" title="Search by voice" hidden>🎤</button>
+    <button type="button" class="pill" id="nearBtn" aria-pressed="false">📍<span>Near me</span></button>
+    <button type="button" class="pill mobile-only" id="filtBtn" aria-expanded="false" aria-controls="filters">Filters</button>
+  </div>
+  <div class="filters" id="filters">
+  <label for="region">Region<select id="region"><option value="">All regions</option></select></label>
+  <label for="sort">Sort<select id="sort">
+    <option value="name">Name (A–Z)</option><option value="region">Region</option><option value="jumuah">Earliest Jumu'ah</option><option value="jumuah-late">Latest Jumu'ah</option><option value="near">Nearest to me</option>
+  </select></label>
+  <label class="chk"><input type="checkbox" id="hasj"> Jumu'ah time known</label>
+  <label class="chk"><input type="checkbox" id="iq"> Iqamah times known</label>
+  <label class="chk" id="speakWrap" hidden><input type="checkbox" id="speak" checked> Read voice answers aloud</label>
+  <button class="reset" id="reset" type="button">Reset</button>
+  </div>
+</div></div>
+<main class="wrap">
+  <div class="voicebar" id="voicebar" aria-live="polite"></div>
+  <div class="count" id="count"></div>
+  <div class="grid" id="grid"></div>
+</main>
+<footer class="wrap">
+  <b>Live</b> times come from each masjid's own Masjidal or Mohid feed. Cards marked <b>Calculated</b> show astronomical adhan times (ISNA, 15°/15°), not iqamah, so check with the masjid before you go.
+  Mosque list © OpenStreetMap contributors and Masjidal.<br><a class="cta" id="addMasjid" target="_blank" rel="noopener">Missing a masjid, or something wrong? Tell us →</a>
+</footer>
+<!--DATA-->
+<script src="data/masajid.js"></script>
+<!--/DATA-->
+<script>
+const D = window.MASAJID || {mosques: []};
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const PRAYERS = [["fajr","Fajr"],["sunrise","Sunrise"],["dhuhr","Dhuhr"],["asr","Asr"],["maghrib","Maghrib"],["isha","Isha"]];
+// "1:00PM" / "01:00 pm" -> "1:00 PM"
+const nt = s => { const m = /^(\d{1,2}):(\d{2})\s*([AP]M)?$/i.exec(String(s || "").trim()); if (!m) return null;
+  let h = +m[1]; const ap = (m[3] || (h < 12 ? "AM" : "PM")).toUpperCase(); if (!m[3] && h > 12) h -= 12; return `${h % 12 || 12}:${m[2]} ${ap}`; };
+const mins = s => { s = nt(s); if (!s) return null; const [hm, ap] = s.split(" "); let [h, m] = hm.split(":").map(Number); h = h % 12 + (ap === "PM" ? 12 : 0); return h * 60 + m; };
+const chicagoISO = d => d.toLocaleDateString("en-CA", {timeZone: "America/Chicago"});
+const todayISO = chicagoISO(new Date());
+const dayISO = s => { const t = new Date(String(s).replace(/^[A-Za-z]+,\s*/, "")); return isNaN(t) ? null : chicagoISO(new Date(t.getTime() + 12 * 3600e3)); };
+let liveCount = 0;
+
+const regions = [...new Set(D.mosques.map(m => m.region))].sort();
+$("region").innerHTML += regions.map(r => `<option>${esc(r)}</option>`).join("");
+function subtitle() {
+  const gen = D.generated_at ? new Date(D.generated_at) : null;
+  $("sub").textContent = `${D.mosques.length} masajid across Minnesota` +
+    (gen ? ` · directory updated ${gen.toLocaleDateString([], {dateStyle: "medium"})}` : "") +
+    (liveCount ? ` · ${liveCount} timetables refreshed live just now` : "");
+}
+subtitle();
+
+const fmtMin = n => `${(Math.floor(n / 60) % 12) || 12}:${String(n % 60).padStart(2, "0")} ${n >= 720 ? "PM" : "AM"}`;
+
+// Pull a time like "1:30", "1:30pm", "12 pm", "13:15" out of the search text.
+// Without am/pm, 1–9 o'clock is read as afternoon (Jumu'ah hours).
+function parseTimeQuery(q) {
+  const re = /\b(\d{1,2}):(\d{2})\s*(a\.?m\.?|p\.?m\.?)?|\b(\d{1,2})\s*(a\.?m\.?|p\.?m\.?)/i;
+  const m = re.exec(q);
+  if (!m) return {text: q, time: null};
+  let h = +(m[1] ?? m[4]), mi = +(m[2] ?? 0);
+  const ap = (m[3] || m[5] || "").toLowerCase().replace(/\./g, "");
+  if (h > 23 || mi > 59) return {text: q, time: null};
+  if (ap === "pm" && h < 12) h += 12;
+  else if (ap === "am" && h === 12) h = 0;
+  else if (!ap && h >= 1 && h <= 9) h += 12;
+  return {text: (q.slice(0, m.index) + " " + q.slice(m.index + m[0].length)).trim(), time: h * 60 + mi};
+}
+// ---- Search that forgives spelling: hyphens/apostrophes/spaces ignored, word-start matches,
+// vowel-insensitive "sounds like" matching (Abubakar ~ Abu Bakr), and * / ? wildcards.
+const fold = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/['’`ʿʾ]/g, "");
+const wordsOf = s => fold(s).split(/[^a-z0-9]+/).filter(Boolean);
+const skel = w => w ? (w[0] + w.slice(1).replace(/[aeiouyhw]/g, "")).replace(/(.)\1+/g, "$1") : "";
+D.mosques.forEach(m => {
+  const nameWords = wordsOf(`${m.name} ${m.aka || ""}`);
+  m._words = [...nameWords, ...wordsOf(`${m.city} ${m.address || ""} ${m.region}`)];
+  m._compact = nameWords.join("");
+  m._skel = skel(m._compact);
+  m._skelWords = m._words.map(skel);
+  m._text = fold(`${m.name} | ${m.aka || ""} | ${m.city} | ${m.address || ""} | ${m.region}`);
+});
+// 0 = no match, 3 = exact, 2 = word starts, 1 = similar spelling
+function matchScore(m, q) {
+  if (/[*?]/.test(q)) {
+    const re = new RegExp(fold(q).split(/([*?])/).map(p => p === "*" ? ".*" : p === "?" ? "." : p.replace(/[.+^${}()|[\]\\]/g, "\\$&")).join(""));
+    return re.test(m._text) ? 3 : 0;
+  }
+  const qw = wordsOf(q); if (!qw.length) return 3;
+  const qc = qw.join("");
+  if (m._compact.includes(qc)) return 3;
+  if (qw.every(w => m._words.some(h => h.startsWith(w)))) return 2;
+  if (qw.every(w => w.length >= 3 && skel(w).length >= 2 && m._skelWords.some(h => h.startsWith(skel(w))))) return 1;
+  if (qc.length >= 5 && skel(qc).length >= 4 && m._skel.includes(skel(qc))) return 1;
+  return 0;
+}
+
+// ---- Near me
+let here = null;
+const miles = (a, b, c, d) => { const r = Math.PI / 180, x = Math.sin((c - a) * r / 2) ** 2 + Math.cos(a * r) * Math.cos(c * r) * Math.sin((d - b) * r / 2) ** 2; return 7917.5 * Math.asin(Math.sqrt(x)); };
+const distOf = m => here && m.lat != null ? miles(here.lat, here.lon, m.lat, m.lon) : null;
+let locNote = "";
+function locate(after) {
+  const btn = $("nearBtn");
+  if (here) { here = null; btn.classList.remove("on"); btn.setAttribute("aria-pressed", "false"); if ($("sort").value === "near") $("sort").value = "name"; render(); return; }
+  if (!navigator.geolocation) { locNote = "This browser can't share your location. Search by city instead."; render(); return; }
+  btn.disabled = true; btn.querySelector("span").textContent = "Finding…";
+  navigator.geolocation.getCurrentPosition(p => {
+    here = {lat: p.coords.latitude, lon: p.coords.longitude}; locNote = "";
+    btn.disabled = false; btn.querySelector("span").textContent = "Near me"; btn.classList.add("on"); btn.setAttribute("aria-pressed", "true");
+    $("sort").value = "near"; render(); window.scrollTo({top: 0, behavior: "smooth"});
+    if (after) after(true);
+  }, err => {
+    btn.disabled = false; btn.querySelector("span").textContent = "Near me";
+    locNote = err.code === 1 ? "Location is blocked. Allow it for this site in your browser settings, or search by city."
+                             : "Couldn't get your location right now. Try again, or search by city.";
+    render(); if (after) after(false);
+  }, {enableHighAccuracy: false, timeout: 12000, maximumAge: 300000});
+}
+
+const todayOf = m => { const d = m.days || []; const i = d.findIndex(x => dayISO(x.date) === todayISO); return d[i < 0 ? 0 : i]; };
+let hit = () => false;    // which Jumu'ah chips to highlight
+let hitIq = () => false;  // which iqamah cells to highlight
+let voicePrayer = null;    // prayer row to highlight after a spoken question
+let voiceCity = null;      // city named in a spoken question (applied as its own filter)
+let voiceJumuahOnly = false; // a spoken Jumu'ah question: match the time against Jumu'ah only, not iqamah
+
+const KEYS = ["q","region","sort","hasj","iq"];
+try { const s = JSON.parse(localStorage.getItem("mnmf4") || "{}"); KEYS.forEach(k => { if (k in s) $(k)[$(k).type === "checkbox" ? "checked" : "value"] = s[k]; }); } catch {}
+const save = () => { try { localStorage.setItem("mnmf4", JSON.stringify(Object.fromEntries(KEYS.map(k => [k, $(k).type === "checkbox" ? $(k).checked : $(k).value])))); } catch {} };
+
+function jumuahHtml(m) {
+  if (!m.jumuah.length) return `<span class="none">Jumu'ah time not published online. Call or check the website.</span>`;
+  return m.jumuah.map(j => {
+    const parts = [];
+    if (j.khutbah && j.khutbah !== j.start) parts.push(`khutbah ${esc(j.khutbah)}`);
+    if (j.iqamah) parts.push(`iqamah ${esc(j.iqamah)}`);
+    return `<span class="t${hit(j) ? " hit" : ""}">${esc(j.start)}${parts.length ? ` <small>(${parts.join(", ")})</small>` : ""}</span>`;
+  }).join("") + `<span class="none" style="font-size:11px">${esc(m.jumuah_source || "")}</span>`;
+}
+
+const hasIqamah = m => (m.days || []).some(d => Object.values(d.iqamah || {}).some(Boolean));
+
+function dayTable(day) {
+  const iq = day.iqamah || {}, hasIq = Object.values(iq).some(Boolean);
+  return `<table><tr><th scope="col">Prayer</th><th scope="col">Adhan</th><th scope="col">Iqamah</th></tr>` +
+    PRAYERS.map(([k, n]) => `<tr${voicePrayer === k ? ' class="vhit"' : ""}><td>${n}</td><td>${esc(day.adhan?.[k] || "—")}</td><td class="${hasIq ? (hitIq(iq[k]) ? "hit" : "") : "na"}">${k === "sunrise" ? "" : esc(iq[k] || "—")}</td></tr>`).join("") +
+    "</table>" + (hasIq ? "" : `<div class="iqnote">Iqamah times aren't published online. Call or check the masjid's website.</div>`);
+}
+
+// Feedback goes to a Google Form; responses land in the maintainer's Google Sheet.
+const FORM = {
+  base: "https://docs.google.com/forms/d/e/1FAIpQLSdbPTC-fwICRAG58oj-kykXhfoj7PhM63SGVO7YJe1hNUbemw/",
+  masjid: "entry.143079288", correct: "entry.47161889", what: "entry.370983494",
+};
+const label = m => `${m.name} (${m.city || "MN"})`;
+const formLink = fields => FORM.base + "viewform?usp=pp_url&" + new URLSearchParams(fields).toString();
+const voteKey = m => `mnmf-vote:${m.id}:${todayISO}`;
+const voted = m => { try { return localStorage.getItem(voteKey(m)); } catch { return null; } };
+
+function feedbackHtml(m) {
+  const no = formLink({[FORM.masjid]: label(m), [FORM.correct]: "No"});
+  if (voted(m)) return `<div class="fb"><span class="done">Thanks, you confirmed these times today.</span>
+    <a href="${esc(no)}" target="_blank" rel="noopener">Something wrong?</a></div>`;
+  return `<div class="fb" data-id="${esc(m.id)}"><span>Are these times correct?</span>
+    <div class="fb-btns"><button type="button" data-vote="yes" aria-label="Yes, the times are correct">👍 Yes</button>
+    <a class="btn" href="${esc(no)}" target="_blank" rel="noopener" aria-label="No, report a correction">👎 No, report a fix</a></div></div>`;
+}
+
+async function confirmTimes(m, box) {
+  const fields = {[FORM.masjid]: label(m), [FORM.correct]: "Yes",
+                  [FORM.what]: `Confirmed on ${todayISO} (${m.timing_source || "unknown source"})`};
+  try {
+    await fetch(FORM.base + "formResponse", {method: "POST", mode: "no-cors", body: new URLSearchParams(fields)});
+    try { localStorage.setItem(voteKey(m), "yes"); } catch {}
+    box.innerHTML = `<span class="done">Thanks! Your confirmation was recorded.</span>`;
+  } catch {
+    // some hosts block background requests; fall back to the pre-filled form
+    window.open(formLink(fields), "_blank", "noopener");
+    box.innerHTML = `<span class="done">Thanks! Press Submit on the form that opened.</span>`;
+  }
+}
+
+$("grid").addEventListener("click", e => {
+  const b = e.target.closest("button[data-vote]"); if (!b) return;
+  const box = b.closest(".fb"), m = D.mosques.find(x => x.id === box.dataset.id);
+  if (m) { b.disabled = true; confirmTimes(m, box); }
+});
+$("addMasjid").href = formLink({[FORM.masjid]: "New masjid / general feedback: "});
+
+function card(m) {
+  const days = m.days || [];
+  let i = days.findIndex(d => dayISO(d.date) === todayISO); if (i < 0) i = 0;
+  const day = days[i], rest = days.slice(i + 1);
+  const calc = (m.timing_source || "").startsWith("Calc");
+  const addr = m.address || `${m.city}, MN`;
+  const map = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(m.name + " " + addr)}`;
+  const links = [
+    `<a href="${map}" target="_blank" rel="noopener">Map</a>`,
+    m.website && `<a href="${esc(m.website)}" target="_blank" rel="noopener">Website</a>`,
+    m.mohid_url && `<a href="${esc(m.mohid_url)}" target="_blank" rel="noopener">Mohid page</a>`,
+    m.phone && `<span>${esc(m.phone)}</span>`,
+  ].filter(Boolean).join(" · ");
+  const ev = m.events.length
+    ? `<ul class="events">${m.events.slice(0, 5).map(e => `<li><time>${esc((e.start || "").slice(0, 16).replace("T", " "))}</time>${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.title)}</a>` : esc(e.title)}</li>`).join("")}</ul>`
+    : `<span class="meta">No upcoming events published online.</span>`;
+  const week = rest.map(d => `<div class="sect" style="margin-top:8px">${esc(d.date)}</div>${dayTable(d)}`).join("");
+  return `<article class="card">
+    <div>
+      <h2>${esc(m.name)}</h2>${m.aka ? `<div class="meta">also listed as ${esc(m.aka)}</div>` : ""}
+      <div class="meta">${distOf(m) != null ? `<span class="dist">${distOf(m) < 10 ? distOf(m).toFixed(1) : Math.round(distOf(m))} mi away</span> · ` : ""}${esc(addr)} · <b>${esc(m.region)}</b></div>
+      <div class="meta">${links}</div>
+    </div>
+    <div><div class="sect">Jumu'ah (Friday)</div><div class="jum">${jumuahHtml(m)}</div></div>
+    ${day ? `<div><div class="sect">${esc(day.date)}${day.hijri ? " · " + esc(day.hijri) : ""} &nbsp;
+      <span class="badge ${calc ? "calc" : "live"}">${calc ? "Calculated" : "Live"}</span></div>
+      ${dayTable(day)}${week ? `<details><summary>Next ${rest.length} days</summary>${week}</details>` : ""}</div>` : ""}
+    <div><div class="sect">Upcoming events</div>${ev}</div>
+    ${feedbackHtml(m)}
+  </article>`;
+}
+
+function render() {
+  save();
+  const {text: q, time: qt} = parseTimeQuery($("q").value.trim().toLowerCase());
+  const region = $("region").value;
+  // a typed time matches Jumu'ah within 15 minutes, or any of today's iqamah times exactly
+  const nearTyped = j => qt != null && j.start_min != null && Math.abs(j.start_min - qt) <= 15;
+  hit = nearTyped;
+  hitIq = v => qt != null && mins(v) === qt;
+  const phrase = q.replace(/\s+/g, " ").replace(/^[\s,]+|[\s,]+$/g, "");
+  if ($("sort").value === "near" && !here) $("sort").value = "name";
+  const score = new Map();
+  const list = D.mosques.filter(m => {
+    if (region && m.region !== region) return false;
+    if (voiceCity && m.city !== voiceCity) return false;
+    if (phrase) { const sc = matchScore(m, phrase); if (!sc) return false; score.set(m, sc); }
+    if ($("iq").checked && !hasIqamah(m)) return false;
+    if ($("hasj").checked && !m.jumuah.some(j => j.start_min != null)) return false;
+    if (qt != null && !m.jumuah.some(nearTyped) && (voiceJumuahOnly || !Object.entries(todayOf(m)?.iqamah || {}).some(([k, v]) => (!voicePrayer || k === voicePrayer) && mins(v) === qt))) return false;
+    return true;
+  });
+  // masajid without a published Jumu'ah time go last in both Jumu'ah sorts
+  const firstJ = m => Math.min(...m.jumuah.map(j => j.start_min ?? 9999), 9999);
+  const lastJ = m => Math.max(...m.jumuah.map(j => j.start_min ?? -1), -1);
+  const s = $("sort").value;
+  const gap = m => Math.min(...m.jumuah.map(j => j.start_min == null ? 999 : Math.abs(j.start_min - qt)),
+                            ...(voiceJumuahOnly ? [] : Object.values(todayOf(m)?.iqamah || {}).map(v => mins(v) === qt ? 0 : 999)), 999);
+  const byDist = (a, b) => (distOf(a) ?? 1e9) - (distOf(b) ?? 1e9);
+  list.sort(s === "near" ? byDist
+    // while searching by name, closest spellings first
+    : s === "name" && qt != null ? (a, b) => gap(a) - gap(b) || a.name.localeCompare(b.name)
+    : s === "name" && phrase ? (a, b) => (score.get(b) || 0) - (score.get(a) || 0) || a.name.localeCompare(b.name)
+    : s === "name" ? (a, b) => a.name.localeCompare(b.name)
+    : s === "jumuah" ? (a, b) => firstJ(a) - firstJ(b) || a.name.localeCompare(b.name)
+    : s === "jumuah-late" ? (a, b) => lastJ(b) - lastJ(a) || a.name.localeCompare(b.name)
+    : (a, b) => a.region.localeCompare(b.region) || hasIqamah(b) - hasIqamah(a) || a.name.localeCompare(b.name));
+  const why = [];
+  if (qt != null) why.push(voiceJumuahOnly ? `Jumu'ah around ${fmtMin(qt)}` : voicePrayer ? `${voicePrayer[0].toUpperCase() + voicePrayer.slice(1)} iqamah at ${fmtMin(qt)}` : `Jumu'ah or iqamah around ${fmtMin(qt)}`);
+  if (voiceCity) why.push(`in ${voiceCity}`);
+  if (s === "near") why.push("nearest first");
+  const similar = [...score.values()].some(v => v === 1);
+  $("count").innerHTML = esc(`${list.length} of ${D.mosques.length} masajid` + (why.length ? ` · ${why.join(" · ")}` : "") + (similar ? " · including similar spellings" : "")) +
+    (locNote ? ` <span class="note">${esc(locNote)}</span>` : "");
+  const nf = [$("region").value, $("hasj").checked, $("iq").checked].filter(Boolean).length + ($("sort").value !== "name" && $("sort").value !== "near" ? 1 : 0);
+  $("filtBtn").textContent = nf ? `Filters (${nf})` : "Filters";
+  window.lastList = list;
+  $("grid").innerHTML = list.length ? list.map(card).join("") : `<div class="empty">No masajid match these filters. Try widening the Jumu'ah window or clearing the search.</div>`;
+}
+
+// Refresh Masjidal-backed timetables straight from the source. Where the browser
+// blocks the call (some hosts do), the snapshot above stays in place.
+async function refreshLive() {
+  const from = todayISO, to = chicagoISO(new Date(Date.now() + 6 * 864e5));
+  const targets = D.mosques.filter(m => m.masjidal_id);
+  await Promise.all(targets.map(async m => {
+    try {
+      const r = await fetch(`https://masjidal.com/api/v1/time/range?masjid_id=${encodeURIComponent(m.masjidal_id)}&from_date=${from}&to_date=${to}`);
+      const j = await r.json();
+      if (j.status !== "success" || !j.data?.salah?.length) return;
+      m.days = j.data.salah.map((s, i) => { const q = j.data.iqamah[i] || {}; return {
+        date: s.date, hijri: `${s.hijri_date || ""} ${s.hijri_month || ""}`.trim(),
+        adhan: {fajr: nt(s.fajr), sunrise: nt(s.sunrise), dhuhr: nt(s.zuhr), asr: nt(s.asr), maghrib: nt(s.maghrib), isha: nt(s.isha)},
+        iqamah: {fajr: nt(q.fajr), dhuhr: nt(q.zuhr), asr: nt(q.asr), maghrib: nt(q.maghrib), isha: nt(q.isha)} }; });
+      m.timing_source = "Masjidal (live)";
+      const q0 = j.data.iqamah[0] || {};
+      const jm = Object.keys(q0).filter(k => k.startsWith("jummah")).sort().map(k => nt(q0[k])).filter((v, i, all) => v && all.indexOf(v) === i);
+      if (jm.length) { m.jumuah = jm.map(s => ({start: s, start_min: mins(s)})); m.jumuah_source = "Masjidal (live)"; }
+      m.live = true; liveCount++;
+    } catch {}
+  }));
+  if (liveCount) { subtitle(); render(); }
+}
+
+KEYS.forEach(k => $(k).addEventListener("input", render));
+$("nearBtn").onclick = locate;
+const fitHint = () => { const w = $("q").clientWidth; $("q").placeholder = w < 200 ? "Search…" : w < 380 ? "Masjid, city or time" : "Masjid, city or time, e.g. Abubakar or 1:30 pm"; };
+fitHint(); addEventListener("resize", fitHint);
+$("sort").addEventListener("input", () => { if ($("sort").value === "near" && !here) locate(); });
+$("filtBtn").onclick = () => { const o = $("filters").classList.toggle("open"); $("filtBtn").setAttribute("aria-expanded", o); };
+$("q").addEventListener("keydown", e => { if (e.key === "Enter") e.target.blur(); });  // close the phone keyboard
+// On phones, bring the top of the results into view as soon as someone searches,
+// wherever they were scrolled to.
+const isPhone = () => matchMedia("(max-width:640px)").matches;
+
+// iPhone Safari slides the keyboard over bars docked to the bottom of the screen instead of
+// moving them. Measure the part of the screen still visible and lift the bar to sit on the keyboard.
+const bar = document.querySelector(".controls");
+let dockFrame = 0;
+function dock(vv = window.visualViewport) {
+  if (!vv || !isPhone()) { bar.style.transform = ""; bar.classList.remove("kb"); return; }
+  const covered = Math.max(0, Math.round(innerHeight - vv.height - vv.offsetTop));
+  bar.style.transform = covered > 1 ? `translateY(${-covered}px)` : "";
+  bar.classList.toggle("kb", covered > 80);
+}
+const dockSoon = () => { cancelAnimationFrame(dockFrame); dockFrame = requestAnimationFrame(() => dock()); };
+if (window.visualViewport) { visualViewport.addEventListener("resize", dockSoon); visualViewport.addEventListener("scroll", dockSoon); }
+addEventListener("resize", dockSoon);
+["focus", "blur"].forEach(ev => $("q").addEventListener(ev, () => { dockSoon(); setTimeout(dockSoon, 350); }));
+const toResults = () => { if (!isPhone()) return; const y = $("count").getBoundingClientRect().top + scrollY - 8; if (Math.abs(scrollY - y) > 40) scrollTo({top: y}); };
+["q", "region", "sort", "hasj", "iq"].forEach(k => $(k).addEventListener("input", toResults));
+$("q").addEventListener("input", e => { if (e.isTrusted && (voiceCity || voiceJumuahOnly || voicePrayer)) { voiceCity = null; voiceJumuahOnly = false; voicePrayer = null; render(); } });  // typing replaces a spoken city
+$("reset").onclick = () => { voiceCity = null; voiceJumuahOnly = false; voicePrayer = null; $("voicebar").classList.remove("show"); KEYS.forEach(k => $(k).type === "checkbox" ? $(k).checked = false : $(k).value = (k === "sort" ? "name" : "")); if (here) locate(); else render(); };
+render();
+refreshLive();
+
+// =====================================================================================
+// Voice search (test). Speech is turned into text by the browser (Apple / Google, as with
+// keyboard dictation); everything after that happens on this page. No audio is stored.
+// =====================================================================================
+const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
+const canSpeak = "speechSynthesis" in window;
+const PRAYER_WORDS = [
+  ["fajr", /\b(fajr|fajar|fajir|fudger|fudge|dawn|morning prayer|subh|subuh)\b/],
+  ["dhuhr", /\b(dhuhr|zuhr|duhr|zohar|zuhar|dhuhur|dhur|luhr|noon prayer)\b/],
+  ["asr", /\b(asr|asar|aser|azure|afternoon prayer)\b/],
+  ["maghrib", /\b(maghrib|magrib|mag rib|maghreb|sunset prayer)\b/],
+  ["isha", /\b(isha|esha|eesha|ishaa|night prayer)\b/],
+];
+const JUMUAH = /\b(jum[ua]?'?ah?|jummah|jumma|juma|jumah|jumu ah|friday( prayer)?)\b/;
+const NEAR = /\b(near me|nearby|near by|nearest|closest|close to me|around me|around here|near here|my location)\b/;
+const NUM = {one:1,two:2,three:3,four:4,five:5,six:6,seven:7,eight:8,nine:9,ten:10,eleven:11,twelve:12};
+const MINW = {"o'clock":0,oclock:0,fifteen:15,thirty:30,forty:40,"forty five":45,"forty-five":45,fortyfive:45,ten:10,twenty:20,"twenty five":25,fifty:50,five:5};
+
+// "one thirty pm" -> "1:30 pm", "half past one" -> "1:30", "noon" -> "12:00 pm"
+function spokenTimes(t) {
+  t = t.replace(/\bnoon\b/g, "12:00 pm").replace(/\b(\d{1,2})\s*(?:\.|:)?\s*(\d{2})\s*(a\.?\s?m\.?|p\.?\s?m\.?)/g, "$1:$2 $3");
+  t = t.replace(/\b(half|quarter) past (\w+)/g, (m, q, h) => { const n = NUM[h] ?? +h; return n ? `${n}:${q === "half" ? "30" : "15"}` : m; });
+  t = t.replace(/\bquarter (?:to|till) (\w+)/g, (m, h) => { const n = NUM[h] ?? +h; return n ? `${n === 1 ? 12 : n - 1}:45` : m; });
+  const hours = Object.keys(NUM).join("|"), mins = Object.keys(MINW).sort((a, b) => b.length - a.length).join("|").replace(/'/g, "'?");
+  t = t.replace(new RegExp(`\\b(${hours}|\\d{1,2})\\s+(${mins})\\b`, "g"), (m, h, mm) => {
+    const n = NUM[h] ?? +h, k = mm.replace(/-/g, " "); const v = MINW[k] ?? MINW[mm]; return n && v != null ? `${n}:${String(v).padStart(2, "0")}` : m; });
+  t = t.replace(new RegExp(`\\b(${hours})\\s*(am|pm|a m|p m)\\b`, "g"), (m, h, ap) => `${NUM[h]} ${ap.replace(" ", "")}`);
+  t = t.replace(/\b(\d{1,2})\s*(am|pm|a m|p m)\b/g, (m, h, ap) => `${h} ${ap.replace(" ", "")}`);
+  return t;
+}
+
+const FILLER = new Set(("a an the is are was what whats what's when where which who how find show me list give tell " +
+  "please can could you i want to for of at in on near nearby nearest closest close around here my location " +
+  "masjid masjids masajid mosque mosques islamic center centre prayer prayers time times timing timings iqamah iqama " +
+  "iqama's iqamah's adhan azan athan today tonight tomorrow this there any all some do does have has open is it " +
+  "start starts starting begin begins after before around about by").split(" "));
+
+const placeIndex = (() => {
+  const cities = new Set(), regions = new Set(D.mosques.map(m => m.region));
+  D.mosques.forEach(m => m.city && cities.add(m.city));
+  const norm = s => fold(s).replace(/\bsaint\b/g, "st").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+  return {norm, cities: [...cities].map(c => [norm(c), c]).sort((a, b) => b[0].length - a[0].length),
+          regions: [...regions].map(r => [norm(r.replace(/ & East Metro| Metro/g, "")), r])};
+})();
+
+function interpret(raw) {
+  let t = " " + fold(raw).replace(/[?!.,]/g, " ").replace(/\s+/g, " ") + " ";
+  t = spokenTimes(t);
+  const intent = {raw, near: NEAR.test(t), jumuah: JUMUAH.test(t), prayer: null, place: null, region: null, time: null, words: ""};
+  for (const [k, re] of PRAYER_WORDS) if (re.test(t)) { intent.prayer = k; break; }
+  const pt = parseTimeQuery(t); intent.time = pt.time; t = " " + pt.text + " ";
+  const tn = placeIndex.norm(t);
+  for (const [n, c] of placeIndex.cities) if (n && new RegExp(`\\b${n}\\b`).test(tn)) { intent.place = c; t = " " + tn.replace(new RegExp(`\\b${n}\\b`), " ") + " "; break; }
+  if (!intent.place) for (const [n, r] of placeIndex.regions) if (n && new RegExp(`\\b${n}\\b`).test(tn) && !/^st paul$/.test(n)) { intent.region = r; break; }
+  t = t.replace(NEAR, " ").replace(JUMUAH, " ");
+  for (const [, re] of PRAYER_WORDS) t = t.replace(re, " ");
+  intent.words = t.split(/[^a-z0-9'*?-]+/).filter(w => w && !FILLER.has(w) && !/^(am|pm)$/.test(w)).join(" ");
+  if (intent.region) intent.words = "";
+  return intent;
+}
+
+const fmtList = a => a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1];
+const shortT = s => (s || "").replace(":00", "").replace(" PM", " p.m.").replace(" AM", " a.m.");
+const PRAYER_NAME = {fajr: "Fajr", dhuhr: "Dhuhr", asr: "Asr", maghrib: "Maghrib", isha: "Isha"};
+
+function answerFor(intent) {
+  const list = window.lastList || [];
+  if (!list.length) return `I couldn't find a masjid for "${intent.raw}". Try saying a masjid name or a city.`;
+  const where = m => { const d = distOf(m); return d != null ? `, ${d < 10 ? d.toFixed(1) : Math.round(d)} miles away` : voiceCity ? "" : ` in ${m.city}`; };
+  if (intent.prayer) {
+    const m = list[0], day = todayOf(m) || {}, a = day.adhan?.[intent.prayer], q = day.iqamah?.[intent.prayer];
+    return `${PRAYER_NAME[intent.prayer]} at ${m.name}${where(m)}: adhan ${shortT(a) || "not listed"}` +
+           (q ? `, iqamah ${shortT(q)}.` : `. Iqamah isn't published online.`) + (list.length > 1 ? ` ${list.length - 1} more shown on screen.` : "");
+  }
+  const top = list.slice(0, 3).map(m => `${m.name}${where(m)}` +
+      (m.jumuah.length ? `, Jumu'ah at ${fmtList(m.jumuah.map(j => shortT(j.start)))}` : (intent.jumuah ? ", Jumu'ah time not published" : "")));
+  const lead = intent.near ? "Nearest" : list.length === 1 ? "Found" : `Found ${list.length}. Top`;
+  return `${lead}: ${top.join(". ")}.`;
+}
+
+function speak(text) {
+  if (!canSpeak || !$("speak").checked) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text.replace(/\.\./g, ".")); u.lang = "en-US"; u.rate = 1;
+  speechSynthesis.speak(u);
+}
+
+function showVoice(heard, answer) {
+  answer = (answer || "").replace(/\.\./g, ".");
+  const vb = $("voicebar");
+  vb.innerHTML = `<div>You said: <span class="heard">"${esc(heard)}"</span></div>` + (answer ? `<div class="ans">${esc(answer)}</div>` : "");
+  vb.classList.add("show");
+}
+
+// Apply what was asked to the page's existing search, filters and Near me; then answer.
+function handleVoice(raw) {
+  const it = interpret(raw);
+  // start from a clean slate so earlier filters don't hide the answer
+  $("region").value = it.region || ""; $("hasj").checked = false; $("iq").checked = false;
+  const timeTxt = it.time != null ? fmtMin(it.time).toLowerCase() : "";
+  voiceCity = it.place; voiceJumuahOnly = it.jumuah && it.time != null;
+  $("q").value = [it.words, timeTxt].filter(Boolean).join(" ").trim();
+  if (it.jumuah && it.time == null) $("hasj").checked = true;
+  // each spoken question starts with a fresh sort: by distance, by Jumu'ah time, or best match / closest time
+  $("sort").value = it.near ? "near" : (it.jumuah && it.time == null && !it.words && !it.place ? "jumuah" : "name");
+  voicePrayer = it.prayer;
+  const finish = () => {
+    render(); const ans = answerFor(it); showVoice(raw, ans); speak(ans);
+    if (isPhone()) { const y = $("voicebar").getBoundingClientRect().top + scrollY - 8; scrollTo({top: y}); }
+  };
+  if (it.near) { if (here) { $("sort").value = "near"; finish(); } else locate(ok => { if (!ok) showVoice(raw, "I need your location for that. Allow location, or say a city."); else finish(); }); }
+  else finish();
+  return it;
+}
+
+// ---- microphone
+let rec = null, listening = false;
+function startListening() {
+  if (listening) { rec && rec.stop(); return; }
+  if (canSpeak) { try { speechSynthesis.cancel(); speechSynthesis.speak(new SpeechSynthesisUtterance("")); } catch {} } // unlocks speech on iPhone
+  rec = new Rec(); rec.lang = "en-US"; rec.interimResults = true; rec.maxAlternatives = 1; rec.continuous = false;
+  const btn = $("micBtn"); let finalText = "";
+  rec.onstart = () => { listening = true; btn.classList.add("listening"); btn.setAttribute("aria-label", "Stop listening"); showVoice("…listening", "Say a masjid, a city, or a question like “Jummah near me”."); };
+  rec.onresult = e => {
+    let interim = ""; for (const r of e.results) (r.isFinal ? (finalText = r[0].transcript) : (interim += r[0].transcript));
+    if (!finalText && interim) showVoice(interim + "…", "");
+  };
+  rec.onerror = e => {
+    const msg = e.error === "not-allowed" || e.error === "service-not-allowed" ? "Microphone is blocked. Allow it for this site in your browser settings (iPhone: Settings › Safari › Microphone)."
+              : e.error === "no-speech" ? "I didn't hear anything. Tap 🎤 and try again." : e.error === "aborted" ? "" : "Voice search didn't work this time. Tap 🎤 to try again, or type instead.";
+    if (msg) showVoice("—", msg);
+  };
+  rec.onend = () => { listening = false; btn.classList.remove("listening"); btn.setAttribute("aria-label", "Search by voice"); if (finalText.trim()) handleVoice(finalText.trim()); };
+  try { rec.start(); } catch { showVoice("—", "Voice search couldn't start. Try again."); }
+}
+if (Rec) { $("micBtn").hidden = false; $("micBtn").onclick = startListening; if (canSpeak) $("speakWrap").hidden = false; }
+</script>
+</body>
+</html>

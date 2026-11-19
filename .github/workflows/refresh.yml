@@ -43,7 +43,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir -p _site/data
-          cp index.html _site/
+          cp *.html _site/
           cp data/masajid.js data/masajid.json _site/data/
 
       - uses: actions/configure-pages@v5
