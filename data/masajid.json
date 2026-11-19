@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-18T12:55-06:00",
- "osm": "live",
+ "generated_at": "2026-11-18T22:06-06:00",
+ "osm": "cached",
  "count": 85,
  "mosques": [
   {
@@ -959,9 +959,7 @@
    "sources": [
     "masjidal"
    ],
-   "errors": [
-    "website: <urlopen error timed out>"
-   ],
+   "errors": [],
    "days": [
     {
      "date": "Wednesday, Nov 18, 2026",
@@ -1283,11 +1281,10 @@
    "id": "dar-al-qalam-islamic-center-minneapolis",
    "events": [],
    "sources": [
-    "masjidal"
+    "masjidal",
+    "wp-events"
    ],
-   "errors": [
-    "events: <urlopen error timed out>"
-   ],
+   "errors": [],
    "days": [
     {
      "date": "Wednesday, Nov 18, 2026",
@@ -7520,11 +7517,11 @@
       "isha": "5:38 PM"
      },
      "iqamah": {
-      "fajr": "6:20 AM",
+      "fajr": "6:25 AM",
       "dhuhr": "12:30 PM",
       "asr": "2:50 PM",
       "maghrib": "4:59 PM",
-      "isha": "6:50 PM"
+      "isha": "6:45 PM"
      }
     },
     {
@@ -7539,11 +7536,11 @@
       "isha": "5:37 PM"
      },
      "iqamah": {
-      "fajr": "6:20 AM",
+      "fajr": "6:25 AM",
       "dhuhr": "12:30 PM",
       "asr": "2:50 PM",
       "maghrib": "4:58 PM",
-      "isha": "6:50 PM"
+      "isha": "6:45 PM"
      }
     },
     {
@@ -7558,11 +7555,11 @@
       "isha": "5:37 PM"
      },
      "iqamah": {
-      "fajr": "6:20 AM",
+      "fajr": "6:25 AM",
       "dhuhr": "12:30 PM",
       "asr": "2:50 PM",
       "maghrib": "4:58 PM",
-      "isha": "6:50 PM"
+      "isha": "6:45 PM"
      }
     },
     {
@@ -7577,11 +7574,11 @@
       "isha": "5:36 PM"
      },
      "iqamah": {
-      "fajr": "6:20 AM",
+      "fajr": "6:25 AM",
       "dhuhr": "12:30 PM",
       "asr": "2:50 PM",
       "maghrib": "4:57 PM",
-      "isha": "6:50 PM"
+      "isha": "6:45 PM"
      }
     },
     {
@@ -7596,11 +7593,11 @@
       "isha": "5:35 PM"
      },
      "iqamah": {
-      "fajr": "6:20 AM",
+      "fajr": "6:25 AM",
       "dhuhr": "12:30 PM",
       "asr": "2:50 PM",
       "maghrib": "4:56 PM",
-      "isha": "6:50 PM"
+      "isha": "6:45 PM"
      }
     },
     {
@@ -7615,11 +7612,11 @@
       "isha": "5:35 PM"
      },
      "iqamah": {
-      "fajr": "6:20 AM",
+      "fajr": "6:25 AM",
       "dhuhr": "12:30 PM",
       "asr": "2:50 PM",
       "maghrib": "4:55 PM",
-      "isha": "6:50 PM"
+      "isha": "6:45 PM"
      }
     },
     {
@@ -7634,11 +7631,11 @@
       "isha": "5:34 PM"
      },
      "iqamah": {
-      "fajr": "6:20 AM",
+      "fajr": "6:25 AM",
       "dhuhr": "12:30 PM",
       "asr": "2:50 PM",
       "maghrib": "4:54 PM",
-      "isha": "6:50 PM"
+      "isha": "6:45 PM"
      }
     }
    ],
