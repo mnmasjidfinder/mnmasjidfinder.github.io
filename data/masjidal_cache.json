@@ -1813,6 +1813,43 @@
   }
  },
  {
+  "id": "wLVOPkAJ",
+  "uuid": "64cd1d97-9932-4657-8a1f-068e46c9ab50",
+  "name": "Masjid Al-Aqsa Islamic Society Of Willmar",
+  "address": "1112 Lake Ave NW",
+  "city": "Willmar",
+  "state": "MN",
+  "country": "US",
+  "longitude": "-95.0596",
+  "latitude": "45.1245",
+  "zipcode": "56201",
+  "phone": "-",
+  "meta": "-",
+  "email": "-",
+  "website_url": "-",
+  "event_url": "-",
+  "donation_url": "-",
+  "audio_url": "-",
+  "prayer_timing_url": "-",
+  "app_premium_features": true,
+  "premium_features": {
+   "app": true,
+   "slideshow": true,
+   "donation_app": true
+  },
+  "is_shell_account": false,
+  "iqamah_settings": {
+   "athan": {
+    "enabled": false,
+    "fajr_offset": 0,
+    "zuhr_offset": 0,
+    "asr_offset": 0,
+    "maghrib_offset": 0,
+    "isha_offset": 0
+   }
+  }
+ },
+ {
   "id": "PAPnDrKJ",
   "uuid": "f1c6ae19-20d3-4ed0-85f9-2c42b42c7174",
   "name": "Masjid Al-furqaan",
