@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-23T16:10-06:00",
- "osm": "cached",
+ "generated_at": "2026-11-23T18:26-06:00",
+ "osm": "live",
  "count": 85,
  "mosques": [
   {
@@ -3156,7 +3156,7 @@
    "lat": 44.9972252,
    "lon": -93.2883703,
    "phone": "6125211749",
-   "website": "https://masjidannur.org/",
+   "website": "https://www.masjidannur.org/",
    "denomination": null,
    "masjidal_id": "xdyqy0dX",
    "jumuah": [
@@ -9897,7 +9897,7 @@
    "lat": 44.0241368,
    "lon": -92.4634816,
    "phone": "5074001342",
-   "website": "http://rochestermosque.org/",
+   "website": "https://rochestermosque.org/",
    "denomination": "sunni",
    "masjidal_id": "VKpelOLP",
    "region": "Southern Minnesota",
