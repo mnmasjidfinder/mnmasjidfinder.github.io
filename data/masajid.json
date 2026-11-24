@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-23T18:26-06:00",
+ "generated_at": "2026-11-23T18:39-06:00",
  "osm": "live",
- "count": 85,
+ "count": 86,
  "mosques": [
   {
    "osm_id": "way/686377520",
@@ -5276,16 +5276,16 @@
    "timing_source": "Masjidal (set by masjid)",
    "jumuah": [
     {
-     "khutbah": null,
-     "iqamah": null,
      "start": "11:15 AM",
      "start_min": 675
     },
     {
-     "khutbah": null,
-     "iqamah": null,
      "start": "12:00 PM",
      "start_min": 720
+    },
+    {
+     "start": "12:45 PM",
+     "start_min": 765
     }
    ],
    "jumuah_source": "Masjidal (set by masjid)",
@@ -8251,16 +8251,16 @@
    "timing_source": "Masjidal (set by masjid)",
    "jumuah": [
     {
-     "khutbah": null,
-     "iqamah": null,
      "start": "12:00 PM",
      "start_min": 720
     },
     {
-     "khutbah": null,
-     "iqamah": null,
      "start": "12:45 PM",
      "start_min": 765
+    },
+    {
+     "start": "1:30 PM",
+     "start_min": 810
     }
    ],
    "jumuah_source": "Masjidal (set by masjid)",
@@ -8467,13 +8467,7 @@
       "maghrib": "4:48 PM",
       "isha": "6:13 PM"
      },
-     "iqamah": {
-      "fajr": "5:16 AM",
-      "dhuhr": "1:15 PM",
-      "asr": "4:55 PM",
-      "maghrib": "7:51 PM",
-      "isha": "9:14 PM"
-     }
+     "iqamah": {}
     },
     {
      "date": "Tuesday, Nov 24, 2026",
@@ -8486,13 +8480,7 @@
       "maghrib": "4:47 PM",
       "isha": "6:13 PM"
      },
-     "iqamah": {
-      "fajr": "5:16 AM",
-      "dhuhr": "1:15 PM",
-      "asr": "4:55 PM",
-      "maghrib": "7:51 PM",
-      "isha": "9:14 PM"
-     }
+     "iqamah": {}
     },
     {
      "date": "Wednesday, Nov 25, 2026",
@@ -8505,13 +8493,7 @@
       "maghrib": "4:46 PM",
       "isha": "6:13 PM"
      },
-     "iqamah": {
-      "fajr": "5:16 AM",
-      "dhuhr": "1:15 PM",
-      "asr": "4:55 PM",
-      "maghrib": "7:51 PM",
-      "isha": "9:14 PM"
-     }
+     "iqamah": {}
     },
     {
      "date": "Thursday, Nov 26, 2026",
@@ -8524,13 +8506,7 @@
       "maghrib": "4:46 PM",
       "isha": "6:12 PM"
      },
-     "iqamah": {
-      "fajr": "5:16 AM",
-      "dhuhr": "1:15 PM",
-      "asr": "4:55 PM",
-      "maghrib": "7:51 PM",
-      "isha": "9:14 PM"
-     }
+     "iqamah": {}
     },
     {
      "date": "Friday, Nov 27, 2026",
@@ -8543,13 +8519,7 @@
       "maghrib": "4:45 PM",
       "isha": "6:12 PM"
      },
-     "iqamah": {
-      "fajr": "5:16 AM",
-      "dhuhr": "1:15 PM",
-      "asr": "4:55 PM",
-      "maghrib": "7:51 PM",
-      "isha": "9:14 PM"
-     }
+     "iqamah": {}
     },
     {
      "date": "Saturday, Nov 28, 2026",
@@ -8562,13 +8532,7 @@
       "maghrib": "4:45 PM",
       "isha": "6:11 PM"
      },
-     "iqamah": {
-      "fajr": "5:16 AM",
-      "dhuhr": "1:15 PM",
-      "asr": "4:55 PM",
-      "maghrib": "7:51 PM",
-      "isha": "9:14 PM"
-     }
+     "iqamah": {}
     },
     {
      "date": "Sunday, Nov 29, 2026",
@@ -8581,16 +8545,12 @@
       "maghrib": "4:44 PM",
       "isha": "6:11 PM"
      },
-     "iqamah": {
-      "fajr": "5:16 AM",
-      "dhuhr": "1:15 PM",
-      "asr": "4:55 PM",
-      "maghrib": "7:51 PM",
-      "isha": "9:14 PM"
-     }
+     "iqamah": {}
     }
    ],
    "timing_source": "Masjidal (set by masjid)",
+   "iqamah_stale": true,
+   "iqamah_note": "Iqamah not shown: the times this masjid lists online can't be right today (for example Asr after sunset), so they look out of date. Jumu'ah may be out of date too. Call or check the website.",
    "jumuah": [],
    "live": true
   },
@@ -8938,6 +8898,123 @@
    ],
    "jumuah_source": "Masjidal (set by masjid)",
    "live": true
+  },
+  {
+   "name": "Masjid As-Sahabah",
+   "address": "3345 Lexington Ave S, Eagan, MN 55121",
+   "city": "Eagan",
+   "phone": "651-252-1829",
+   "website": "https://as-sahabah.org/",
+   "jumuah": [
+    {
+     "start": "1:30 PM",
+     "khutbah": "1:30 PM",
+     "start_min": 810
+    },
+    {
+     "start": "1:55 PM",
+     "khutbah": "1:55 PM",
+     "start_min": 835
+    }
+   ],
+   "jumuah_note": "from the masjid's timetable on as-sahabah.org",
+   "ref": "Reported missing by a user, 2026-11-22 (via USA Masjid Finder). Address and phone from as-sahabah.org; Jumu'ah khutbah 1:30 and 1:55 from its timetable image at as-sahabah.org/prayer-times (an image, so the daily Jumu'ah check can't read it).",
+   "lat": 44.8357476,
+   "lon": -93.1469556,
+   "region": "South Metro",
+   "id": "masjid-as-sahabah-eagan",
+   "events": [],
+   "sources": [],
+   "errors": [],
+   "jumuah_source": "Entered by hand – from the masjid's timetable on as-sahabah.org",
+   "days": [
+    {
+     "date": "Monday, Nov 23, 2026",
+     "adhan": {
+      "fajr": "5:54 AM",
+      "sunrise": "7:20 AM",
+      "dhuhr": "12:00 PM",
+      "asr": "2:17 PM",
+      "maghrib": "4:37 PM",
+      "isha": "6:03 PM"
+     },
+     "iqamah": {}
+    },
+    {
+     "date": "Tuesday, Nov 24, 2026",
+     "adhan": {
+      "fajr": "5:56 AM",
+      "sunrise": "7:22 AM",
+      "dhuhr": "12:00 PM",
+      "asr": "2:17 PM",
+      "maghrib": "4:37 PM",
+      "isha": "6:03 PM"
+     },
+     "iqamah": {}
+    },
+    {
+     "date": "Wednesday, Nov 25, 2026",
+     "adhan": {
+      "fajr": "5:57 AM",
+      "sunrise": "7:23 AM",
+      "dhuhr": "12:01 PM",
+      "asr": "2:16 PM",
+      "maghrib": "4:36 PM",
+      "isha": "6:02 PM"
+     },
+     "iqamah": {}
+    },
+    {
+     "date": "Thursday, Nov 26, 2026",
+     "adhan": {
+      "fajr": "5:58 AM",
+      "sunrise": "7:24 AM",
+      "dhuhr": "12:01 PM",
+      "asr": "2:16 PM",
+      "maghrib": "4:35 PM",
+      "isha": "6:02 PM"
+     },
+     "iqamah": {}
+    },
+    {
+     "date": "Friday, Nov 27, 2026",
+     "adhan": {
+      "fajr": "5:59 AM",
+      "sunrise": "7:25 AM",
+      "dhuhr": "12:01 PM",
+      "asr": "2:16 PM",
+      "maghrib": "4:35 PM",
+      "isha": "6:01 PM"
+     },
+     "iqamah": {}
+    },
+    {
+     "date": "Saturday, Nov 28, 2026",
+     "adhan": {
+      "fajr": "6:00 AM",
+      "sunrise": "7:27 AM",
+      "dhuhr": "12:02 PM",
+      "asr": "2:15 PM",
+      "maghrib": "4:34 PM",
+      "isha": "6:01 PM"
+     },
+     "iqamah": {}
+    },
+    {
+     "date": "Sunday, Nov 29, 2026",
+     "adhan": {
+      "fajr": "6:01 AM",
+      "sunrise": "7:28 AM",
+      "dhuhr": "12:02 PM",
+      "asr": "2:15 PM",
+      "maghrib": "4:34 PM",
+      "isha": "6:01 PM"
+     },
+     "iqamah": {}
+    }
+   ],
+   "timing_source": "Calculated adhan (ISNA) – confirm iqamah with masjid",
+   "live": false
   },
   {
    "name": "Minnesota islamic center",
@@ -9606,16 +9683,16 @@
    "timing_source": "Masjidal (set by masjid)",
    "jumuah": [
     {
-     "khutbah": null,
-     "iqamah": null,
      "start": "11:00 AM",
      "start_min": 660
     },
     {
-     "khutbah": null,
-     "iqamah": null,
      "start": "12:00 PM",
      "start_min": 720
+    },
+    {
+     "start": "1:00 PM",
+     "start_min": 780
     }
    ],
    "jumuah_source": "Masjidal (set by masjid)",
@@ -13277,16 +13354,16 @@
    "timing_source": "Masjidal (set by masjid)",
    "jumuah": [
     {
-     "khutbah": null,
-     "iqamah": null,
      "start": "11:15 AM",
      "start_min": 675
     },
     {
-     "khutbah": null,
-     "iqamah": null,
      "start": "12:15 PM",
      "start_min": 735
+    },
+    {
+     "start": "1:15 PM",
+     "start_min": 795
     }
    ],
    "jumuah_source": "Masjidal (set by masjid)",

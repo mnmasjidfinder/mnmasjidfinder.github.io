@@ -1,0 +1,14 @@
+{
+ "Eagan Islamic Center": {
+  "stale": true,
+  "source": "Masjidal (set by masjid)",
+  "listed": {
+   "fajr": "5:16 AM",
+   "dhuhr": "1:15 PM",
+   "asr": "4:55 PM",
+   "maghrib": "7:51 PM",
+   "isha": "9:14 PM"
+  },
+  "shown": {}
+ }
+}

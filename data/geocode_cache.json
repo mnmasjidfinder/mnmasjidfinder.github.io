@@ -703,5 +703,28 @@
     "-93.3262731"
    ]
   }
+ ],
+ "f:3345 Lexington Ave S, Eagan, MN 55121": [
+  {
+   "place_id": 397755320,
+   "licence": "Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+   "osm_type": "way",
+   "osm_id": 113740324,
+   "lat": "44.8357476",
+   "lon": "-93.1469556",
+   "category": "place",
+   "type": "house",
+   "place_rank": 30,
+   "importance": 9.99999999995449e-06,
+   "addresstype": "place",
+   "name": "",
+   "display_name": "3345, Lexington Avenue South, Eagan, Dakota County, Minnesota, 55121, United States",
+   "boundingbox": [
+    "44.8356976",
+    "44.8357976",
+    "-93.1470056",
+    "-93.1469056"
+   ]
+  }
  ]
 }
