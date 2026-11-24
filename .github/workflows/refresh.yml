@@ -71,8 +71,10 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
-      # GitHub's Pages service occasionally can't find the package it was just given
-      # ("No artifacts named github-pages"). Wait and try again before failing the run.
+      # GitHub's Pages service often can't find the package it was just given
+      # ("No artifacts named github-pages"). Give it a moment first, then retry once if needed.
+      - name: Give Pages a moment to register the upload
+        run: sleep 30
       - id: deploy
         uses: actions/deploy-pages@v5
         continue-on-error: true
