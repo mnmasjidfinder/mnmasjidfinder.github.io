@@ -1,5 +1,5 @@
 {
-  "_help": "Extra mosques and per-mosque overrides. Entries are matched to OpenStreetMap results by 'osm_id' (e.g. 'way/93122458'), by exact 'name', or by location (within 80 m). Any field here wins over OSM. An 'address' with no lat/lon is geocoded automatically. Optional live sources: masjidal_id (from a timing.athanplus.com / masjidal.com widget), mohid_url (us.mohid.co page), events_wp (WordPress site running The Events Calendar). Hand-entered Jumu'ah: \"jumuah\": [{\"khutbah\": \"12:30 PM\", \"iqamah\": \"1:00 PM\"}] plus \"jumuah_note\". 'ref' records where the facts came from.",
+  "_help": "Extra mosques and per-mosque overrides. Entries are matched to OpenStreetMap results by 'osm_id' (e.g. 'way/93122458'), by exact 'name', or by location (within 80 m). Any field here wins over OSM. An 'address' with no lat/lon is geocoded automatically. Optional live sources: masjidal_id (from a timing.athanplus.com / masjidal.com widget), mohid_url (us.mohid.co page), events_wp (WordPress site running The Events Calendar). Hand-entered Jumu'ah: \"jumuah\": [{\"khutbah\": \"12:30 PM\", \"iqamah\": \"1:00 PM\"}] plus \"jumuah_note\". 'ref' records where the facts came from. Daily Jumu'ah check for a hand-entered time: \"jumuah_watch\": {\"url\": \"<page>\", \"seen\": [\"12:30 PM\"]} raises a GitHub issue when the page's Jumu'ah times change (the site keeps the hand entry); use \"label\": \"<regex>\" instead of \"seen\" to take the page's time automatically.",
   "exclude_masjidal": [
     "Vdwg9ode",
     "wAaDPXL1"
@@ -23,7 +23,11 @@
     },
     {
       "osm_id": "way/313727189",
-      "jumuah": [{"khutbah": "12:30 PM"}],
+      "jumuah": [
+        {
+          "khutbah": "12:30 PM"
+        }
+      ],
       "jumuah_note": "doors open 11:30 AM; per masjidannur.org/jumuah, checked Nov 2026",
       "ref": "https://www.masjidannur.org/jumuah"
     },
@@ -36,7 +40,6 @@
       "mohid_url": false,
       "ref": "https://www.nwiccmn.org/salah-time"
     },
-
     {
       "osm_id": "way/607751857",
       "name": "Blaine Masjid (MAS Minnesota)",
@@ -136,6 +139,25 @@
       "city": "Brooklyn Center",
       "denomination": "shia",
       "ref": "https://startpage.mapquest.com/us/minnesota/imam-husain-islamic-center-534426519"
+    },
+    {
+      "name": "Masjid As-Sahabah",
+      "address": "3345 Lexington Ave S, Eagan, MN 55121",
+      "city": "Eagan",
+      "phone": "651-252-1829",
+      "website": "https://as-sahabah.org/",
+      "jumuah": [
+        {
+          "start": "1:30 PM",
+          "khutbah": "1:30 PM"
+        },
+        {
+          "start": "1:55 PM",
+          "khutbah": "1:55 PM"
+        }
+      ],
+      "jumuah_note": "from the masjid's timetable on as-sahabah.org",
+      "ref": "Reported missing by a user, 2026-11-22 (via USA Masjid Finder). Address and phone from as-sahabah.org; Jumu'ah khutbah 1:30 and 1:55 from its timetable image at as-sahabah.org/prayer-times (an image, so the daily Jumu'ah check can't read it)."
     },
     {
       "name": "Mankato Islamic Center",

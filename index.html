@@ -88,7 +88,31 @@ footer code{font-size:12px}
   .pill .long{display:none}
   .filters{display:none;padding-bottom:4px;max-height:55vh;overflow-y:auto} .filters.open{display:flex}
   .filters label{flex:1 1 140px} .filters .chk{flex:1 1 auto}
+  #qiblaBtn span{display:none} #qiblaBtn{padding-inline:10px}
 }
+/* qibla panel */
+dialog.qibla{border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--ink);padding:0;width:min(400px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto}
+dialog.qibla::backdrop{background:rgba(0,0,0,.45)}
+.qb-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px 4px}
+.qb-head h2{margin:0;font-size:18px}
+.qb-x{font:inherit;font-size:22px;line-height:1;background:none;border:0;color:var(--muted);cursor:pointer;padding:4px 8px}
+.qb-body{padding:4px 16px 16px;display:flex;flex-direction:column;gap:12px}
+.qb-rose{width:220px;height:220px;margin:4px auto 0;display:block}
+.qb-rose .ring{fill:var(--accent-soft);stroke:var(--line);stroke-width:2}
+.qb-rose .tick{stroke:var(--muted);stroke-width:2}
+.qb-rose .card-n{fill:var(--ink);font:700 15px var(--font)}
+.qb-rose .cdir{fill:var(--muted);font:600 13px var(--font)}
+.qb-rose .needle{fill:var(--accent)}
+.qb-rose .hub{fill:var(--card);stroke:var(--accent);stroke-width:3}
+.qb-rose #qbDial{transition:transform .25s ease-out;transform-origin:110px 110px}
+.qb-big{text-align:center;font-size:17px;font-weight:700}
+.qb-big small{display:block;font-weight:500;color:var(--muted);font-size:13px;margin-top:2px}
+.qb-note{font-size:13px;color:var(--muted);text-align:center}
+.qb-btns{display:flex;flex-direction:column;gap:8px}
+.qb-btns .pill{justify-content:center;height:auto;min-height:40px;white-space:normal;text-align:center}
+.qb-btns a.pill{text-decoration:none}
+.qb-src{font-size:11px;color:var(--muted);text-align:center}
+footer a{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -100,6 +124,7 @@ footer code{font-size:12px}
   <div class="searchrow">
     <label for="q" class="grow"><span class="lbl">Search name, city or time</span><input type="search" id="q" placeholder="Masjid, city or time" autocomplete="off" enterkeyhint="search"></label>
     <button type="button" class="pill" id="nearBtn" aria-pressed="false">📍<span>Near me</span></button>
+    <button type="button" class="pill" id="qiblaBtn" aria-haspopup="dialog" aria-label="Qibla direction">🕋<span>Qibla</span></button>
     <button type="button" class="pill mobile-only" id="filtBtn" aria-expanded="false" aria-controls="filters">Filters</button>
   </div>
   <div class="filters" id="filters">
@@ -118,8 +143,34 @@ footer code{font-size:12px}
 </main>
 <footer class="wrap">
   <b>Live</b> times come from each masjid's own Masjidal or Mohid feed. Cards marked <b>Calculated</b> show astronomical adhan times (ISNA, 15°/15°), not iqamah, so check with the masjid before you go.
-  Mosque list © OpenStreetMap contributors and Masjidal.<br><a class="cta" id="addMasjid" target="_blank" rel="noopener">Missing a masjid, or something wrong? Tell us →</a>
+  Mosque list © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> and Masjidal.
+  Outside Minnesota? <a href="https://usamasjidfinder.github.io">USA Masjid Finder</a> covers all 50 states.<br>
+  <a class="cta" id="addMasjid" target="_blank" rel="noopener">Missing a masjid, or something wrong? Tell us →</a>
 </footer>
+<dialog class="qibla" id="qibla" aria-labelledby="qbTitle">
+  <div class="qb-head"><h2 id="qbTitle">🕋 Qibla direction</h2><button type="button" class="qb-x" id="qbClose" aria-label="Close">×</button></div>
+  <div class="qb-body">
+    <svg class="qb-rose" viewBox="0 0 220 220" role="img" aria-labelledby="qbBig">
+      <g id="qbDial">
+        <circle class="ring" cx="110" cy="110" r="100"/>
+        <g id="qbTicks"></g>
+        <text class="card-n" x="110" y="30" text-anchor="middle">N</text>
+        <text class="cdir" x="196" y="115" text-anchor="middle">E</text>
+        <text class="cdir" x="110" y="200" text-anchor="middle">S</text>
+        <text class="cdir" x="24" y="115" text-anchor="middle">W</text>
+        <g id="qbNeedle"><path class="needle" d="M110 34 L121 110 L110 102 L99 110 Z"/><text x="110" y="52" text-anchor="middle" font-size="16">🕋</text></g>
+      </g>
+      <circle class="hub" cx="110" cy="110" r="9"/>
+    </svg>
+    <div class="qb-big" id="qbBig" aria-live="polite">Finding your location…</div>
+    <div class="qb-note" id="qbNote"></div>
+    <div class="qb-btns">
+      <button type="button" class="pill" id="qbCompass" hidden>📱 Use phone compass</button>
+      <a class="pill" id="qbGoogle" href="https://qiblafinder.withgoogle.com/intl/en/finder/ar" target="_blank" rel="noopener">📷 Open Google Qibla Finder (camera view) ↗</a>
+    </div>
+    <div class="qb-src">Direction is the great-circle bearing from your location to the Kaaba in Makkah. Phone compasses can be thrown off by metal, magnets or cases. Move the phone in a figure 8 to calibrate.</div>
+  </div>
+</dialog>
 <!--DATA-->
 <script src="data/masajid.js"></script>
 <!--/DATA-->
@@ -136,6 +187,45 @@ const chicagoISO = d => d.toLocaleDateString("en-CA", {timeZone: "America/Chicag
 const todayISO = chicagoISO(new Date());
 const dayISO = s => { const t = new Date(String(s).replace(/^[A-Za-z]+,\s*/, "")); return isNaN(t) ? null : chicagoISO(new Date(t.getTime() + 12 * 3600e3)); };
 let liveCount = 0;
+const MN_TZ = "America/Chicago";
+const longDate = iso => new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", {timeZone: "UTC", weekday: "long", month: "short", day: "numeric", year: "numeric"});
+const addDays = (iso, n) => new Date(Date.parse(iso + "T12:00:00Z") + n * 864e5).toISOString().slice(0, 10);
+// ---- astronomical adhan times (praytimes.org method, ISNA 15°/15°, standard Asr)
+function calcTimes(iso, lat, lon, tz) {
+  const [Y, Mo, Dd] = iso.split("-").map(Number);
+  const rad = x => x * Math.PI / 180, deg = x => x * 180 / Math.PI, mod = (a, n) => ((a % n) + n) % n;
+  const jd = Date.UTC(Y, Mo - 1, Dd) / 864e5 + 2440587.5 - lon / 360;
+  const sun = j => { const d = j - 2451545, g = mod(357.529 + 0.98560028 * d, 360), q = mod(280.459 + 0.98564736 * d, 360);
+    const L = mod(q + 1.915 * Math.sin(rad(g)) + 0.020 * Math.sin(rad(2 * g)), 360), e = 23.439 - 0.00000036 * d;
+    const RA = deg(Math.atan2(Math.cos(rad(e)) * Math.sin(rad(L)), Math.cos(rad(L)))) / 15;
+    return {decl: deg(Math.asin(Math.sin(rad(e)) * Math.sin(rad(L)))), eqt: mod(q / 15 - mod(RA, 24) + 12, 24) - 12}; };
+  const mid = t => mod(12 - sun(jd + t / 24).eqt, 24);
+  const ang = (a, t, ccw) => { const {decl} = sun(jd + t / 24), noon = mid(t);
+    const c = Math.max(-1, Math.min(1, (-Math.sin(rad(a)) - Math.sin(rad(decl)) * Math.sin(rad(lat))) / (Math.cos(rad(decl)) * Math.cos(rad(lat)))));
+    const v = deg(Math.acos(c)) / 15; return noon + (ccw ? -v : v); };
+  const asr = t => { const {decl} = sun(jd + t / 24); return ang(-deg(Math.atan(1 / (1 + Math.tan(Math.abs(rad(lat - decl)))))), t, false); };
+  let t = {fajr: 5, sunrise: 6, dhuhr: 12, asr: 13, maghrib: 18, isha: 18};
+  for (let i = 0; i < 2; i++) t = {fajr: ang(15, t.fajr, true), sunrise: ang(0.833, t.sunrise, true), dhuhr: mid(t.dhuhr),
+    asr: asr(t.asr), maghrib: ang(0.833, t.maghrib, false), isha: ang(15, t.isha, false)};
+  t.dhuhr += 1 / 60;
+  const base = Date.UTC(Y, Mo - 1, Dd), out = {};
+  for (const k in t) {
+    const ms = base + Math.round((t[k] - lon / 15) * 60) * 60e3;
+    try { out[k] = new Date(ms).toLocaleTimeString("en-US", {timeZone: tz, hour: "numeric", minute: "2-digit"}).replace(/ /g, " "); } catch { out[k] = null; }
+  }
+  return out;
+}
+
+// The days shown on a card: the stored/live timetable from today on, else calculated here.
+function daysOf(m) {
+  if (m._days) return m._days;
+  const live = (m.days || []).filter(d => (dayISO(d.date) || "") >= todayISO);
+  if (live.length && dayISO(live[0].date) === todayISO) { m._calc = (m.timing_source || "").startsWith("Calc"); return m._days = live; }
+  if (m.lat == null) return m._days = [];
+  m._calc = true;
+  return m._days = Array.from({length: 7}, (_, i) => { const iso = addDays(todayISO, i);
+    return {date: longDate(iso), adhan: calcTimes(iso, m.lat, m.lon, MN_TZ), iqamah: {}}; });
+}
 
 const regions = [...new Set(D.mosques.map(m => m.region))].sort();
 $("region").innerHTML += regions.map(r => `<option>${esc(r)}</option>`).join("");
@@ -213,7 +303,77 @@ function locate() {
   }, {enableHighAccuracy: false, timeout: 12000, maximumAge: 300000});
 }
 
-const todayOf = m => { const d = m.days || []; const i = d.findIndex(x => dayISO(x.date) === todayISO); return d[i < 0 ? 0 : i]; };
+// ---- Qibla: great-circle bearing to the Kaaba, optionally turned by the phone's compass
+const KAABA = {lat: 21.422487, lon: 39.826206};
+const qiblaBearing = (lat, lon) => { const r = Math.PI / 180, dl = (KAABA.lon - lon) * r;
+  const y = Math.sin(dl) * Math.cos(KAABA.lat * r), x = Math.cos(lat * r) * Math.sin(KAABA.lat * r) - Math.sin(lat * r) * Math.cos(KAABA.lat * r) * Math.cos(dl);
+  return (Math.atan2(y, x) / r + 360) % 360; };
+const compassWord = b => ["north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest"][Math.round(b / 45) % 8];
+let qibla = null, heading = null, compassOn = false, qLoc = null, dialRot = 0;
+// Phone compasses read magnetic north. Approximate US magnetic declination (degrees east), fitted to
+// 2025 values for 24 US cities (within ~3 degrees); Alaska and Hawaii use typical fixed values.
+const declination = (lat, lon) => lat > 51 ? 15 : lon < -150 && lat < 25 ? 9.5
+  : -30.65349 - 0.34523 * lon - 0.56283 * lat - 0.00548 * lon * lat;
+$("qbTicks").innerHTML = Array.from({length: 36}, (_, i) => { const a = i * 10 * Math.PI / 180, r1 = i % 9 ? 92 : 86;
+  return `<line class="tick" x1="${110 + r1 * Math.sin(a)}" y1="${110 - r1 * Math.cos(a)}" x2="${110 + 99 * Math.sin(a)}" y2="${110 - 99 * Math.cos(a)}"/>`; }).join("");
+function drawQibla() {
+  if (qibla == null) return;
+  // dial turns against the phone's heading so N stays north; the needle sits at the qibla bearing on the dial
+  if (heading == null) { dialRot = 0; $("qbDial").style.transform = ""; }
+  else { dialRot += ((-heading - dialRot) % 360 + 540) % 360 - 180; $("qbDial").style.transform = `rotate(${dialRot}deg)`; }  // shortest turn, no spin at north
+  $("qbNeedle").setAttribute("transform", `rotate(${qibla.toFixed(1)} 110 110)`);
+  if (heading != null) {
+    const turn = ((qibla - heading + 540) % 360) - 180;
+    $("qbNote").textContent = Math.abs(turn) <= 5 ? "✅ You're facing the Qibla." : `Turn ${Math.round(Math.abs(turn))}° to the ${turn > 0 ? "right" : "left"}, holding the phone flat.`;
+  }
+}
+function showQibla(lat, lon, where) {
+  qibla = qiblaBearing(lat, lon); qLoc = {lat, lon};
+  $("qbBig").innerHTML = `${Math.round(qibla)}° from true north (${compassWord(qibla)})<small>${where} · ${Math.round(miles(lat, lon, KAABA.lat, KAABA.lon)).toLocaleString()} miles to the Kaaba</small>`;
+  $("qbNote").textContent = "Face the 🕋 arrow, with N on the dial pointing north.";
+  $("qbCompass").hidden = !("DeviceOrientationEvent" in window) || compassOn;
+  drawQibla();
+}
+function onOrient(e) {
+  let h = null;
+  if (typeof e.webkitCompassHeading === "number") h = e.webkitCompassHeading;          // iPhone: degrees from magnetic north
+  else if (e.absolute && typeof e.alpha === "number") h = (360 - e.alpha) % 360;      // Android: absolute orientation
+  if (h == null) return;
+  heading = (h + (qLoc ? declination(qLoc.lat, qLoc.lon) : 0) + 360) % 360; drawQibla();
+}
+async function startCompass() {
+  try {
+    if (typeof DeviceOrientationEvent.requestPermission === "function" && await DeviceOrientationEvent.requestPermission() !== "granted") {
+      $("qbNote").textContent = "Compass access was declined. Use the bearing above, or Google's camera view."; return;
+    }
+  } catch { $("qbNote").textContent = "This browser won't share the compass. Use the bearing above, or Google's camera view."; return; }
+  compassOn = true; $("qbCompass").hidden = true;
+  addEventListener("deviceorientationabsolute", onOrient); addEventListener("deviceorientation", onOrient);
+  $("qbNote").textContent = "Hold the phone flat and turn until the arrow points straight up.";
+  setTimeout(() => { if (heading == null && compassOn) $("qbNote").textContent = "No compass reading from this device. Use the bearing above, or Google's camera view."; }, 3000);
+}
+function openQibla() {
+  const dlg = $("qibla");
+  if (!dlg.open) dlg.showModal ? dlg.showModal() : dlg.setAttribute("open", "");
+  if (here) return showQibla(here.lat, here.lon, "From your location");
+  if (!navigator.geolocation) { $("qbBig").textContent = "This browser can't share your location."; return; }
+  $("qbBig").textContent = "Finding your location…";
+  navigator.geolocation.getCurrentPosition(p => showQibla(p.coords.latitude, p.coords.longitude, "From your location"),
+    err => { $("qbBig").innerHTML = (err.code === 1 ? "Location is blocked, so the direction can't be worked out here."
+      : "Couldn't get your location right now.") + "<small>Google's camera view below can still find the Qibla.</small>"; },
+    {enableHighAccuracy: false, timeout: 12000, maximumAge: 300000});
+}
+function closeQibla() {
+  const dlg = $("qibla"); dlg.close ? dlg.close() : dlg.removeAttribute("open");
+}
+$("qibla").addEventListener("close", () => { compassOn = false; heading = null;
+  removeEventListener("deviceorientationabsolute", onOrient); removeEventListener("deviceorientation", onOrient); });
+$("qiblaBtn").onclick = openQibla;
+$("qbClose").onclick = closeQibla;
+$("qbCompass").onclick = startCompass;
+$("qibla").addEventListener("click", e => { if (e.target === $("qibla")) closeQibla(); });
+
+const todayOf = m => daysOf(m)[0];
 let hit = () => false;    // which Jumu'ah chips to highlight
 let hitIq = () => false;  // which iqamah cells to highlight
 
@@ -233,11 +393,35 @@ function jumuahHtml(m) {
 
 const hasIqamah = m => (m.days || []).some(d => Object.values(d.iqamah || {}).some(Boolean));
 
-function dayTable(day) {
+// Iqamah outside its prayer's window can't be right (Asr after sunset, Fajr before dawn): same rule as fetch.py
+const NEXT = {fajr: "sunrise", dhuhr: "asr", asr: "maghrib", maghrib: "isha"};
+function badIqamah(day) {
+  const a = day.adhan || {};
+  return Object.entries(day.iqamah || {}).filter(([k, v]) => {
+    let q = mins(v); const start = mins(a[k]);
+    if (q == null || start == null) return false;
+    if (k === "isha") { if (q < 240) q += 1440; return !(start - 10 <= q && q <= start + 180); }
+    const end = mins(a[NEXT[k]]), early = {fajr: 20, asr: 50}[k] ?? 5;  // 18-degree Fajr, Hanafi Asr
+    return end != null && !(start - early <= q && q < end);
+  }).map(([k]) => k);
+}
+const STALE_NOTE = "Iqamah not shown: the times this masjid lists online can't be right today (for example Asr after sunset), so they look out of date. Jumu'ah may be out of date too. Call or check the website.";
+const SOME_NOTE = "Some iqamah times aren't shown because they fall outside their prayer's time today. Call or check the website.";
+function dropBadIqamah(m, days) {
+  if (!m.iqamah_stale) m.iqamah_note = null;
+  if (m.iqamah_stale || (days[0] && badIqamah(days[0]).length >= 2)) {
+    days.forEach(d => d.iqamah = {}); m.iqamah_stale = true; m.iqamah_note = STALE_NOTE; return;
+  }
+  let hid = false;
+  days.forEach(d => badIqamah(d).forEach(k => { delete d.iqamah[k]; hid = true; }));
+  if (hid) m.iqamah_note = SOME_NOTE;
+}
+function dayTable(day, m) {
   const iq = day.iqamah || {}, hasIq = Object.values(iq).some(Boolean);
   return `<table><tr><th scope="col">Prayer</th><th scope="col">Adhan</th><th scope="col">Iqamah</th></tr>` +
     PRAYERS.map(([k, n]) => `<tr><td>${n}</td><td>${esc(day.adhan?.[k] || "—")}</td><td class="${hasIq ? (hitIq(iq[k]) ? "hit" : "") : "na"}">${k === "sunrise" ? "" : esc(iq[k] || "—")}</td></tr>`).join("") +
-    "</table>" + (hasIq ? "" : `<div class="iqnote">Iqamah times aren't published online. Call or check the masjid's website.</div>`);
+    "</table>" + (m?.iqamah_note ? `<div class="iqnote">${esc(m.iqamah_note)}</div>`
+      : hasIq ? "" : `<div class="iqnote">Iqamah times aren't published online. Call or check the masjid's website.</div>`);
 }
 
 // Feedback goes to a Google Form; responses land in the maintainer's Google Sheet.
@@ -275,29 +459,27 @@ async function confirmTimes(m, box) {
 
 $("grid").addEventListener("click", e => {
   const b = e.target.closest("button[data-vote]"); if (!b) return;
-  const box = b.closest(".fb"), m = D.mosques.find(x => x.id === box.dataset.id);
+  const box = b.closest(".fb"), m = byId.get(box.dataset.id);
   if (m) { b.disabled = true; confirmTimes(m, box); }
 });
 $("addMasjid").href = formLink({[FORM.masjid]: "New masjid / general feedback: "});
 
 function card(m) {
-  const days = m.days || [];
-  let i = days.findIndex(d => dayISO(d.date) === todayISO); if (i < 0) i = 0;
-  const day = days[i], rest = days.slice(i + 1);
-  const calc = (m.timing_source || "").startsWith("Calc");
+  const days = daysOf(m), day = days[0], rest = days.slice(1);
+  const calc = !!m._calc;
   const addr = m.address || `${m.city}, MN`;
   const map = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(m.name + " " + addr)}`;
   const links = [
     `<a href="${map}" target="_blank" rel="noopener">Map</a>`,
-    m.website && `<a href="${esc(m.website)}" target="_blank" rel="noopener">Website</a>`,
+    m.website && /^https?:/i.test(m.website) && `<a href="${esc(m.website)}" target="_blank" rel="noopener">Website</a>`,
     m.mohid_url && `<a href="${esc(m.mohid_url)}" target="_blank" rel="noopener">Mohid page</a>`,
-    m.phone && `<span>${esc(m.phone)}</span>`,
+    m.phone && `<a href="tel:${esc(m.phone.replace(/[^\d+]/g, ""))}">${esc(m.phone)}</a>`,
   ].filter(Boolean).join(" · ");
   const ev = m.events.length
     ? `<ul class="events">${m.events.slice(0, 5).map(e => `<li><time>${esc((e.start || "").slice(0, 16).replace("T", " "))}</time>${e.url ? `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.title)}</a>` : esc(e.title)}</li>`).join("")}</ul>`
     : `<span class="meta">No upcoming events published online.</span>`;
-  const week = rest.map(d => `<div class="sect" style="margin-top:8px">${esc(d.date)}</div>${dayTable(d)}`).join("");
-  return `<article class="card">
+  const week = rest.map(d => `<div class="sect" style="margin-top:8px">${esc(d.date)}</div>${dayTable(d, m)}`).join("");
+  return `<article class="card" data-card="${esc(m.id)}">
     <div>
       <h2>${esc(m.name)}</h2>${m.aka ? `<div class="meta">also listed as ${esc(m.aka)}</div>` : ""}
       <div class="meta">${distOf(m) != null ? `<span class="dist">${distOf(m) < 10 ? distOf(m).toFixed(1) : Math.round(distOf(m))} mi away</span> · ` : ""}${esc(addr)} · <b>${esc(m.region)}</b></div>
@@ -306,7 +488,7 @@ function card(m) {
     <div><div class="sect">Jumu'ah (Friday)</div><div class="jum">${jumuahHtml(m)}</div></div>
     ${day ? `<div><div class="sect">${esc(day.date)}${day.hijri ? " · " + esc(day.hijri) : ""} &nbsp;
       <span class="badge ${calc ? "calc" : "live"}">${calc ? "Calculated" : "Live"}</span></div>
-      ${dayTable(day)}${week ? `<details><summary>Next ${rest.length} days</summary>${week}</details>` : ""}</div>` : ""}
+      ${dayTable(day, m)}${week ? `<details><summary>Next ${rest.length} days</summary>${week}</details>` : ""}</div>` : ""}
     <div><div class="sect">Upcoming events</div>${ev}</div>
     ${feedbackHtml(m)}
   </article>`;
@@ -351,31 +533,59 @@ function render() {
     (locNote ? ` <span class="note">${esc(locNote)}</span>` : "");
   const nf = [$("region").value, $("hasj").checked, $("iq").checked].filter(Boolean).length + ($("sort").value !== "name" && $("sort").value !== "near" ? 1 : 0);
   $("filtBtn").textContent = nf ? `Filters (${nf})` : "Filters";
+  window.lastList = list;
   $("grid").innerHTML = list.length ? list.map(card).join("") : `<div class="empty">No masajid match these filters. Try widening the Jumu'ah window or clearing the search.</div>`;
+  watchCards();
 }
 
-// Refresh Masjidal-backed timetables straight from the source. Where the browser
-// blocks the call (some hosts do), the snapshot above stays in place.
-async function refreshLive() {
-  const from = todayISO, to = chicagoISO(new Date(Date.now() + 6 * 864e5));
-  const targets = D.mosques.filter(m => m.masjidal_id);
-  await Promise.all(targets.map(async m => {
-    try {
-      const r = await fetch(`https://masjidal.com/api/v1/time/range?masjid_id=${encodeURIComponent(m.masjidal_id)}&from_date=${from}&to_date=${to}`);
-      const j = await r.json();
-      if (j.status !== "success" || !j.data?.salah?.length) return;
-      m.days = j.data.salah.map((s, i) => { const q = j.data.iqamah[i] || {}; return {
-        date: s.date, hijri: `${s.hijri_date || ""} ${s.hijri_month || ""}`.trim(),
-        adhan: {fajr: nt(s.fajr), sunrise: nt(s.sunrise), dhuhr: nt(s.zuhr), asr: nt(s.asr), maghrib: nt(s.maghrib), isha: nt(s.isha)},
-        iqamah: {fajr: nt(q.fajr), dhuhr: nt(q.zuhr), asr: nt(q.asr), maghrib: nt(q.maghrib), isha: nt(q.isha)} }; });
-      m.timing_source = "Masjidal (live)";
-      const q0 = j.data.iqamah[0] || {};
-      const jm = Object.keys(q0).filter(k => k.startsWith("jummah")).sort().map(k => nt(q0[k])).filter((v, i, all) => v && all.indexOf(v) === i);
-      if (jm.length) { m.jumuah = jm.map(s => ({start: s, start_min: mins(s)})); m.jumuah_source = "Masjidal (live)"; }
-      m.live = true; liveCount++;
-    } catch {}
-  }));
-  if (liveCount) { subtitle(); render(); }
+// ---- live Masjidal refresh, only for the cards someone is actually looking at, a few at a time
+const byId = new Map(D.mosques.map(m => [m.id, m]));
+const liveQ = [], liveTried = new Set();
+let liveBusy = 0;
+function wantLive(m) { if (!m || !m.masjidal_id || liveTried.has(m.id)) return; liveTried.add(m.id); liveQ.push(m); pumpLive(); }
+function pumpLive() {
+  while (liveBusy < 6 && liveQ.length) {
+    const m = liveQ.shift(); liveBusy++;
+    fetchLive(m).finally(() => { liveBusy--; pumpLive(); });
+  }
+}
+async function fetchLive(m) {
+  try {
+    const from = todayISO, to = addDays(from, 6);
+    const r = await fetch(`https://masjidal.com/api/v1/time/range?masjid_id=${encodeURIComponent(m.masjidal_id)}&from_date=${from}&to_date=${to}`);
+    const j = await r.json();
+    if (j.status !== "success" || !j.data?.salah?.length) return;
+    const days = j.data.salah.map((s, i) => { const q = j.data.iqamah[i] || {}; return {
+      date: s.date, hijri: `${s.hijri_date || ""} ${s.hijri_month || ""}`.trim(),
+      adhan: {fajr: nt(s.fajr), sunrise: nt(s.sunrise), dhuhr: nt(s.zuhr), asr: nt(s.asr), maghrib: nt(s.maghrib), isha: nt(s.isha)},
+      iqamah: {fajr: nt(q.fajr), dhuhr: nt(q.zuhr), asr: nt(q.asr), maghrib: nt(q.maghrib), isha: nt(q.isha)} }; });
+    if (!days.some(d => Object.values(d.adhan).some(Boolean))) return;
+    days.forEach(d => { for (const k in d.iqamah) if (!d.iqamah[k]) delete d.iqamah[k]; });
+    if (m.lat != null) {  // a timetable whose sunrise/sunset is off is on the wrong clock: keep the calculated times
+      const c = calcTimes(from, m.lat, m.lon, MN_TZ), a = days[0].adhan;
+      const off = Math.max(...["sunrise", "maghrib"].map(k => mins(a[k]) != null && mins(c[k]) != null ? Math.abs(mins(a[k]) - mins(c[k])) : 0));
+      if (off > 25) return;
+    }
+    dropBadIqamah(m, days);
+    m.days = days; m._days = null; m.timing_source = "Masjidal (live)";
+    const q0 = j.data.iqamah[0] || {};
+    const jm = Object.keys(q0).filter(k => k.startsWith("jummah")).sort().map(k => nt(q0[k])).filter((v, i, all) => v && all.indexOf(v) === i);
+    // the live feed only carries two slots; keep the daily list when it has a 3rd/4th Jumu'ah
+    if (jm.length && jm.length >= (m.jumuah || []).length) { m.jumuah = jm.map(s => ({start: s, start_min: mins(s)})); m.jumuah_source = "Masjidal (live)"; }
+    m.live = true; liveCount++; subtitle();
+    const el = document.querySelector(`[data-card="${CSS.escape(m.id)}"]`);
+    if (el && !el.contains(document.activeElement)) {
+      const open = el.querySelector("details")?.open; el.outerHTML = card(m);
+      const nel = document.querySelector(`[data-card="${CSS.escape(m.id)}"]`);
+      if (open) nel.querySelector("details")?.setAttribute("open", ""); watchCards(nel);
+    }
+  } catch {}
+}
+const cardWatch = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { cardWatch.unobserve(e.target); wantLive(byId.get(e.target.dataset.card)); } }), {rootMargin: "600px 0px"}) : null;
+function watchCards(one) {
+  const els = one ? [one] : document.querySelectorAll("[data-card]");
+  els.forEach(el => cardWatch ? cardWatch.observe(el) : wantLive(byId.get(el.dataset.card)));
 }
 
 KEYS.forEach(k => $(k).addEventListener("input", render));
@@ -407,7 +617,6 @@ const toResults = () => { if (!isPhone()) return; const y = $("count").getBoundi
 ["q", "region", "sort", "hasj", "iq"].forEach(k => $(k).addEventListener("input", toResults));
 $("reset").onclick = () => { KEYS.forEach(k => $(k).type === "checkbox" ? $(k).checked = false : $(k).value = (k === "sort" ? "name" : "")); if (here) locate(); else render(); };
 render();
-refreshLive();
 </script>
 </body>
 </html>

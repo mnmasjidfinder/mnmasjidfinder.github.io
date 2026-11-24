@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write   # commit refreshed data back
+  issues: write     # open an issue when a watched Jumu'ah time changes
   pages: write
   id-token: write
 
@@ -23,9 +24,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url || steps.deploy_retry.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -40,24 +41,44 @@ jobs:
           git diff --cached --quiet || git commit -m "Refresh data $(date -u +%F)"
           git push || echo "push skipped"
 
+      - name: Open an issue when a watched Jumu'ah time changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY' > alerts.tsv
+          import json
+          for k, v in json.load(open("data/watch_alerts.json")).items():
+              print(f"Jumu'ah check: {k}\t{v}")
+          PY
+          while IFS=$'\t' read -r title body; do
+            [ -z "$title" ] && continue
+            open=$(gh issue list --state open --search "\"$title\" in:title" --json title -q ".[] | select(.title == \"$title\") | .title")
+            if [ -z "$open" ]; then
+              gh issue create --title "$title" --body "$body
+
+          Found by the daily refresh. Close this issue once mosques_seed.json is updated (or the website is fixed)."
+            fi
+          done < alerts.tsv
+          rm -f alerts.tsv
+
       - name: Assemble site
         run: |
           mkdir -p _site/data
           cp *.html _site/
           cp data/masajid.js data/masajid.json _site/data/
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
       # GitHub's Pages service occasionally can't find the package it was just given
       # ("No artifacts named github-pages"). Wait and try again before failing the run.
       - id: deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
         continue-on-error: true
       - name: Wait before retrying deploy
         if: steps.deploy.outcome == 'failure'
         run: sleep 60
       - id: deploy_retry
         if: steps.deploy.outcome == 'failure'
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

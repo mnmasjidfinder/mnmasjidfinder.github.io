@@ -288,6 +288,19 @@ def src_masjidal(mid: str, today: dt.date):
     return {"days": days, "jumuah": jumuah, "source": "Masjidal (set by masjid)"}
 
 
+def src_masjidal_jumuah(mid):
+    """Every Jumu'ah slot from Masjidal's public widget; the time API only returns the first two."""
+    h = http_get(f"https://timing.athanplus.com/masjid/widgets/embed?theme=1&masjid_id={urllib.parse.quote(mid)}",
+                 timeout=20)
+    blk = re.search(r'class="testing-sec"(.*?)</ul>', h, re.S)
+    out = []
+    for t, _n in re.findall(r"<b>\s*([^<]*?)\s*</b>\s*<p[^>]*>\s*Jum[a-z']*\s*(\d)", blk.group(1) if blk else "", re.I):
+        t = norm_time(t)
+        if t and t not in [x["start"] for x in out]:
+            out.append({"start": t})
+    return out
+
+
 def _text(h):
     h = re.sub(r"<script.*?</script>|<style.*?</style>", " ", h, flags=re.S | re.I)
     h = re.sub(r"<[^>]+>", " ", h)
@@ -336,6 +349,135 @@ def src_wp_events(base: str, today: dt.date):
              "start": e.get("start_date"), "end": e.get("end_date"), "url": e.get("url"),
              "venue": (e.get("venue") or {}).get("venue") if isinstance(e.get("venue"), dict) else None}
             for e in j.get("events", [])]
+
+
+# ---------------------------------------------------------------- impossible / stale iqamah
+
+def sun_minutes(d, lat, lon, tz="America/Chicago"):
+    """Local sunrise/sunset (minutes after midnight) by the NOAA solar equations."""
+    n = d.timetuple().tm_yday
+    g = 2 * math.pi / 365 * (n - 1)
+    eqt = 229.18 * (0.000075 + 0.001868 * math.cos(g) - 0.032077 * math.sin(g) - 0.014615 * math.cos(2 * g) - 0.040849 * math.sin(2 * g))
+    decl = 0.006918 - 0.399912 * math.cos(g) + 0.070257 * math.sin(g) - 0.006758 * math.cos(2 * g) + 0.000907 * math.sin(2 * g) - 0.002697 * math.cos(3 * g) + 0.00148 * math.sin(3 * g)
+    la = math.radians(lat)
+    ha = math.degrees(math.acos(math.cos(math.radians(90.833)) / (math.cos(la) * math.cos(decl)) - math.tan(la) * math.tan(decl)))
+    off = dt.datetime(d.year, d.month, d.day, 12, tzinfo=ZoneInfo(tz)).utcoffset().total_seconds() / 60
+    noon = 720 - 4 * lon - eqt + off
+    return noon - 4 * ha, noon + 4 * ha
+
+
+_OFF_NOTE = ("Times not shown from this masjid's online timetable: its sunrise and sunset are off by "
+             "{n} minutes (likely a wrong clock or time zone), so adhan times are calculated and iqamah is hidden. "
+             "Call or check the website.")
+_STALE_NOTE = ("Iqamah not shown: the times this masjid lists online can't be right today (for example Asr after "
+               "sunset), so they look out of date. Jumu'ah may be out of date too. Call or check the website.")
+_SOME_NOTE = "Some iqamah times aren't shown because they fall outside their prayer's time today. Call or check the website."
+
+
+def bad_iqamah(day):
+    """Prayers whose iqamah falls outside that prayer's window (e.g. Asr after sunset, Fajr before dawn):
+    the sign of a schedule nobody updated since summer, or a typo like 1:30 AM."""
+    a = {k: minutes(v) for k, v in (day.get("adhan") or {}).items()}
+    nxt = {"fajr": "sunrise", "dhuhr": "asr", "asr": "maghrib", "maghrib": "isha"}
+    bad = []
+    for k, v in (day.get("iqamah") or {}).items():
+        q, start = minutes(v), a.get(k)
+        if q is None or start is None:
+            continue
+        if k == "isha":
+            q += 1440 if q < 240 else 0  # 12:30 AM is after Isha, not before it
+            ok = start - 10 <= q <= start + 180
+        else:
+            end = a.get(nxt.get(k))
+            early = {"fajr": 20, "asr": 50}.get(k, 5)  # 18-degree Fajr and Hanafi Asr shift the adhan
+            ok = end is None or start - early <= q < end
+        if not ok:
+            bad.append(k)
+    return bad
+
+
+def drop_bad_iqamah(m):
+    """Hide impossible iqamah times. Two or more on today's timetable means the whole schedule is stale."""
+    days = m.get("days") or []
+    if not days:
+        return
+    if m.get("lat") is not None:  # a timetable whose sunrise/sunset is off is on the wrong clock entirely
+        try:
+            d0 = dt.datetime.strptime(days[0]["date"], "%A, %b %d, %Y").date()
+            sr, ss = sun_minutes(d0, m["lat"], m["lon"])
+            a = days[0].get("adhan") or {}
+            off = max(abs(minutes(a["sunrise"]) - sr) if minutes(a.get("sunrise")) is not None else 0,
+                      abs(minutes(a["maghrib"]) - ss) if minutes(a.get("maghrib")) is not None else 0)
+        except (ValueError, KeyError):
+            off = 0
+        if off > 25:
+            m["days"], m["timing_source"] = [], None
+            m["iqamah_stale"], m["iqamah_note"] = True, _OFF_NOTE.format(n=round(off / 5) * 5)
+            return
+    if len(bad_iqamah(days[0])) >= 2:
+        for d in days:
+            d["iqamah"] = {}
+        m["iqamah_stale"], m["iqamah_note"] = True, _STALE_NOTE
+        return
+    hid = False
+    for d in days:
+        for k in bad_iqamah(d):
+            d["iqamah"].pop(k, None)
+            hid = True
+    if hid:
+        m["iqamah_note"] = _SOME_NOTE
+
+
+# ---------------------------------------------------------------- daily check of hand-entered Jumu'ah
+
+_JLAB = r"(?<![a-z])(?:jum(?![aā]d)[uʿ'’‘a]*\w*|friday\s+(?:prayers?|salah|khutb\w*|sermon)|khut?b\w*)"
+_JTIME = r"(\d{1,2}(?::\d{2})?\s*[ap]\.?\s?m\b\.?)"
+
+
+def _clock(x):
+    x = re.sub(r"[\s.]", "", x).upper()
+    return norm_time(x if ":" in x else x[:-2] + ":00" + x[-2:])
+
+
+def jumuah_on_page(t, label=None):
+    """Times written next to a Jumu'ah label in page text. With no label, any midday time near a
+    Jumu'ah/Friday/khutbah word (11 AM-3:30 PM), the fingerprint used to notice a change."""
+    pat = (rf"(?:{label})\s*(?:at|:|-)?\s*" if label else _JLAB + r"[^.|\n]{0,40}?") + _JTIME
+    out = []
+    for x in re.findall(pat, t, re.I):
+        x = _clock(x)
+        if x and x not in out and (label or 660 <= minutes(x) <= 930):
+            out.append(x)
+    return out if label else sorted(out, key=minutes)
+
+
+def watch_jumuah(m):
+    """Re-read a hand-entered Jumu'ah time from the masjid's own page. Returns an alert string or None.
+    With "label", a new time is used straight away. With "seen", the hand entry stays and a change
+    only raises an alert, so a misread page never puts a wrong time on the site."""
+    w = m["jumuah_watch"]
+    hand = [norm_time(j.get("start") or j.get("khutbah") or j.get("iqamah")) for j in m.get("jumuah") or []]
+    site = re.sub(r"^https?://(www[.])?|/$", "", w["url"])
+    try:
+        t = _text(http_get(w["url"], ua="Mozilla/5.0 (compatible; MNMasjidFinder)"))
+    except Exception as e:
+        return f"could not open {w['url']} ({str(e)[:80]}); the site still shows {', '.join(hand)}"
+    found = jumuah_on_page(t, w.get("label"))
+    if not found:
+        return f"the Jumu'ah times are gone from {w['url']}; the site still shows {', '.join(hand)}"
+    if w.get("label"):
+        m["jumuah"] = [{"start": x} for x in found]
+        if found != hand:
+            m["jumuah_source"] = f"From the masjid's website ({site}), checked daily"
+            return (f"Jumu'ah changed on {w['url']}: was {', '.join(hand)}, now {', '.join(found)}. "
+                    "The site uses the new time; update mosques_seed.json to match.")
+    elif found != w.get("seen"):
+        return (f"the Jumu'ah times on {w['url']} changed: the page used to show {', '.join(w.get('seen') or [])}, "
+                f"now {', '.join(found)}. The site still shows {', '.join(hand)}; check the page and update "
+                "mosques_seed.json (jumuah and jumuah_watch.seen).")
+    note = f"; {m['jumuah_note']}" if m.get("jumuah_note") and not m["jumuah_note"].startswith("from ") else ""
+    m["jumuah_source"] = f"From the masjid's website ({site}), checked daily{note}"
+    return None
 
 
 def discover(website: str):
@@ -620,6 +762,12 @@ def enrich(m, today):
         try:
             r = src_masjidal(m["masjidal_id"], today)
             m["days"], m["timing_source"] = r["days"], r["source"]
+            try:
+                w = src_masjidal_jumuah(m["masjidal_id"])
+                if len(w) > len(r["jumuah"]):
+                    r["jumuah"] = w
+            except Exception:
+                pass
             if r["jumuah"]:
                 m["jumuah"], m["jumuah_source"] = r["jumuah"], r["source"]
             m["sources"].append("masjidal")
@@ -642,6 +790,12 @@ def enrich(m, today):
             m["sources"].append("wp-events")
         except Exception as e:
             m["errors"].append(f"events: {str(e)[:100]}")
+    m["iqamah_before"] = [dict(d.get("iqamah") or {}) for d in (m.get("days") or [])[:1]]
+    drop_bad_iqamah(m)
+    if m.get("jumuah_watch") and not m.get("jumuah_source"):
+        a = watch_jumuah(m)
+        if a:
+            m["watch_alert"] = a
     if m.get("jumuah") and not m.get("jumuah_source"):  # manual values from seed
         for j in m["jumuah"]:
             j["start"] = norm_time(j.get("start") or j.get("khutbah") or j.get("iqamah"))
@@ -655,7 +809,8 @@ def enrich(m, today):
     now = dt.datetime.now(TZ).strftime("%Y-%m-%d")
     m["events"] = sorted([e for e in m["events"] if (e.get("start") or "")[:10] >= now],
                          key=lambda e: e.get("start") or "")
-    m["jumuah"] = m.get("jumuah") or []
+    seen = set()  # drop empty and repeated slots (some pages list the same one several times)
+    m["jumuah"] = [j for j in (m.get("jumuah") or []) if j.get("start") and not (j["start"] in seen or seen.add(j["start"]))]
     for j in m["jumuah"]:
         j["start_min"] = minutes(j.get("start"))
     m["live"] = "masjidal" in m["sources"] or bool(m.get("jumuah_source", "").startswith("Mohid"))
@@ -670,6 +825,18 @@ def main():
     with cf.ThreadPoolExecutor(max_workers=8) as ex:
         mosques = list(ex.map(lambda m: enrich(m, today), mosques))
     mosques.sort(key=lambda m: (m["region"], m["name"]))
+    hidden = {m["name"]: {"stale": bool(m.get("iqamah_stale")), "source": m.get("timing_source"),
+              "listed": (m.get("iqamah_before") or [{}])[0], "shown": (m.get("days") or [{}])[0].get("iqamah")}
+              for m in mosques if m.get("iqamah_note")}
+    (DATA / "iqamah_hidden.json").write_text(json.dumps(hidden, indent=1, ensure_ascii=False))
+    log(f"Iqamah hidden: {sum(v['stale'] for v in hidden.values())} stale schedules, "
+        f"{sum(not v['stale'] for v in hidden.values())} with single bad times (data/iqamah_hidden.json)")
+    alerts = {m["name"]: m["watch_alert"] for m in mosques if m.get("watch_alert")}
+    (DATA / "watch_alerts.json").write_text(json.dumps(alerts, indent=1, ensure_ascii=False))
+    for k, v in alerts.items():
+        log(f"WATCH {k}: {v}")
+    for m in mosques:
+        m.pop("iqamah_before", None)
     out = {
         "generated_at": dt.datetime.now(TZ).isoformat(timespec="minutes"),
         "osm": osm_state,
