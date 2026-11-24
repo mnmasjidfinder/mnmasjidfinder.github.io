@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-23T18:39-06:00",
- "osm": "live",
+ "generated_at": "2026-11-23T18:49-06:00",
+ "osm": "cached",
  "count": 86,
  "mosques": [
   {
@@ -9544,7 +9544,9 @@
    "sources": [
     "masjidal"
    ],
-   "errors": [],
+   "errors": [
+    "website: The read operation timed out"
+   ],
    "days": [
     {
      "date": "Monday, Nov 23, 2026",
